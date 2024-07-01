@@ -227,6 +227,10 @@
 	<string name="pref_map_3d_buildings_disabled_summary">Els edificis en 3D es desactiven en mode d\'estalvi d\'energia</string>
 	<!-- Settings «Route» category: «Tts enabled» title -->
 	<string name="pref_tts_enable_title">Instruccions de veu</string>
+	<!-- Settings «Route» category: «Tts announce street names» title -->
+	<string name="pref_tts_street_names_title">Anuncia els noms dels carrers</string>
+	<!-- Settings «Route» category: «Tts announce street names» description -->
+	<string name="pref_tts_street_names_description">Quan s\'activa, el nom del carrer o la sortida per girar es pronunciarà en veu alta.</string>
 	<!-- Settings «Route» category: «Tts language» title -->
 	<string name="pref_tts_language_title">Llengua de la veu</string>
 	<!-- Settings «Route» category: «Test Voice Directions» title -->
@@ -270,6 +274,8 @@
 	<string name="compass_calibration_recommended">Milloreu la direcció de la fletxa movent el telèfon amb un moviment de vuit per calibrar la brúixola.</string>
 	<!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
 	<string name="compass_calibration_required">Moveu el telèfon amb un moviment de vuit per calibrar la brúixola i fixar la direcció de la fletxa al mapa.</string>
+	<!-- Toast text when user hides UI with a long tap anywhere on the map -->
+	<string name="long_tap_toast">Toqueu llargament el mapa de nou per veure la interfície</string>
 	<!-- Update all button text -->
 	<string name="downloader_update_all_button">Actualitza-ho tot</string>
 	<!-- Cancel all button text -->
@@ -470,6 +476,8 @@
 	<string name="editor_edit_place_title">Edició</string>
 	<string name="editor_add_place_title">Addició</string>
 	<string name="editor_edit_place_name_hint">Nom del lloc</string>
+	<!-- The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name -->
+	<string name="editor_default_language_hint">Com està escrit en la llengua local</string>
 	<string name="editor_edit_place_category_title">Categoria</string>
 	<string name="detailed_problem_description">Descripció detallada del problema</string>
 	<string name="editor_report_problem_other_title">Un altre problema</string>
@@ -495,6 +503,8 @@
 	<string name="editor_detailed_description">Heu suggerit canvis en el mapa que s\'enviaran a la comunitat d\'OpenStreetMap. Descriviu qualsevol detall addicional que no es pot editar en l\'Organic Maps.</string>
 	<string name="editor_more_about_osm">Més sobre l\'OpenStreetMap</string>
 	<string name="editor_operator">Propietari</string>
+	<string name="editor_category_unsuitable_title">No trobeu una categoria adequada?</string>
+	<string name="editor_category_unsuitable_text">Organic Maps només permet afegir categories de punts simples, això vol dir que no hi ha ciutats, carreteres, llacs, contorns d\'edificis, etc. Si us plau, afegiu aquestes categories directament a <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Consulteu la nostra <a href="https://organicmaps.app/faq/editing/advanced-map-editing">guia</a> per obtenir instruccions detallades pas a pas.</string>
 	<string name="downloader_no_downloaded_maps_title">No heu baixat cap mapa</string>
 	<string name="downloader_no_downloaded_maps_message">Baixeu mapes per a cercar una ubicacio i usar la navegació sense connexió.</string>
 	<!-- abbreviation for meters -->
@@ -541,7 +551,7 @@
 	<!-- Dialog before publishing the modifications to the public map. -->
 	<string name="editor_share_to_all_dialog_message_1">Assegureu-vos que no heu introduït cap dada personal.</string>
 	<string name="editor_share_to_all_dialog_message_2">Revisarem els canvis. Si tenim cap pregunta contactem amb vós via correu electrònic.</string>
-	<string name="navigation_stop_button">atura\'t</string>
+	<string name="navigation_stop_button">Atura\'t</string>
 	<!-- For the first routing -->
 	<string name="accept">D\'acord</string>
 	<!-- For the first routing -->
@@ -570,8 +580,10 @@
 	<string name="learn_more">Més informació</string>
 	<!-- Subway exits for public transport marks on the map -->
 	<string name="core_exit">Surt</string>
-	<string name="routing_add_start_point">Afegiu un punt inical per a planificar una ruta</string>
-	<string name="routing_add_finish_point">Afegeiu la destinació per a planificar la ruta</string>
+	<!-- User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". -->
+	<string name="routing_add_start_point">Utilitzeu la cerca o toqueu el mapa per afegir un punt de partida de la ruta</string>
+	<!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
+	<string name="routing_add_finish_point">Utilitzeu la cerca o toqueu el mapa per afegir un punt de destinació</string>
 	<string name="placepage_remove_stop">Elimina</string>
 	<string name="placepage_add_stop">Afegeix una parada</string>
 	<!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
@@ -585,6 +597,10 @@
 	<!-- Do not display all bookmark lists on the map -->
 	<string name="bookmark_lists_hide_all">Amaga-ho tot</string>
 	<string name="bookmark_lists_show_all">Mostra-ho tot</string>
+	<plurals name="bookmarks_places">
+	  <item quantity="one">%d marcador</item>
+	  <item quantity="other">%d marcadors</item>
+	</plurals>
 	<string name="bookmarks_create_new_group">Crea una llista</string>
 	<!-- Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files -->
 	<string name="bookmarks_import">Importa marcadors i les traces</string>
@@ -603,14 +619,7 @@
 	  <item quantity="one">S\'ha trobat %d fitxer. Podeu veure\'l després de la conversió.</item>
 	  <item quantity="other">S\'han trobat %d fiters. Podeu veure\'ls després de la conversió.</item>
 	</plurals>
-	<plurals name="objects">
-	  <item quantity="one">%d objecte</item>
-	  <item quantity="other">%d objectes</item>
-	</plurals>
-	<plurals name="places">
-	  <item quantity="one">%d lloc</item>
-	  <item quantity="other">%d llocs</item>
-	</plurals>
+	<string name="restore">Restaura</string>
 	<plurals name="tracks">
 	  <item quantity="one">%d traça</item>
 	  <item quantity="other">%d traces</item>
@@ -626,7 +635,8 @@
 	<string name="bookmarks_empty_list_title">Aquesta llista és buida</string>
 	<string name="bookmarks_empty_list_message">Per a afegir un marcador, toqueu un lloc en el mapa i després toqueu la icona d\'estrella</string>
 	<string name="category_desc_more">…més</string>
-	<string name="export_file">Exporta com a fitxer</string>
+	<string name="export_file">Exporta KMZ</string>
+	<string name="export_file_gpx">Exporta GPX</string>
 	<string name="delete_list">Esborra la llista</string>
 	<string name="public_access">Accés públic</string>
 	<string name="limited_access">Accés limitat</string>
@@ -772,16 +782,16 @@
 	<string name="app_tip_08">Podeu corregir i millorar fàcilment les dades del mapa.</string>
 	<!-- App tip #09 -->
 	<string name="app_tip_09">El nostre objectiu principal és crear mapes ràpids, centrats en la privadesa i fàcils d\'utilitzar que us encantaran.</string>
-	<!-- Text on the Android Auto placeholder screen that maps are displayed on the phone screen -->
-	<string name="aa_used_on_the_phone_screen">Ara esteu utilitzant els Organic Maps a la pantalla del telèfon</string>
+	<!-- Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen -->
+	<string name="car_used_on_the_phone_screen">Ara esteu utilitzant els Organic Maps a la pantalla del telèfon</string>
 	<!-- Text on the phone placeholder screen that maps are displayed on the car screen -->
-	<string name="aa_used_on_the_car_screen">Ara esteu utilitzant els Organic Maps a la pantalla del cotxe</string>
+	<string name="car_used_on_the_car_screen">Ara esteu utilitzant els Organic Maps a la pantalla del cotxe</string>
 	<!-- Displayed on the phone screen. Android Auto connected -->
 	<string name="aa_connected_title">Us heu connectat a Android Auto</string>
 	<!-- Displayed on the phone screen. Button to display maps on the phone screen instead of a car -->
-	<string name="aa_continue_on_the_phone">Continueu al telèfon</string>
-	<!-- Displayed on the Android Auto screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
-	<string name="aa_continue_in_the_car">A la pantalla del cotxe</string>
+	<string name="car_continue_on_the_phone">Continueu al telèfon</string>
+	<!-- Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
+	<string name="car_continue_in_the_car">A la pantalla del cotxe</string>
 	<!-- Ask user to grant location permissions -->
 	<string name="aa_location_permissions_request">Aquesta aplicació requereix accés a la vostra ubicació per a la navegació.</string>
 	<!-- Displayed on the Android Auto screen. Grant Permissions button. Must be no more than 18 symbols! -->
@@ -799,11 +809,21 @@
 	<string name="pref_tts_open_system_settings">Configuració de la síntesi de veu del sistema</string>
 	<!-- toast displayed when pressing the "Speech synthesis system settings" button, and the system settings aren't found. -->
 	<string name="pref_tts_no_system_tts">No s\'ha trobat la configuració de la síntesi de veu, esteu segur que el vostre dispositiu l\'admet?</string>
+	<string name="drive_through">Servei al cotxe</string>
+	<string name="clear_the_search">Esborra la cerca</string>
+	<string name="zoom_in">Ampliar</string>
+	<!-- Accessibility text for the zoom-out button on the map -->
+	<string name="zoom_out">Disminuir el zoom</string>
+	<!-- Restaurant or other food place's menu URL field in the Editor -->
+	<string name="website_menu">Enllaç del menú</string>
+	<!-- Button in the Place Page which opens a restaurant or other food place's menu in a browser -->
+	<string name="view_menu">Veure menú</string>
 
 	<!-- SECTION: Types -->
 	<string name="type.addr_interpolation">Adreça/Bloc</string>
 	<string name="type.addr_interpolation.even">Adreça/Bloc</string>
 	<string name="type.addr_interpolation.odd">Adreça/Bloc</string>
+	<string name="type.amenity.bbq">Barbacoa</string>
 	<string name="type.amenity.gambling">Jocs d\'atzar</string>
 	<string name="type.leisure.adult_gaming_centre">Centre de joc per a adults</string>
 	<string name="type.leisure.amusement_arcade">Arcade</string>
@@ -827,6 +847,8 @@
 	<string name="type.amenity.place_of_worship.christian.jehovahs_witness">Sala del Regne dels Testimonis de Jehovà</string>
 
 	<!-- SECTION: Types: Recycling -->
+	<!-- Compared to wilderness_hut its smaller and simpler, without a fireplace. -->
+	<string name="type.amenity.shelter.basic_hut">Cabana Bivac</string>
 	<string name="type.amenity.public_bath">Bany Públic</string>
 	<string name="type.amenity.stripclub">Club de striptease</string>
 	<string name="type.amenity.vehicle_inspection">Inspecció de vehicles</string>
@@ -869,6 +891,7 @@
 	<string name="type.historic.tank">Tanc històric</string>
 	<string name="type.historic.wreck">Naufragi</string>
 	<string name="type.landuse.flowerbed">Llit de flors</string>
+	<string name="type.leisure.miniature_golf">Minigolf</string>
 	<string name="type.leisure.outdoor_seating">Seients a l\'aire lliure</string>
 	<string name="type.man_made.tower.communication">Torre de comunicacions</string>
 	<!-- A land cover consisting of rounded rock fragments (pebbles) on a beach or riverbed. -->
@@ -931,6 +954,7 @@
 	<string name="type.tourism.aquarium">Aquari</string>
 	<!-- Typically serviced, staff is present and food is available (compared to wilderness_hut). -->
 	<string name="type.tourism.alpine_hut">Lodge de muntanya</string>
+	<string name="type.tourism.apartment">Apartament de vacances</string>
 	<string name="type.attraction.animal">Recinte d\'animals</string>
 	<!-- A rentable countryside vacation house. -->
 	<string name="type.tourism.chalet">Casa rural de vacances</string>

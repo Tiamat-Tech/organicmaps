@@ -254,6 +254,12 @@
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "Hääljuhised";
 
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "Teatage tänavanimed";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "Kui see on lubatud, öeldakse valjusti tänava või väljasõidu nimi, millele pöörata.";
+
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "Hääle keel";
 
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "Kompassi kalibreerimine";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "Puudutage pikalt kaardil uuesti, et näha kasutajaliidest.";
 
 /* Update all button text */
 "downloader_update_all_button" = "Värskenda kõik";
@@ -499,8 +508,6 @@
 "dialog_routing_application_error" = "Marsruuti ei saa koostada rakenduse vea tõttu.";
 
 "dialog_routing_try_again" = "Palun proovi uuesti";
-
-"not_now" = "Mitte praegu";
 
 "dialog_routing_download_and_build_cross_route" = "Kas sooviksid kaardi alla laadida ja luua optimaalsema rohkem kui ühte kaarti hõlmava marsruudi?";
 
@@ -705,6 +712,9 @@
 
 "editor_edit_place_name_hint" = "Koha nimi";
 
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "Nagu on kirjutatud kohalikus keeles";
+
 "editor_edit_place_category_title" = "Kategooria";
 
 "whatsnew_editor_message_1" = "Lisa kaardile uusi kohti ja muuda olemasolevaid otse rakenduses.";
@@ -860,7 +870,7 @@
 
 "editor_share_to_all_dialog_message_2" = "OpenStreetMap muutjad kontrollivad muudatused üle ja võtavad küsimuste korral Sinuga ühendust.";
 
-"navigation_stop_button" = "lõpeta";
+"navigation_stop_button" = "Lõpeta";
 
 /* iOS dialog for the case when recent track recording is on and the app comes back from background */
 "recent_track_background_dialog_title" = "Keela oma hiljuti läbitud marsruudi salvestamine?";
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "Liiklusinfo ei ole saadaval";
 
+"enable_logging" = "Luba logimine";
+
+"log_file_size" = "Logifaili suurus: %@";
+
 "transliteration_title" = "Transliteratsioon ladina keelde";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "Välju";
 
-"routing_add_start_point" = "Marsruudi planeerimiseks lisa lähtepunkt";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "Marsruudi alguspunkti lisamiseks kasutage otsingut või puudutage kaarti";
 
-"routing_add_finish_point" = "Marsruudi planeerimiseks lisa sihtkoht";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "Kasutage otsingut või koputage kaardil sihtkoha lisamiseks";
 
 "planning_route_manage_route" = "Halda marsruuti";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "Lisa peatus";
 
 "start_from_my_position" = "Alusta kohast";
-
-"profile_authorization_error" = "Vabandust, tekkis viga. Proovi uuesti sisse logida.";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "Palun logige sisse OpenStreetMap'i, et laadida automaatselt üles kõik oma kaarditööd. Lisateave";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "Kuva kõik";
 
 "bookmarks_create_new_group" = "Loo uus loetelu";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "Importida järjehoidjaid ja lugusid";
 
 "downloader_hide_screen" = "Peida vaade";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "Mõningaid faile ei teisendatud.";
 
-"bookmarks_restore_title" = "Taasta see versioon?";
-
-"error_system_message" = "Tekkis tundmatu viga";
-
 "restore" = "Taasta";
 
 "privacy_policy" = "Privaatsuspoliitika";
 
 "terms_of_use" = "Kasutustingimused";
-
-"button_layer_traffic" = "Liiklus";
 
 "button_layer_subway" = "Metroo";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "Populaarne";
 
-"export_file" = "Ekspordi fail";
+"export_file" = "KMZ eksportimine";
+
+"export_file_gpx" = "Ekspordi GPX";
 
 "delete_list" = "Kustuta loetelu";
 
@@ -1038,6 +1051,8 @@
 "power_managment_setting_auto" = "Automaatne";
 
 "power_managment_setting_manual_max" = "Maksimaalne energiasääst";
+
+"enable_logging_warning_message" = "See valik lülitab sisse logimise diagnostilistel eesmärkidel. Meie meeskonnale võib olla abi rakendusega seotud probleemide tõrkeotsingul. Lubage see valik ajutiselt, et salvestada ja saata meile oma probleemi üksikasjalikud logid.";
 
 "driving_options_title" = "Marsruutimise valikud";
 
@@ -1258,6 +1273,18 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/About_OpenStreetMap";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "Nüüd kasutate telefoni ekraanil Organic Maps";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "Nüüd kasutate auto ekraanil Organic Maps";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "Jätka telefonis";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "Auto ekraanile";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
 "button_layer_outdoor" = "Matkamine";
 
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "Kaart";
+
+"drive_through" = "Läbi sõit";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "Menüü link";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "Lubage iCloudi sünkroniseerimine";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "iCloudi sünkroniseerimine on eksperimentaalne funktsioon, mis on arendamisel. Veenduge, et olete teinud varukoopia kõigist oma järjehoidjatest ja lugudest.";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "iCloud on välja lülitatud";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "Selle funktsiooni kasutamiseks lubage seadme seadetes iCloud.";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "Lubage";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "Varukoopia";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "Viga: Sünkroniseerimine ebaõnnestus ühenduse vea tõttu.";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "Viga: iCloudi kvoodi ületamise tõttu ei õnnestunud sünkroniseerimine.";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "Viga: iCloud ei ole saadaval";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "Baar";
 
-"type.amenity.bbq" = "Piknikuala";
+"type.amenity.bbq" = "Grillgrill";
 
 "type.amenity.bench" = "Pink";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "Varjupaik";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "Varjupaik";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "Vivouac-küünla";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
 
 "type.amenity.public_bath" = "Avalik vann";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "Väljumine";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "Tasuta";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "Jalakäijate ülekäigurada";
 
-"type.highway.footway.alpine_hiking" = "Alpi matkarada";
-
 "type.highway.footway.area" = "Jalakäijate ala";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "Jalakäijate sild";
-
-"type.highway.footway.demanding_alpine_hiking" = "Nõudlik alpi matkarada";
-
-"type.highway.footway.demanding_mountain_hiking" = "Rada";
-
-"type.highway.footway.difficult_alpine_hiking" = "Nõudlik mägimatkarada";
-
-"type.highway.footway.hiking" = "Rada";
-
-"type.highway.footway.mountain_hiking" = "Mägirada";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "Jalakäijate tunnel";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "Rada";
 
-"type.highway.path.alpine_hiking" = "Alpi matkarada";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "Rada";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "Rada";
 
 "type.highway.path.bicycle" = "Jalgratta- ja jalgtee";
+
+"type.highway.footway.bicycle" = "Jalgratta- ja jalgtee";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "Sild";
 
-"type.highway.path.demanding_alpine_hiking" = "Nõudlik alpi matkarada";
-
-"type.highway.path.demanding_mountain_hiking" = "Nõudlik mägimatkarada";
-
-"type.highway.path.difficult_alpine_hiking" = "Raske alpi matkarada";
-
-"type.highway.path.hiking" = "Rada";
-
 "type.highway.path.horse" = "Valjarada";
-
-"type.highway.path.mountain_hiking" = "Mägitee";
-
-"type.highway.path.permissive" = "Rada";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "Tunnel";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "Rada";
 
-"type.highway.track.grade2" = "Rada";
-
-"type.highway.track.grade3" = "Rada";
-
-"type.highway.track.grade4" = "Rada";
-
-"type.highway.track.grade5" = "Rada";
-
 "type.highway.track.no.access" = "Rada";
-
-"type.highway.track.permissive" = "Rada";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "Tunnel";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Haridusrajatised";
 
-"type.landuse.farm" = "Talu";
-
 "type.landuse.farmland" = "Talumaa";
 
 "type.landuse.farmyard" = "Taluõu";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "Elamu aed";
 
 "type.leisure.golf_course" = "Golfirada";
+
+"type.leisure.miniature_golf" = "Minigolf";
 
 "type.leisure.hackerspace" = "Hackerspace";
 
@@ -3726,7 +3766,7 @@
 /* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
 "type.tourism.alpine_hut" = "Mägimajake";
 
-"type.tourism.apartment" = "Korterid";
+"type.tourism.apartment" = "Puhkuse korter";
 
 "type.tourism.artwork" = "Kunstiteos";
 
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "Jõgi";
 
 "type.waterway.river.tunnel" = "Jõgi";
-
-"type.waterway.riverbank" = "Jõgi";
 
 "type.waterway.stream" = "Oja";
 

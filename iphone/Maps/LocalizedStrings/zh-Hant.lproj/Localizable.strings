@@ -210,7 +210,7 @@
 "done" = "完成";
 
 /* Prints version number in About dialog */
-"version" = "有機地圖版本：%@";
+"version" = "Organic Maps 版本：%@";
 
 /* Title for tracks category in bookmarks manager */
 "tracks_title" = "軌跡";
@@ -253,6 +253,12 @@
 
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "語音指示";
+
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "宣布街道名稱";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "啟用後，將大聲說出要轉入的街道或出口的名稱。";
 
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "語音語言";
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "指南針校準";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "再次長按地圖即可看到介面";
 
 /* Update all button text */
 "downloader_update_all_button" = "更新全部";
@@ -500,8 +509,6 @@
 
 "dialog_routing_try_again" = "請再試一次";
 
-"not_now" = "現在不要";
-
 "dialog_routing_download_and_build_cross_route" = "您是否要下載地圖，產生跨越邊界的更好路線？";
 
 "dialog_routing_download_cross_route" = "若要產生跨越邊界的更理想路線，您需要下載地圖。";
@@ -609,11 +616,11 @@
 
 "opens_at" = "Opens at %@";
 
-"opens_in" = "Opens in %@";
+"opens_in" = "將於 %@ 後開業";
 
 "closes_at" = "Closes at %@";
 
-"closes_in" = "Closes in %@";
+"closes_in" = "將於 %@ 後停業";
 
 "closed" = "已關閉";
 
@@ -705,6 +712,9 @@
 
 "editor_edit_place_name_hint" = "該地點的名稱";
 
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "因為它是用當地語言寫的";
+
 "editor_edit_place_category_title" = "類別";
 
 "whatsnew_editor_message_1" = "新增新地點到該地圖，並直接通過此應用程式編輯已存在的地點。";
@@ -779,7 +789,7 @@
 
 "location_services_disabled_on_device_4" = "4.開啟定位服務";
 
-"location_services_disabled_on_device_additional_message" = "或繼續使用沒有位置的有機地圖";
+"location_services_disabled_on_device_additional_message" = "或繼續使用 Organic Maps，但無法定位到您目前所在的位置。";
 
 /* abbreviation for meters */
 "m" = "公尺";
@@ -810,7 +820,7 @@
 "more_on_kayak" = "照片、評論、預訂";
 
 /* An explanation dialog shown when clicking on more_on_kayak link. */
-"dialog_kayak_disclaimer" = "透過此連結進行的每次預訂收到的推薦獎金將用於開發有機地圖";
+"dialog_kayak_disclaimer" = "透過此連結進行的每次預訂收到的推薦獎金將用於開發 Organic Maps。";
 
 /* A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. */
 "dialog_kayak_button" = "Kayak 上的詳細資訊";
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "無法使用交通資訊";
 
+"enable_logging" = "啟用記錄";
+
+"log_file_size" = "日誌檔案大小：%@";
+
 "transliteration_title" = "音譯為拉丁文";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "退出";
 
-"routing_add_start_point" = "新增起點以計劃路線";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "使用搜尋或點擊地圖新增路線起點";
 
-"routing_add_finish_point" = "新增終點以計劃路線";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "使用搜尋或點擊地圖新增目的地點";
 
 "planning_route_manage_route" = "管理路線";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "新增停靠站";
 
 "start_from_my_position" = "起點";
-
-"profile_authorization_error" = "噢，發生錯誤。請嘗試再次登入。";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "請登入 OpenStreetMap 自動上傳您所有的地圖編輯內容。了解更多";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "顯示全部";
 
 "bookmarks_create_new_group" = "創建新列表";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "導入書籤和曲目";
 
 "downloader_hide_screen" = "隱藏畫面";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "有些文件未被轉換。";
 
-"bookmarks_restore_title" = "還原這個版本？";
-
-"error_system_message" = "出現未知錯誤";
-
 "restore" = "恢復";
 
 "privacy_policy" = "隱私政策";
 
 "terms_of_use" = "使用條款";
-
-"button_layer_traffic" = "路況";
 
 "button_layer_subway" = "捷運";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "受歡迎的";
 
-"export_file" = "導出文件";
+"export_file" = "出口KMZ";
+
+"export_file_gpx" = "導出GPX";
 
 "delete_list" = "刪除列表";
 
@@ -1039,16 +1052,18 @@
 
 "power_managment_setting_manual_max" = "最大程度省電";
 
+"enable_logging_warning_message" = "暫時啟用此選項，以便使用「回報問題」功能在幫助對話框中記錄並手動發送詳細的診斷日誌給我們。日誌可能包含位置資訊。";
+
 "driving_options_title" = "繞行設定";
 
 /* Recommended length for CarPlay and Android Auto is around 25-27 characters */
 "avoid_tolls" = "避開收費公路";
 
 /* Recommended length for CarPlay and Android Auto is around 25-27 characters */
-"avoid_unpaved" = "規避土路";
+"avoid_unpaved" = "避開未鋪設道路";
 
 /* Recommended length for CarPlay and Android Auto is around 25-27 characters */
-"avoid_ferry" = "規避渡輪渡口";
+"avoid_ferry" = "避開渡輪";
 
 "avoid_motorways" = "避開高速公路";
 
@@ -1258,6 +1273,18 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/About_OpenStreetMap";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "您現在正在手機螢幕上使用 Organic Maps";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "您現在正在汽車螢幕上使用 Organic Maps";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "繼續打電話";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "到車用螢幕";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
 "button_layer_outdoor" = "遠足";
 
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "地圖";
+
+"drive_through" = "免下車服務";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "選單連結";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "啟用 iCloud 同步";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "iCloud 同步是一項正在開發中的實驗性功能。確保您已備份所有書籤和曲目。";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "iCloud 已停用";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "請在您的裝置設定中啟用 iCloud 以使用此功能。";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "使能夠";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "备份";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "錯誤：由於連線錯誤而無法同步";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "錯誤：由於超出 iCloud 配額而無法同步";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "錯誤：iCloud 不可用";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "酒吧";
 
-"type.amenity.bbq" = "野餐";
+"type.amenity.bbq" = "烤肉架";
 
 "type.amenity.bench" = "長板凳";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "隱藏處";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "隱藏處";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "露營小屋";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
 
 "type.amenity.public_bath" = "公共浴場";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "出口";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "免費";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "行人穿越道";
 
-"type.highway.footway.alpine_hiking" = "人行步道";
-
 "type.highway.footway.area" = "人行步道";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "橋";
-
-"type.highway.footway.demanding_alpine_hiking" = "人行步道";
-
-"type.highway.footway.demanding_mountain_hiking" = "人行步道";
-
-"type.highway.footway.difficult_alpine_hiking" = "人行步道";
-
-"type.highway.footway.hiking" = "人行步道";
-
-"type.highway.footway.mountain_hiking" = "人行步道";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "隧道";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "人行步道";
 
-"type.highway.path.alpine_hiking" = "人行步道";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "人行步道";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "人行步道";
 
 "type.highway.path.bicycle" = "人行步道";
+
+"type.highway.footway.bicycle" = "人行步道";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "橋";
 
-"type.highway.path.demanding_alpine_hiking" = "人行步道";
-
-"type.highway.path.demanding_mountain_hiking" = "人行步道";
-
-"type.highway.path.difficult_alpine_hiking" = "人行步道";
-
-"type.highway.path.hiking" = "人行步道";
-
 "type.highway.path.horse" = "人行步道";
-
-"type.highway.path.mountain_hiking" = "人行步道";
-
-"type.highway.path.permissive" = "人行步道";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "隧道";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "土路";
 
-"type.highway.track.grade2" = "土路";
-
-"type.highway.track.grade3" = "土路";
-
-"type.highway.track.grade4" = "土路";
-
-"type.highway.track.grade5" = "土路";
-
 "type.highway.track.no.access" = "土路";
-
-"type.highway.track.permissive" = "土路";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "隧道";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Educational Facility";
 
-"type.landuse.farm" = "Farm";
-
 "type.landuse.farmland" = "農業用地";
 
 "type.landuse.farmyard" = "Farmyard";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "花園";
 
 "type.leisure.golf_course" = "高爾夫球場";
+
+"type.leisure.miniature_golf" = "Minigolf";
 
 "type.leisure.hackerspace" = "駭客空間";
 
@@ -3726,7 +3766,7 @@
 /* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
 "type.tourism.alpine_hut" = "山間小屋";
 
-"type.tourism.apartment" = "公寓";
+"type.tourism.apartment" = "假日公寓";
 
 "type.tourism.artwork" = "藝術品";
 
@@ -3781,7 +3821,7 @@
 
 "type.tourism.theme_park" = "旅遊景點";
 
-"type.tourism.viewpoint" = "視野";
+"type.tourism.viewpoint" = "觀景點";
 
 /* Typically more basic, not staffed and free (compared to alpine_hut). */
 "type.tourism.wilderness_hut" = "山屋";
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "河流";
 
 "type.waterway.river.tunnel" = "河流";
-
-"type.waterway.riverbank" = "河流";
 
 "type.waterway.stream" = "溪";
 

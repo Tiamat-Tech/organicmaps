@@ -254,6 +254,12 @@
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "Taleinstrukser";
 
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "Kunngjør gatenavn";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "Når aktivert, vil navnet på gaten eller avkjørselen du skal svinge inn på, bli lest opp.";
+
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "Talespråk";
 
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "Kompasskalibrering";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "Trykk lenge på kartet igjen for å se grensesnittet";
 
 /* Update all button text */
 "downloader_update_all_button" = "Oppdater alle";
@@ -499,8 +508,6 @@
 "dialog_routing_application_error" = "En applikasjonsfeil førte til at ruten ikke kunne opprettes.";
 
 "dialog_routing_try_again" = "Vennligst prøv igjen";
-
-"not_now" = "Ikke nå";
 
 "dialog_routing_download_and_build_cross_route" = "Vil du laste ned kartet og lage en mer optimal rute som går over flere kart?";
 
@@ -705,6 +712,9 @@
 
 "editor_edit_place_name_hint" = "Navn på stedet";
 
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "Som det står skrevet på det lokale språket";
+
 "editor_edit_place_category_title" = "Kategori";
 
 "whatsnew_editor_message_1" = "Legg til nye steder i kartet og rediger eksisterende steder direkte fra appen.";
@@ -860,7 +870,7 @@
 
 "editor_share_to_all_dialog_message_2" = "OpenStreetMap-redaktører vil sjekke endringene og ta kontakt med deg hvis de har spørsmål.";
 
-"navigation_stop_button" = "stopp";
+"navigation_stop_button" = "Stopp";
 
 /* iOS dialog for the case when recent track recording is on and the app comes back from background */
 "recent_track_background_dialog_title" = "Deaktivere opptak av nylig reiste rute?";
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "Trafikkdata er ikke tilgjengelig";
 
+"enable_logging" = "Aktiver loggføring";
+
+"log_file_size" = "Loggfilstørrelse: %@";
+
 "transliteration_title" = "Omskrivning til latin";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "Avslutt";
 
-"routing_add_start_point" = "Angi startpunkt for å planlegge rute";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "Bruk søk eller trykk på kartet for å legge til et startpunkt for ruten";
 
-"routing_add_finish_point" = "Angi sluttpunkt for å planlegge rute";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "Bruk søk eller trykk på kartet for å legge til et destinasjonspunkt";
 
 "planning_route_manage_route" = "Administrere rute";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "Angi stopp";
 
 "start_from_my_position" = "Start fra";
-
-"profile_authorization_error" = "Oops, en feil oppstod. Prøv å logge inn på nytt.";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "Logg inn på OpenStreetMap for automatisk å laste opp alle kartredigeringene dine. Finn ut mer";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "Vis alle";
 
 "bookmarks_create_new_group" = "Opprett ny liste";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "Importer bokmerker og spor";
 
 "downloader_hide_screen" = "Skjul skjerm";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "Noen filer ble ikke konvertert.";
 
-"bookmarks_restore_title" = "Gjenopprett denne versjonen?";
-
-"error_system_message" = "En ukjent feil oppstod";
-
 "restore" = "Restaurere";
 
 "privacy_policy" = "Personvernpolitikk";
 
 "terms_of_use" = "Bruksbetingelser";
-
-"button_layer_traffic" = "Trafikk";
 
 "button_layer_subway" = "T-bane";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "Populær";
 
-"export_file" = "Eksporter fil";
+"export_file" = "Eksporter KMZ";
+
+"export_file_gpx" = "Eksporter GPX";
 
 "delete_list" = "Slett liste";
 
@@ -1038,6 +1051,8 @@
 "power_managment_setting_auto" = "Automatisk";
 
 "power_managment_setting_manual_max" = "Maksimum strømsparing";
+
+"enable_logging_warning_message" = "Alternativet slår på logging for diagnostiske formål. Det kan være nyttig for våre supportpersonale som feilsøker problemer med appen. Aktiver dette alternativet bare på forespørsel fra Organic Maps-brukerstøtte.";
 
 "driving_options_title" = "Kjørealternativer";
 
@@ -1258,6 +1273,18 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/About_OpenStreetMap";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "Du bruker nå Organic Maps på telefonskjermen";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "Du bruker nå Organic Maps på bilskjermen";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "Fortsett i telefonen";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "Til bilens skjerm";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
 "button_layer_outdoor" = "Fotturer";
 
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "Kart";
+
+"drive_through" = "Gjennomkjøring";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "Lenke til menyen";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "Aktiver iCloud-synkronisering";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "iCloud-synkronisering er en eksperimentell funksjon under utvikling. Sørg for at du har tatt en sikkerhetskopi av alle bokmerkene og sporene dine.";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "iCloud er deaktivert";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "Aktiver iCloud i enhetens innstillinger for å bruke denne funksjonen.";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "Aktivere";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "Sikkerhetskopiering";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "Feil: Kunne ikke synkronisere på grunn av tilkoblingsfeil";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "Feil: Kunne ikke synkronisere på grunn av overskredet iCloud-kvote";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "Feil: iCloud er ikke tilgjengelig";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "Bar";
 
-"type.amenity.bbq" = "Rasteplass";
+"type.amenity.bbq" = "Barbecue-grill";
 
 "type.amenity.bench" = "Benk";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "Ly";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "Ly";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "Bivuakkhytte";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
 
 "type.amenity.public_bath" = "Offentlig bad";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "Utgang";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "Gratis";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "Fotgjengerovergang";
 
-"type.highway.footway.alpine_hiking" = "Sti";
-
 "type.highway.footway.area" = "Gangvei";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "Bru";
-
-"type.highway.footway.demanding_alpine_hiking" = "Sti";
-
-"type.highway.footway.demanding_mountain_hiking" = "Sti";
-
-"type.highway.footway.difficult_alpine_hiking" = "Sti";
-
-"type.highway.footway.hiking" = "Sti";
-
-"type.highway.footway.mountain_hiking" = "Sti";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "Tunnel";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "Sti";
 
-"type.highway.path.alpine_hiking" = "Sti";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "Sti";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "Sti";
 
 "type.highway.path.bicycle" = "Sti";
+
+"type.highway.footway.bicycle" = "Sti";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "Bru";
 
-"type.highway.path.demanding_alpine_hiking" = "Sti";
-
-"type.highway.path.demanding_mountain_hiking" = "Sti";
-
-"type.highway.path.difficult_alpine_hiking" = "Sti";
-
-"type.highway.path.hiking" = "Sti";
-
 "type.highway.path.horse" = "Sti";
-
-"type.highway.path.mountain_hiking" = "Sti";
-
-"type.highway.path.permissive" = "Sti";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "Tunnel";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "Traktor/Skogsbilvei";
 
-"type.highway.track.grade2" = "Traktor/Skogsbilvei";
-
-"type.highway.track.grade3" = "Traktor/Skogsbilvei";
-
-"type.highway.track.grade4" = "Traktor/Skogsbilvei";
-
-"type.highway.track.grade5" = "Traktor/Skogsbilvei";
-
 "type.highway.track.no.access" = "Traktor/Skogsbilvei";
-
-"type.highway.track.permissive" = "Traktor/Skogsbilvei";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "Tunnel";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Educational Facility";
 
-"type.landuse.farm" = "Farm";
-
 "type.landuse.farmland" = "Jordbruksområde";
 
 "type.landuse.farmyard" = "Farmyard";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "Hage";
 
 "type.leisure.golf_course" = "Golfbane";
+
+"type.leisure.miniature_golf" = "Minigolf";
 
 "type.leisure.hackerspace" = "Hackerspace";
 
@@ -3726,7 +3766,7 @@
 /* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
 "type.tourism.alpine_hut" = "Fjellstue";
 
-"type.tourism.apartment" = "Leiligheter";
+"type.tourism.apartment" = "Ferieleilighet";
 
 "type.tourism.artwork" = "Kunstverk";
 
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "Elv";
 
 "type.waterway.river.tunnel" = "Elv";
-
-"type.waterway.riverbank" = "Elv";
 
 "type.waterway.stream" = "Elv";
 

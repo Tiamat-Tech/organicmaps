@@ -513,6 +513,7 @@ UNIT_TEST(Relation_Wiki)
         TEST(fb.GetMetadata().Get(feature::Metadata::FMD_WIKIPEDIA).empty(), ());
         break;
       }
+      default: TEST(false, ()); break;
       }
     });
 
@@ -986,6 +987,38 @@ UNIT_CLASS_TEST(TestRawGenerator, Addr_Interpolation)
       TEST_EQUAL(params.GetStreet(), "Juncal", ());
     }
   });
+
+  TEST_EQUAL(count, 1, ());
+
+  BuildFeatures(mwmName);
+  BuildSearch(mwmName);
+
+  FrozenDataSource dataSource;
+  auto const res = dataSource.RegisterMap(platform::LocalCountryFile::MakeTemporary(GetMwmPath(mwmName)));
+  CHECK_EQUAL(res.second, MwmSet::RegResult::Success, ());
+
+  FeaturesLoaderGuard guard(dataSource, res.first);
+
+  count = 0;
+  size_t const numFeatures = guard.GetNumFeatures();
+  for (size_t id = 0; id < numFeatures; ++id)
+  {
+    auto ft = guard.GetFeatureByIndex(id);
+    if (ftypes::IsAddressInterpolChecker::Instance()(*ft))
+    {
+      ++count;
+
+      auto value = guard.GetHandle().GetValue();
+      if (!value->m_house2street)
+        value->m_house2street = search::LoadHouseToStreetTable(*value);
+
+      auto res = value->m_house2street->Get(id);
+      TEST(res, ());
+
+      auto street = guard.GetFeatureByIndex(res->m_streetId);
+      TEST_EQUAL(street->GetName(StringUtf8Multilang::kDefaultCode), "Juncal", ());
+    }
+  }
 
   TEST_EQUAL(count, 1, ());
 }

@@ -176,9 +176,9 @@ UNIT_TEST(EnglandToFranceRouteLeMansTest)
 {
   TRouteResult const res = CalculateRoute(GetVehicleComponents(VehicleType::Car),
                                           FromLatLon(51.09276, 1.11369), {0., 0.},
-                                          FromLatLon(50.93227, 1.82725));
+                                          FromLatLon(50.93317, 1.82737));
 
-  TestRouteLength(*res.first, 64089.4);
+  TestRouteLength(*res.first, 63877.4);
   // LeMans shuttle duration is 35 min.
   TEST_LESS(res.first->GetTotalTimeSec(), 3200, ());
 }
@@ -501,13 +501,15 @@ UNIT_TEST(RussiaMoscowNotCrossingTollRoadTest)
     CalculateRouteAndTestRouteLength(vehicleComponents, start, {0.0, 0.0}, finish[0], 8427.71);
 
     // 2. End point is near the service road via the motorway toll road, but choose a minor track as end segment.
-    CalculateRouteAndTestRouteLength(vehicleComponents, start, {0.0, 0.0},finish[1], 8361.27);
+    CalculateRouteAndTestRouteLength(vehicleComponents, start, {0.0, 0.0}, finish[1], 8361.27);
   }
 
   {
-    // Normal route via the motorway toll road (long but fast).
-    CalculateRouteAndTestRouteLength(vehicleComponents, start, {0.0, 0.0}, finish[0], 20604.9);
-    CalculateRouteAndTestRouteLength(vehicleComponents, start, {0.0, 0.0}, finish[1], 20689.6);
+    // Normal route via the motorway toll road - long but fast (like Valhalla).
+    // - 20595.3 is OK (Graphopper)
+    // - 19203.7 is OK (OSRM)
+    CalculateRouteAndTestRouteLength(vehicleComponents, start, {0.0, 0.0}, finish[0], 21930.7);
+    CalculateRouteAndTestRouteLength(vehicleComponents, start, {0.0, 0.0}, finish[1], 22015.4);
   }
 }
 
@@ -846,7 +848,7 @@ UNIT_TEST(Germany_Netherlands_AvoidLoops)
   TEST(routeResult.first, ());
   Route const & route = *routeResult.first;
   TestRouteLength(route, 405159);
-  TestRouteTime(route, 14280.7);
+  TestRouteTime(route, 14100);
 }
 
 UNIT_TEST(Germany_Cologne_Croatia_Zagreb)

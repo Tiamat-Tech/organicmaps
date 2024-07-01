@@ -254,6 +254,12 @@
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "Instrucciones de voz";
 
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "Anunciar nombres de calles";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "Cuando se activa, el nombre de la calle o la salida para girar se pronunciará en voz alta.";
+
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "Idioma de voz";
 
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "Calibración de la brújula";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "Vuelve a pulsar prolongadamente sobre el mapa para ver la interfaz";
 
 /* Update all button text */
 "downloader_update_all_button" = "Actualizar todos";
@@ -499,8 +508,6 @@
 "dialog_routing_application_error" = "No se pudo crear la ruta debido a un error en la aplicación.";
 
 "dialog_routing_try_again" = "Intentar nuevamente";
-
-"not_now" = "No ahora";
 
 "dialog_routing_download_and_build_cross_route" = "¿Desea descargar el mapa y crear una ruta mejor que abarque más de un mapa?";
 
@@ -705,6 +712,9 @@
 
 "editor_edit_place_name_hint" = "Nombre del lugar";
 
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "Como está escrito en la lengua local";
+
 "editor_edit_place_category_title" = "Categoría";
 
 "whatsnew_editor_message_1" = "Añadir lugares nuevos al mapa y editar los lugares actuales directamente desde la aplicación.";
@@ -860,7 +870,7 @@
 
 "editor_share_to_all_dialog_message_2" = "Los editores de OpenStreetMap comprobarán los cambios y se pondrán en contacto con usted si tienen alguna pregunta.";
 
-"navigation_stop_button" = "detener";
+"navigation_stop_button" = "Detener";
 
 /* iOS dialog for the case when recent track recording is on and the app comes back from background */
 "recent_track_background_dialog_title" = "¿Desactivar la grabación de su ruta recientemente recorrida?";
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "Los datos de tráfico no están disponibles";
 
+"enable_logging" = "Habilitar historial";
+
+"log_file_size" = "Tamaño del archivo de registro: %@";
+
 "transliteration_title" = "Transliteración al latín";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "Salida";
 
-"routing_add_start_point" = "Buscar un origen para el plan de ruta";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "Busca o toca en el mapa para añadir el origen de la ruta";
 
-"routing_add_finish_point" = "Buscar un destino para el plan de ruta";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "Busca o toca en el mapa para añadir el destino";
 
 "planning_route_manage_route" = "Administrar ruta";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "Añadir parada";
 
 "start_from_my_position" = "Empezar desde";
-
-"profile_authorization_error" = "Vaya, se ha producido un error. Intente iniciar sesión de nuevo.";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "Inicia sesión en OpenStreetMap para cargar automáticamente todas tus ediciones de mapas. Más información";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "Mostrar todo";
 
 "bookmarks_create_new_group" = "Crear nueva lista";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "Importar marcadores y trazas";
 
 "downloader_hide_screen" = "Ocultar pantalla";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "Algunos archivos no fueron convertidos.";
 
-"bookmarks_restore_title" = "¿Restaurar esta versión?";
-
-"error_system_message" = "Ocurrió un error desconocido";
-
 "restore" = "Restaurar";
 
 "privacy_policy" = "Política de privacidad";
 
 "terms_of_use" = "Condiciones de uso";
-
-"button_layer_traffic" = "Tráfico";
 
 "button_layer_subway" = "Metro";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "Popular";
 
-"export_file" = "Exportar archivo";
+"export_file" = "Exportar KMZ";
+
+"export_file_gpx" = "Exportar GPX";
 
 "delete_list" = "Eliminar lista";
 
@@ -1038,6 +1051,8 @@
 "power_managment_setting_auto" = "Automático";
 
 "power_managment_setting_manual_max" = "Ahorro de energía máximo";
+
+"enable_logging_warning_message" = "Esta opción está habilitada para las acciones de registro con fines de diagnóstico. Esto ayuda a nuestro equipo a identificar problemas con la aplicación. Habilite la opción solo a petición del apoyo de Organic Maps.";
 
 "driving_options_title" = "Opciones de enrutamiento";
 
@@ -1258,6 +1273,18 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/ES:Acerca_de_OpenStreetMap";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "Ahora usa Organic Maps en la pantalla del teléfono";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "Ahora usa Organic Maps en la pantalla del coche";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "Continuar en el teléfono";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "A la pantalla del coche";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
 "button_layer_outdoor" = "Senderismo";
 
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "Mapa";
+
+"drive_through" = "Servicio al auto";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "Enlace al menú";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "Activar la sincronización con iCloud";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "La sincronización con iCloud es una función experimental en desarrollo. Asegúrate de haber hecho una copia de seguridad de todos tus marcadores y pistas.";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "iCloud está desactivado";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "Activa iCloud en los ajustes de tu dispositivo para utilizar esta función.";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "Activa";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "Copia de seguridad";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "Error: No se ha podido sincronizar debido a un error de conexión";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "Error: No se ha podido sincronizar porque se ha superado la cuota de iCloud";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "Error: iCloud no está disponible";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "Bar";
 
-"type.amenity.bbq" = "Picnic";
+"type.amenity.bbq" = "Barbacoa";
 
 "type.amenity.bench" = "Asiento";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "Refugio";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "Refugio";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "Cabaña de Vivac";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
 
 "type.amenity.public_bath" = "Baños públicos";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "Salida";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "Gratis";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "Paso de peatones";
 
-"type.highway.footway.alpine_hiking" = "Camino de senderismo alpino";
-
 "type.highway.footway.area" = "Zona peatonal";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "Puente peatonal";
-
-"type.highway.footway.demanding_alpine_hiking" = "Camino";
-
-"type.highway.footway.demanding_mountain_hiking" = "Camino";
-
-"type.highway.footway.difficult_alpine_hiking" = "Camino";
-
-"type.highway.footway.hiking" = "Sendero";
-
-"type.highway.footway.mountain_hiking" = "Sendero de montaña";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "Túnel peatonal";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "Camino";
 
-"type.highway.path.alpine_hiking" = "Camino de senderismo alpino";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "Camino";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "Camino";
 
 "type.highway.path.bicycle" = "Camino para bicicletas";
+
+"type.highway.footway.bicycle" = "Camino para bicicletas";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "Puente";
 
-"type.highway.path.demanding_alpine_hiking" = "Camino de senderismo alpino exigente";
-
-"type.highway.path.demanding_mountain_hiking" = "Camino de senderismo de montaña exigente";
-
-"type.highway.path.difficult_alpine_hiking" = "Camino";
-
-"type.highway.path.hiking" = "Sendero";
-
 "type.highway.path.horse" = "Sendero de herradura";
-
-"type.highway.path.mountain_hiking" = "Sendero de montaña";
-
-"type.highway.path.permissive" = "Camino";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "Túnel";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "Pista";
 
-"type.highway.track.grade2" = "Pista";
-
-"type.highway.track.grade3" = "Pista";
-
-"type.highway.track.grade4" = "Pista";
-
-"type.highway.track.grade5" = "Pista";
-
 "type.highway.track.no.access" = "Pista";
-
-"type.highway.track.permissive" = "Pista";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "Túnel";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Instalaciones educativas";
 
-"type.landuse.farm" = "Granja";
-
 "type.landuse.farmland" = "Tierras agrícolas";
 
 "type.landuse.farmyard" = "Granja";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "Jardín residencial";
 
 "type.leisure.golf_course" = "Campo de golf";
+
+"type.leisure.miniature_golf" = "Minigolf";
 
 "type.leisure.hackerspace" = "Espacio para hackers";
 
@@ -3726,7 +3766,7 @@
 /* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
 "type.tourism.alpine_hut" = "Albergue de montaña";
 
-"type.tourism.apartment" = "Apartamentos";
+"type.tourism.apartment" = "Apartamento de vacaciones";
 
 "type.tourism.artwork" = "Obras de arte";
 
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "Río";
 
 "type.waterway.river.tunnel" = "Río";
-
-"type.waterway.riverbank" = "Río";
 
 "type.waterway.stream" = "Arroyo";
 

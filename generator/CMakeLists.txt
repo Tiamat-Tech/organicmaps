@@ -3,6 +3,8 @@ project(generator)
 set(SRC
   addresses_collector.cpp
   addresses_collector.hpp
+  address_enricher.cpp
+  address_enricher.hpp
   affiliation.cpp
   affiliation.hpp
   altitude_generator.cpp
@@ -273,3 +275,4 @@ omim_add_tool_subdirectory(generator_tool)
 omim_add_tool_subdirectory(feature_segments_checker)
 omim_add_tool_subdirectory(srtm_coverage_checker)
 add_subdirectory(world_roads_builder)
+add_subdirectory(address_parser)

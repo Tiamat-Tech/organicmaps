@@ -254,6 +254,12 @@
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "ध्वनि निर्देश";
 
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "सड़कों के नाम की घोषणा करें";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "सक्षम होने पर, सड़क का नाम या मुड़ने के लिए निकास का नाम ज़ोर से बोला जाएगा।";
+
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "आवाज की भाषा";
 
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "कम्पास अंशांकन";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "इंटरफ़ेस देखने के लिए मानचित्र पर फिर से देर तक टैप करें";
 
 /* Update all button text */
 "downloader_update_all_button" = "Update All";
@@ -499,8 +508,6 @@
 "dialog_routing_application_error" = "एप्लिकेशन त्रुटि के कारण मार्ग बनाने में असमर्थ.";
 
 "dialog_routing_try_again" = "Please try again";
-
-"not_now" = "Not Now";
 
 "dialog_routing_download_and_build_cross_route" = "Would you like to download the map and create a more optimal route spanning more than one map?";
 
@@ -705,6 +712,9 @@
 
 "editor_edit_place_name_hint" = "स्थान का नाम";
 
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "जैसा कि स्थानीय भाषा में लिखा गया है";
+
 "editor_edit_place_category_title" = "वर्ग";
 
 "whatsnew_editor_message_1" = "Add new places to the map, and edit existing ones directly from the app.";
@@ -860,7 +870,7 @@
 
 "editor_share_to_all_dialog_message_2" = "OpenStreetMap editors will check the changes and contact you if they have any questions.";
 
-"navigation_stop_button" = "stop";
+"navigation_stop_button" = "Stop";
 
 /* iOS dialog for the case when recent track recording is on and the app comes back from background */
 "recent_track_background_dialog_title" = "क्या आप हाल ही में यात्रा किए गए मार्ग की रिकॉर्डिंग अक्षम करना चाहते हैं?";
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "Traffic data is not available";
 
+"enable_logging" = "लॉगिंग करने देना";
+
+"log_file_size" = "लॉग फ़ाइल का आकार: %@";
+
 "transliteration_title" = "लैटिन में लिप्यंतरण";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "Exit";
 
-"routing_add_start_point" = "मार्ग की योजना बनाने के लिए एक प्रारंभिक बिंदु जोड़ें";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "मार्ग का प्रारंभिक बिंदु जोड़ने के लिए खोज का उपयोग करें या मानचित्र पर टैप करें";
 
-"routing_add_finish_point" = "मार्ग की योजना बनाने के लिए एक गंतव्य जोड़ें";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "गंतव्य बिंदु जोड़ने के लिए खोज का उपयोग करें या मानचित्र पर टैप करें";
 
 "planning_route_manage_route" = "मार्ग प्रबंधित करें";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "गंतव्य जोड़ें";
 
 "start_from_my_position" = "Start from";
-
-"profile_authorization_error" = "उफ़, एक त्रुटि हुई. पुनः साइन इन करने का प्रयास करें.";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "कृपया अपने सभी मानचित्र संपादनों को स्वचालित रूप से अपलोड करने के लिए OpenStreetMap पर लॉगिन करें। अधिक जानें";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "सब दिखाएं";
 
 "bookmarks_create_new_group" = "एक नई सूची बनाएं";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "बुकमार्क और सेटिंग्स आयात करें";
 
 "downloader_hide_screen" = "Hide Screen";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "कुछ फ़ाइलें परिवर्तित नहीं की गईं.";
 
-"bookmarks_restore_title" = "Restore this version?";
-
-"error_system_message" = "एक अज्ञात त्रुटि हुई";
-
 "restore" = "Restore";
 
 "privacy_policy" = "गोपनीयता नीति";
 
 "terms_of_use" = "उपयोग की शर्तें";
-
-"button_layer_traffic" = "Traffic";
 
 "button_layer_subway" = "भूमिगत मार्ग";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "Popular";
 
-"export_file" = "फ़ाइल निर्यात करें";
+"export_file" = "निर्यात KMZ";
+
+"export_file_gpx" = "जीपीएक्स निर्यात करें";
 
 "delete_list" = "Delete list";
 
@@ -1038,6 +1051,8 @@
 "power_managment_setting_auto" = "जब बैटरी कम हो";
 
 "power_managment_setting_manual_max" = "हमेशा";
+
+"enable_logging_warning_message" = "सहायता संवाद में \"बग की रिपोर्ट करें\" का उपयोग करके हमें अपनी समस्या के बारे में विस्तृत डायग्नोस्टिक लॉग रिकॉर्ड करने और मैन्युअल रूप से भेजने के लिए इस विकल्प को अस्थायी रूप से सक्षम करें। लॉग में स्थान की जानकारी शामिल हो सकती है.";
 
 "driving_options_title" = "रूटिंग विकल्प";
 
@@ -1258,6 +1273,18 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/About_OpenStreetMap";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "अब आप फ़ोन स्क्रीन पर ऑर्गेनिक मानचित्र का उपयोग कर रहे हैं";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "अब आप कार स्क्रीन पर ऑर्गेनिक मानचित्र का उपयोग कर रहे हैं";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "फ़ोन पर जारी रखें";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "कार स्क्रीन पर";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
 "button_layer_outdoor" = "लंबी पैदल यात्रा";
 
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "नक्शा";
+
+"drive_through" = "ड्राइव करते हुए किसी जगह से गुजरना";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "मेनू लिंक";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "iCloud सिंक्रोनाइज़ेशन सक्षम करें";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "iCloud सिंक्रोनाइज़ेशन विकासाधीन एक प्रायोगिक सुविधा है। सुनिश्चित करें कि आपने अपने सभी बुकमार्क और ट्रैक का बैकअप बना लिया है।";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "iCloud अक्षम है";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "कृपया इस सुविधा का उपयोग करने के लिए अपने डिवाइस की सेटिंग में iCloud सक्षम करें।";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "सक्षम";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "बैकअप";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "त्रुटि: कनेक्शन त्रुटि के कारण सिंक्रनाइज़ करने में विफल";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "त्रुटि: iCloud कोटा पार हो जाने के कारण सिंक्रनाइज़ करने में विफल";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "त्रुटि: iCloud उपलब्ध नहीं है";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "मधुशाला";
 
-"type.amenity.bbq" = "बार्बीक्यू";
+"type.amenity.bbq" = "बारबेक्यू";
 
 "type.amenity.bench" = "बेंच";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "आश्रय";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "आश्रय";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "द्विवार्षिक झोपड़ी";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
 
 "type.amenity.public_bath" = "Public Bath";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "Exit";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "Free";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "पैदल पार पथ";
 
-"type.highway.footway.alpine_hiking" = "पथ";
-
 "type.highway.footway.area" = "पैदलपथ";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "Pedestrian Bridge";
-
-"type.highway.footway.demanding_alpine_hiking" = "पथ";
-
-"type.highway.footway.demanding_mountain_hiking" = "पथ";
-
-"type.highway.footway.difficult_alpine_hiking" = "पथ";
-
-"type.highway.footway.hiking" = "पथ";
-
-"type.highway.footway.mountain_hiking" = "पथ";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "Pedestrian Tunnel";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "पथ";
 
-"type.highway.path.alpine_hiking" = "पथ";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "पथ";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "पथ";
 
 "type.highway.path.bicycle" = "पथ";
+
+"type.highway.footway.bicycle" = "पथ";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "Bridge";
 
-"type.highway.path.demanding_alpine_hiking" = "पथ";
-
-"type.highway.path.demanding_mountain_hiking" = "पथ";
-
-"type.highway.path.difficult_alpine_hiking" = "पथ";
-
-"type.highway.path.hiking" = "पथ";
-
 "type.highway.path.horse" = "पथ";
-
-"type.highway.path.mountain_hiking" = "पथ";
-
-"type.highway.path.permissive" = "पथ";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "Tunnel";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "सड़क";
 
-"type.highway.track.grade2" = "सड़क";
-
-"type.highway.track.grade3" = "सड़क";
-
-"type.highway.track.grade4" = "सड़क";
-
-"type.highway.track.grade5" = "सड़क";
-
 "type.highway.track.no.access" = "सड़क";
-
-"type.highway.track.permissive" = "सड़क";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "Tunnel";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Educational Facility";
 
-"type.landuse.farm" = "खेत";
-
 "type.landuse.farmland" = "Farmland";
 
 "type.landuse.farmyard" = "Farmyard";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "बाग";
 
 "type.leisure.golf_course" = "Golf Course";
+
+"type.leisure.miniature_golf" = "Minigolf";
 
 "type.leisure.hackerspace" = "हैकर्सस्पेस";
 
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "नदी";
 
 "type.waterway.river.tunnel" = "नदी";
-
-"type.waterway.riverbank" = "River";
 
 "type.waterway.stream" = "Stream";
 

@@ -254,6 +254,12 @@
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "Hlasové instrukce";
 
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "Oznamujte názvy ulic";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "Je-li povoleno, bude nahlas vyslovován název ulice nebo výjezdu, na který se má odbočit.";
+
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "Jazyk hlasu";
 
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "Kalibrace kompasu";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "Dlouhým klepnutím na mapu znovu zobrazíte rozhraní.";
 
 /* Update all button text */
 "downloader_update_all_button" = "Aktualizovat vše";
@@ -499,8 +508,6 @@
 "dialog_routing_application_error" = "Trasu se nepodařilo vytvořit z důvodu chyby aplikace.";
 
 "dialog_routing_try_again" = "Prosím, zkuste to znovu";
-
-"not_now" = "Nyní ne";
 
 "dialog_routing_download_and_build_cross_route" = "Chcete mapu stáhnout a vytvořit optimálnější trasu, která vede přes více než jednu mapu?";
 
@@ -705,6 +712,9 @@
 
 "editor_edit_place_name_hint" = "Název místa";
 
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "Jak je napsáno v místním jazyce";
+
 "editor_edit_place_category_title" = "Kategorie";
 
 "whatsnew_editor_message_1" = "Přidejte na mapu nová místa a upravte existující místa přímo z aplikace.";
@@ -860,7 +870,7 @@
 
 "editor_share_to_all_dialog_message_2" = "Redaktoři OpenStreetMap zkontrolují změny a budou vás kontaktovat, pokud budou mít nějaké dotazy.";
 
-"navigation_stop_button" = "stop";
+"navigation_stop_button" = "Stop";
 
 /* iOS dialog for the case when recent track recording is on and the app comes back from background */
 "recent_track_background_dialog_title" = "Zakázat zaznamenávání vaší nedávno ujeté trasy?";
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "Data o provozu nejsou k dispozici";
 
+"enable_logging" = "Povolit protokolování";
+
+"log_file_size" = "Velikost souboru protokolu: %@";
+
 "transliteration_title" = "Přepis do latinky";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "Ukončit";
 
-"routing_add_start_point" = "Zadejte výchozí bod pro plánování trasy";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "Pomocí vyhledávání nebo klepnutím na mapu přidejte výchozí bod trasy";
 
-"routing_add_finish_point" = "Zadejte cílový bod pro plánování trasy";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "Pomocí vyhledávání nebo klepnutím na mapu přidejte cílový bod";
 
 "planning_route_manage_route" = "Spravovat trasu";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "Přidat zastávku";
 
 "start_from_my_position" = "Začít z";
-
-"profile_authorization_error" = "Jejda, došlo k chybě. Zkuste se přihlásit znovu.";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "Přihlaste se do OpenStreetMap, abyste mohli automaticky nahrávat všechny své úpravy mapy. Více informací";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "Zobrazit vše";
 
 "bookmarks_create_new_group" = "Vytvořte nový seznam";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "Import záložek a stop";
 
 "downloader_hide_screen" = "Skrýt obrazovku";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "Některé soubory nebyly převedeny.";
 
-"bookmarks_restore_title" = "Obnovit tuto verzi?";
-
-"error_system_message" = "Nastala neznámá chyba";
-
 "restore" = "Obnovit";
 
 "privacy_policy" = "Zásady ochrany osobních údajů";
 
 "terms_of_use" = "Podmínky užívání";
-
-"button_layer_traffic" = "Zácpy";
 
 "button_layer_subway" = "Metro";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "Popular";
 
-"export_file" = "Exportovat soubor";
+"export_file" = "Export KMZ";
+
+"export_file_gpx" = "Export GPX";
 
 "delete_list" = "Smazat seznam";
 
@@ -1038,6 +1051,8 @@
 "power_managment_setting_auto" = "Automatický";
 
 "power_managment_setting_manual_max" = "Maximální šetření baterií";
+
+"enable_logging_warning_message" = "Možnost zapne odesílání dat za diagnostickými účely. To nám pomáhá při řešení problémů s aplikací. Dočasně povolte pro nahrávání a odesílání logů našemu týmu o vašem problému.";
 
 "driving_options_title" = "Možnosti trasy";
 
@@ -1258,6 +1273,18 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/About_OpenStreetMap";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "Na obrazovce telefonu nyní používáte aplikaci Organic Maps";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "Na obrazovce auta nyní používáte aplikaci Organic Maps";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "Pokračujte v telefonu";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "Na obrazovku auta";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
 "button_layer_outdoor" = "Pěší turistika";
 
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "Mapa";
+
+"drive_through" = "Průjezd";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "Odkaz na menu";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "Povolení synchronizace s iCloudem";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "Synchronizace iCloudu je experimentální funkce, která se vyvíjí. Ujistěte se, že jste si vytvořili zálohu všech svých záložek a skladeb.";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "Služba iCloud je vypnutá";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "Chcete-li tuto funkci používat, povolte v nastavení zařízení službu iCloud.";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "Povolit";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "Záloha";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "Chyba: Nepodařilo se synchronizovat z důvodu chyby připojení";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "Chyba: Nepodařilo se synchronizovat z důvodu překročení kvóty iCloudu";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "Chyba: iCloud není k dispozici";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "Bar";
 
-"type.amenity.bbq" = "Piknik";
+"type.amenity.bbq" = "Grilování";
 
 "type.amenity.bench" = "Lavička";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "Přístřešek";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "Přístřešek";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "Bivakovací Chata";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
 
 "type.amenity.public_bath" = "Veřejné lázně";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "Exit";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "Zdarma";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "Přechod pro chodce";
 
-"type.highway.footway.alpine_hiking" = "Cesta";
-
 "type.highway.footway.area" = "Cesta";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "Most";
-
-"type.highway.footway.demanding_alpine_hiking" = "Cesta";
-
-"type.highway.footway.demanding_mountain_hiking" = "Cesta";
-
-"type.highway.footway.difficult_alpine_hiking" = "Cesta";
-
-"type.highway.footway.hiking" = "Cesta";
-
-"type.highway.footway.mountain_hiking" = "Cesta";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "Tunel";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "Cesta";
 
-"type.highway.path.alpine_hiking" = "Cesta";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "Cesta";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "Cesta";
 
 "type.highway.path.bicycle" = "Cesta";
+
+"type.highway.footway.bicycle" = "Cesta";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "Most";
 
-"type.highway.path.demanding_alpine_hiking" = "Cesta";
-
-"type.highway.path.demanding_mountain_hiking" = "Cesta";
-
-"type.highway.path.difficult_alpine_hiking" = "Cesta";
-
-"type.highway.path.hiking" = "Cesta";
-
 "type.highway.path.horse" = "Cesta";
-
-"type.highway.path.mountain_hiking" = "Cesta";
-
-"type.highway.path.permissive" = "Cesta";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "Tunel";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "Ulice";
 
-"type.highway.track.grade2" = "Ulice";
-
-"type.highway.track.grade3" = "Ulice";
-
-"type.highway.track.grade4" = "Ulice";
-
-"type.highway.track.grade5" = "Ulice";
-
 "type.highway.track.no.access" = "Ulice";
-
-"type.highway.track.permissive" = "Ulice";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "Tunel";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Educational Facility";
 
-"type.landuse.farm" = "Farm";
-
 "type.landuse.farmland" = "Orná půda";
 
 "type.landuse.farmyard" = "Farmyard";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "Zahrada";
 
 "type.leisure.golf_course" = "Golf";
+
+"type.leisure.miniature_golf" = "Minigolf";
 
 "type.leisure.hackerspace" = "Hackerspace";
 
@@ -3726,7 +3766,7 @@
 /* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
 "type.tourism.alpine_hut" = "Horská chata";
 
-"type.tourism.apartment" = "Byty";
+"type.tourism.apartment" = "Prázdninový apartmán";
 
 "type.tourism.artwork" = "Umělecké dílo";
 
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "Řeka";
 
 "type.waterway.river.tunnel" = "Řeka";
-
-"type.waterway.riverbank" = "Řeka";
 
 "type.waterway.stream" = "Řeka";
 

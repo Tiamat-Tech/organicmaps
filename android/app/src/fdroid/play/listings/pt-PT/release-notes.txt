@@ -1,10 +1,8 @@
-• OpenStreetMap login works again!
-• Better isolines elevation data for European countries
-• OpenStreetMap data as of March 26
-• Bookmark lists are sorted by modification time (recent at the top)
-• Eye icons for visible/hidden bookmark lists
-• Fixed crash when importing GPX, KML, KMZ from the Files app
-• Bigger "View search results on the map" button
-• FreeDrive mode and faster bookmarks in Android Auto
+• Dados do OpenStreetMap de 28 de maio
+• Pesquisa de códigos postais dos EUA e do Reino Unido
+• Anúncios de nomes de ruas em instruções verbais TTS (ative-o nas configurações), graças a Will Bradley
+• Exporta favoritos e trilhos em formato GPX
+• Salva favoritos e trilhos no armazenamento local do dispositivo
+• Adiciona, edita e exibe links da web para cardápios de restaurantes, bares e outros serviços de alimentação
 
-…read more details at omaps.org/news
+…mais detalhes em omaps.org/news

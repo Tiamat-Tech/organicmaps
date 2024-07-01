@@ -254,6 +254,12 @@
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "音声指示";
 
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "通りの名前を発表";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "有効にすると、右折する通りまたは出口の名前が読み上げられます。";
+
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "音声言語";
 
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "コンパスの調整";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "インターフェイスを見るには、もう一度地図をロングタップする。";
 
 /* Update all button text */
 "downloader_update_all_button" = "全てをアップデート";
@@ -499,8 +508,6 @@
 "dialog_routing_application_error" = "エラーにより案内ルートを作成できませんでした。";
 
 "dialog_routing_try_again" = "もう一度お試しください";
-
-"not_now" = "後で";
 
 "dialog_routing_download_and_build_cross_route" = "マップをダウンロードし、複数マップを利用してより最適なルートを作成しますか？";
 
@@ -704,6 +711,9 @@
 "editor_add_place_title" = "追加中";
 
 "editor_edit_place_name_hint" = "場所の名前";
+
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "現地の言葉でこう書かれている。";
 
 "editor_edit_place_category_title" = "カテゴリ";
 
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "交通データは利用できません";
 
+"enable_logging" = "ログを有効化";
+
+"log_file_size" = "ログファイルのサイズ: %@";
+
 "transliteration_title" = "ラテン文字への翻字";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "出口";
 
-"routing_add_start_point" = "ルートを計画するには出発地を追加してください";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "検索を使うか、地図上をタップしてルートの出発点を追加する";
 
-"routing_add_finish_point" = "ルートを計画するには目的地を追加してください";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "検索を使うか、地図上をタップして目的地を追加する";
 
 "planning_route_manage_route" = "ルートを編集";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "中間地点を追加";
 
 "start_from_my_position" = "出発地";
-
-"profile_authorization_error" = "エラーが発生しました。もう一度サインインしてみてください。";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "すべてのマップ編集を自動的にアップロードするには、OpenStreetMapにログインしてください。詳しくは";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "すべて表示";
 
 "bookmarks_create_new_group" = "新しいリストを作成する";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "ブックマークとトラックをインポートする";
 
 "downloader_hide_screen" = "画面を非表示";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "一部のファイルは変換されませんでした。";
 
-"bookmarks_restore_title" = "このバージョンを復元しますか？";
-
-"error_system_message" = "不明なエラーが発生しました";
-
 "restore" = "復元";
 
 "privacy_policy" = "プライバシーポリシー";
 
 "terms_of_use" = "利用規約";
-
-"button_layer_traffic" = "交通状況";
 
 "button_layer_subway" = "地下鉄";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "人気";
 
-"export_file" = "ファイルのエクスポート";
+"export_file" = "KMZをエクスポートする";
+
+"export_file_gpx" = "GPXをエクスポートする";
 
 "delete_list" = "リストを削除";
 
@@ -1038,6 +1051,8 @@
 "power_managment_setting_auto" = "自動";
 
 "power_managment_setting_manual_max" = "最大電力節約";
+
+"enable_logging_warning_message" = "このオプションは診断目的でのデータ記録を有効にします。これはこのアプリケーションのトラブルシューティングを担当する当社のサポートスタッフの助けになります。このオプションはOrganic Mapsにリクエストされた場合にのみ有効にしてください。";
 
 "driving_options_title" = "経路オプション";
 
@@ -1258,6 +1273,18 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/JA:参加する";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "端末の画面でOrganic Mapsを使用している";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "あなたは今、車の画面でオーガニック・マップを使用している";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "電話で続ける";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "車のスクリーンへ";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
 "button_layer_outdoor" = "ハイキング";
 
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "地図";
+
+"drive_through" = "ドライブスルー";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "メニューリンク";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "iCloud同期を有効にする";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "iCloud同期は開発中の実験的機能である。すべてのブックマークとトラックのバックアップをとっておくこと。";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "iCloudが無効になっている";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "この機能を使うには、デバイスの設定でiCloudを有効にしてほしい。";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "有効にする";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "バックアップ";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "エラー：接続エラーにより同期に失敗した";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "エラー：iCloudのクォータが超過したため、同期に失敗しました。";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "エラー：iCloudが利用できない";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "居酒屋";
 
-"type.amenity.bbq" = "ピクニック";
+"type.amenity.bbq" = "バーベキューグリル";
 
 "type.amenity.bench" = "ベンチ";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "避難所";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "避難所";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "ビバーク小屋";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
 
 "type.amenity.public_bath" = "公衆浴場";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "終了する";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "無料";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "横断歩道";
 
-"type.highway.footway.alpine_hiking" = "歩道";
-
 "type.highway.footway.area" = "歩道";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "橋";
-
-"type.highway.footway.demanding_alpine_hiking" = "歩道";
-
-"type.highway.footway.demanding_mountain_hiking" = "歩道";
-
-"type.highway.footway.difficult_alpine_hiking" = "歩道";
-
-"type.highway.footway.hiking" = "歩道";
-
-"type.highway.footway.mountain_hiking" = "歩道";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "トンネル";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "歩道";
 
-"type.highway.path.alpine_hiking" = "歩道";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "歩道";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "歩道";
 
 "type.highway.path.bicycle" = "歩道";
+
+"type.highway.footway.bicycle" = "歩道";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "橋";
 
-"type.highway.path.demanding_alpine_hiking" = "歩道";
-
-"type.highway.path.demanding_mountain_hiking" = "歩道";
-
-"type.highway.path.difficult_alpine_hiking" = "歩道";
-
-"type.highway.path.hiking" = "歩道";
-
 "type.highway.path.horse" = "歩道";
-
-"type.highway.path.mountain_hiking" = "歩道";
-
-"type.highway.path.permissive" = "歩道";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "トンネル";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "ストリート";
 
-"type.highway.track.grade2" = "ストリート";
-
-"type.highway.track.grade3" = "ストリート";
-
-"type.highway.track.grade4" = "ストリート";
-
-"type.highway.track.grade5" = "ストリート";
-
 "type.highway.track.no.access" = "ストリート";
-
-"type.highway.track.permissive" = "ストリート";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "トンネル";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Educational Facility";
 
-"type.landuse.farm" = "農地";
-
 "type.landuse.farmland" = "農地";
 
 "type.landuse.farmyard" = "農地";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "庭園";
 
 "type.leisure.golf_course" = "ゴルフコース";
+
+"type.leisure.miniature_golf" = "ミニゴルフ";
 
 "type.leisure.hackerspace" = "ハッカースペース";
 
@@ -3726,7 +3766,7 @@
 /* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
 "type.tourism.alpine_hut" = "山小屋";
 
-"type.tourism.apartment" = "アパート";
+"type.tourism.apartment" = "ホリデー・アパート";
 
 "type.tourism.artwork" = "芸術";
 
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "河川";
 
 "type.waterway.river.tunnel" = "河川";
-
-"type.waterway.riverbank" = "河川";
 
 "type.waterway.stream" = "小川";
 

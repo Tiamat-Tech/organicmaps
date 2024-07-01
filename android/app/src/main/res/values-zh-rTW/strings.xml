@@ -221,6 +221,10 @@
 	<string name="pref_map_3d_buildings_disabled_summary">3D 建築在省電模式下關閉</string>
 	<!-- Settings «Route» category: «Tts enabled» title -->
 	<string name="pref_tts_enable_title">語音指示</string>
+	<!-- Settings «Route» category: «Tts announce street names» title -->
+	<string name="pref_tts_street_names_title">宣布街道名稱</string>
+	<!-- Settings «Route» category: «Tts announce street names» description -->
+	<string name="pref_tts_street_names_description">啟用後，將大聲說出要轉入的街道或出口的名稱。</string>
 	<!-- Settings «Route» category: «Tts language» title -->
 	<string name="pref_tts_language_title">語音語言</string>
 	<!-- Settings «Route» category: «Test Voice Directions» title -->
@@ -268,6 +272,8 @@
 	<string name="compass_calibration_recommended">通過以八字形移動手機來校準指南針來改善箭頭方向</string>
 	<!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
 	<string name="compass_calibration_required">以 8 字形移動手機以校準指南針並固定地圖上的箭頭方向</string>
+	<!-- Toast text when user hides UI with a long tap anywhere on the map -->
+	<string name="long_tap_toast">再次長按地圖即可看到介面</string>
 	<!-- Update all button text -->
 	<string name="downloader_update_all_button">更新全部</string>
 	<!-- Cancel all button text -->
@@ -426,6 +432,8 @@
 	<string name="day_off_today">今天沒有營業</string>
 	<string name="day_off">沒有營業</string>
 	<string name="today">今天</string>
+	<string name="opens_in">將於 %s 後開業</string>
+	<string name="closes_in">將於 %s 後停業</string>
 	<string name="closed">已關閉</string>
 	<string name="edit_opening_hours">編輯營業時間</string>
 	<string name="no_osm_account">沒有 OpenStreetMap 帳號嗎？</string>
@@ -465,6 +473,8 @@
 	<string name="editor_edit_place_title">編輯中</string>
 	<string name="editor_add_place_title">新增中</string>
 	<string name="editor_edit_place_name_hint">該地點的名稱</string>
+	<!-- The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name -->
+	<string name="editor_default_language_hint">因為它是用當地語言寫的</string>
 	<string name="editor_edit_place_category_title">類別</string>
 	<string name="detailed_problem_description">問題的詳細描述</string>
 	<string name="editor_report_problem_other_title">不同的問題</string>
@@ -490,6 +500,8 @@
 	<string name="editor_detailed_description">您建議的變更將傳送至 OpenStreetMap 社群。說明無法在 Organic Maps 中編輯的詳細資料。</string>
 	<string name="editor_more_about_osm">關於 OpenStreetMap 的更多資訊</string>
 	<string name="editor_operator">營運者</string>
+	<string name="editor_category_unsuitable_title">找不到合適的類別？</string>
+	<string name="editor_category_unsuitable_text">Organic Maps 只允許添加簡單的點類別，即無法添加城鎮、道路、湖泊、建築輪廓等類別。 請直接向<a href="https://www.openstreetmap.org">OpenStreetMap.org</a>新增此類類別。 請查看我們的<a href="https://organicmaps.app/faq/editing/advanced-map-editing">指南</a>，以了解詳細的步驟說明。</string>
 	<string name="downloader_no_downloaded_maps_title">您尚未下載任何地圖</string>
 	<string name="downloader_no_downloaded_maps_message">下載地圖來尋找位置和離線瀏覽。</string>
 	<!-- abbreviation for meters -->
@@ -509,7 +521,7 @@
 	<!-- A referral link on the place page for some hotels -->
 	<string name="more_on_kayak">照片、評論、預訂</string>
 	<!-- An explanation dialog shown when clicking on more_on_kayak link. -->
-	<string name="dialog_kayak_disclaimer">透過此連結進行的每次預訂收到的推薦獎金將用於開發有機地圖</string>
+	<string name="dialog_kayak_disclaimer">透過此連結進行的每次預訂收到的推薦獎金將用於開發 Organic Maps。</string>
 	<!-- A confirmation button text in the explanation dialog that opens hotel details page on Kayak website. -->
 	<string name="dialog_kayak_button">Kayak 上的詳細資訊</string>
 	<string name="placepage_edit_bookmark_button">編輯書籤</string>
@@ -562,8 +574,10 @@
 	<string name="learn_more">瞭解更多資訊</string>
 	<!-- Subway exits for public transport marks on the map -->
 	<string name="core_exit">退出</string>
-	<string name="routing_add_start_point">新增起點以計劃路線</string>
-	<string name="routing_add_finish_point">新增終點以計劃路線</string>
+	<!-- User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". -->
+	<string name="routing_add_start_point">使用搜尋或點擊地圖新增路線起點</string>
+	<!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
+	<string name="routing_add_finish_point">使用搜尋或點擊地圖新增目的地點</string>
 	<string name="placepage_remove_stop">移除</string>
 	<string name="placepage_add_stop">新增停靠站</string>
 	<!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
@@ -577,6 +591,9 @@
 	<!-- Do not display all bookmark lists on the map -->
 	<string name="bookmark_lists_hide_all">隱藏全部</string>
 	<string name="bookmark_lists_show_all">顯示全部</string>
+	<plurals name="bookmarks_places">
+	  <item quantity="other">%d 個書籤</item>
+	</plurals>
 	<string name="bookmarks_create_new_group">創建新列表</string>
 	<!-- Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files -->
 	<string name="bookmarks_import">導入書籤和曲目</string>
@@ -594,12 +611,7 @@
 	<plurals name="bookmarks_detect_message">
 	  <item quantity="other">找到%d個文件。 轉換後你會看到它。</item>
 	</plurals>
-	<plurals name="objects">
-	  <item quantity="other">%d 地點</item>
-	</plurals>
-	<plurals name="places">
-	  <item quantity="other">%d 地點</item>
-	</plurals>
+	<string name="restore">恢復</string>
 	<plurals name="tracks">
 	  <item quantity="other">%d 軌跡</item>
 	</plurals>
@@ -614,7 +626,8 @@
 	<string name="bookmarks_empty_list_title">列表為空</string>
 	<string name="bookmarks_empty_list_message">要增加新標籤，請點一下對象卡片中的星型圖標</string>
 	<string name="category_desc_more">…更多</string>
-	<string name="export_file">導出文件</string>
+	<string name="export_file">出口KMZ</string>
+	<string name="export_file_gpx">導出GPX</string>
 	<string name="delete_list">刪除列表</string>
 	<string name="public_access">開放空間</string>
 	<string name="limited_access">私人空間</string>
@@ -641,9 +654,9 @@
 	<!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
 	<string name="avoid_tolls">避開收費公路</string>
 	<!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
-	<string name="avoid_unpaved">規避土路</string>
+	<string name="avoid_unpaved">避開未鋪設道路</string>
 	<!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
-	<string name="avoid_ferry">規避渡輪渡口</string>
+	<string name="avoid_ferry">避開渡輪</string>
 	<string name="avoid_motorways">避開高速公路</string>
 	<string name="unable_to_calc_alert_title">無法規劃路線</string>
 	<string name="unable_to_calc_alert_subtitle">很遺憾，我們無法使用所選選項規劃路線。請更改設定，然後重試</string>
@@ -750,16 +763,16 @@
 	<string name="app_tip_08">您可以輕鬆修復和改進地圖數據。</string>
 	<!-- App tip #09 -->
 	<string name="app_tip_09">我們的主要目標是構建您會喜歡的快速、注重隱私、易於使用的地圖。</string>
-	<!-- Text on the Android Auto placeholder screen that maps are displayed on the phone screen -->
-	<string name="aa_used_on_the_phone_screen">您現在正在手機螢幕上使用有機地圖</string>
+	<!-- Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen -->
+	<string name="car_used_on_the_phone_screen">您現在正在手機螢幕上使用 Organic Maps</string>
 	<!-- Text on the phone placeholder screen that maps are displayed on the car screen -->
-	<string name="aa_used_on_the_car_screen">您現在正在汽車螢幕上使用有機地圖</string>
+	<string name="car_used_on_the_car_screen">您現在正在汽車螢幕上使用 Organic Maps</string>
 	<!-- Displayed on the phone screen. Android Auto connected -->
 	<string name="aa_connected_title">您已連接到 Android Auto</string>
 	<!-- Displayed on the phone screen. Button to display maps on the phone screen instead of a car -->
-	<string name="aa_continue_on_the_phone">繼續打電話</string>
-	<!-- Displayed on the Android Auto screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
-	<string name="aa_continue_in_the_car">到車用螢幕</string>
+	<string name="car_continue_on_the_phone">繼續打電話</string>
+	<!-- Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
+	<string name="car_continue_in_the_car">到車用螢幕</string>
 	<!-- Ask user to grant location permissions -->
 	<string name="aa_location_permissions_request">此應用程式需要訪問您的位置以進行導航。</string>
 	<!-- Displayed on the Android Auto screen. Grant Permissions button. Must be no more than 18 symbols! -->
@@ -777,6 +790,15 @@
 	<string name="pref_tts_open_system_settings">系統語音合成設定</string>
 	<!-- toast displayed when pressing the "Speech synthesis system settings" button, and the system settings aren't found. -->
 	<string name="pref_tts_no_system_tts">未找到語音合成設置，您確定您的設備支援它嗎？</string>
+	<string name="drive_through">免下車服務</string>
+	<string name="clear_the_search">清除搜尋</string>
+	<string name="zoom_in">放大</string>
+	<!-- Accessibility text for the zoom-out button on the map -->
+	<string name="zoom_out">縮小</string>
+	<!-- Restaurant or other food place's menu URL field in the Editor -->
+	<string name="website_menu">選單連結</string>
+	<!-- Button in the Place Page which opens a restaurant or other food place's menu in a browser -->
+	<string name="view_menu">查看選單</string>
 
 	<!-- SECTION: Types -->
 	<string name="type.addr_interpolation">地址/區塊</string>
@@ -802,7 +824,7 @@
 	<string name="type.amenity.atm">自動櫃員機</string>
 	<string name="type.amenity.bank">銀行</string>
 	<string name="type.amenity.bar">酒吧</string>
-	<string name="type.amenity.bbq">野餐</string>
+	<string name="type.amenity.bbq">烤肉架</string>
 	<string name="type.amenity.bench">長板凳</string>
 	<string name="type.amenity.bicycle_parking">腳踏車停放區</string>
 	<string name="type.amenity.bicycle_rental">自行車出租</string>
@@ -922,6 +944,10 @@
 	<string name="type.amenity.school">學校</string>
 	<!-- Weather shelter (including sun shelters and natural rock shelters). -->
 	<string name="type.amenity.shelter">隱藏處</string>
+	<!-- A weather shelter by the public transport stop. -->
+	<string name="type.amenity.shelter.public_transport">隱藏處</string>
+	<!-- Compared to wilderness_hut its smaller and simpler, without a fireplace. -->
+	<string name="type.amenity.shelter.basic_hut">露營小屋</string>
 	<string name="type.amenity.public_bath">公共浴場</string>
 	<string name="type.amenity.shower">淋浴間</string>
 	<string name="type.amenity.stripclub">脫衣舞俱樂部</string>
@@ -1126,15 +1152,9 @@
 	<string name="type.highway.footway">人行步道</string>
 	<string name="type.highway.footway.sidewalk">人行道</string>
 	<string name="type.highway.footway.crossing">行人穿越道</string>
-	<string name="type.highway.footway.alpine_hiking">人行步道</string>
 	<string name="type.highway.footway.area">人行步道</string>
 	<!-- These translations are used for all type.highway.*.bridge. -->
 	<string name="type.highway.footway.bridge">橋</string>
-	<string name="type.highway.footway.demanding_alpine_hiking">人行步道</string>
-	<string name="type.highway.footway.demanding_mountain_hiking">人行步道</string>
-	<string name="type.highway.footway.difficult_alpine_hiking">人行步道</string>
-	<string name="type.highway.footway.hiking">人行步道</string>
-	<string name="type.highway.footway.mountain_hiking">人行步道</string>
 	<!-- These translations are used for all type.highway.*.tunnel. -->
 	<string name="type.highway.footway.tunnel">隧道</string>
 	<string name="type.highway.ford">淺灘</string>
@@ -1155,17 +1175,15 @@
 	<!-- These translations are used for all type.highway.*.tunnel. -->
 	<string name="type.highway.motorway_link.tunnel">隧道</string>
 	<string name="type.highway.path">人行步道</string>
-	<string name="type.highway.path.alpine_hiking">人行步道</string>
+	<!-- Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. -->
+	<string name="type.highway.path.difficult">人行步道</string>
+	<!-- Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. -->
+	<string name="type.highway.path.expert">人行步道</string>
 	<string name="type.highway.path.bicycle">人行步道</string>
+	<string name="type.highway.footway.bicycle">人行步道</string>
 	<!-- These translations are used for all type.highway.*.bridge. -->
 	<string name="type.highway.path.bridge">橋</string>
-	<string name="type.highway.path.demanding_alpine_hiking">人行步道</string>
-	<string name="type.highway.path.demanding_mountain_hiking">人行步道</string>
-	<string name="type.highway.path.difficult_alpine_hiking">人行步道</string>
-	<string name="type.highway.path.hiking">人行步道</string>
 	<string name="type.highway.path.horse">人行步道</string>
-	<string name="type.highway.path.mountain_hiking">人行步道</string>
-	<string name="type.highway.path.permissive">人行步道</string>
 	<!-- These translations are used for all type.highway.*.tunnel. -->
 	<string name="type.highway.path.tunnel">隧道</string>
 	<string name="type.highway.pedestrian">路</string>
@@ -1239,12 +1257,7 @@
 	<!-- These translations are used for all type.highway.*.bridge. -->
 	<string name="type.highway.track.bridge">橋</string>
 	<string name="type.highway.track.grade1">土路</string>
-	<string name="type.highway.track.grade2">土路</string>
-	<string name="type.highway.track.grade3">土路</string>
-	<string name="type.highway.track.grade4">土路</string>
-	<string name="type.highway.track.grade5">土路</string>
 	<string name="type.highway.track.no.access">土路</string>
-	<string name="type.highway.track.permissive">土路</string>
 	<!-- These translations are used for all type.highway.*.tunnel. -->
 	<string name="type.highway.track.tunnel">隧道</string>
 	<string name="type.highway.traffic_signals">紅綠燈</string>
@@ -1891,7 +1904,7 @@
 	<string name="type.tourism.aquarium">水族館</string>
 	<!-- Typically serviced, staff is present and food is available (compared to wilderness_hut). -->
 	<string name="type.tourism.alpine_hut">山間小屋</string>
-	<string name="type.tourism.apartment">公寓</string>
+	<string name="type.tourism.apartment">假日公寓</string>
 	<string name="type.tourism.artwork">藝術品</string>
 	<string name="type.tourism.artwork.architecture">藝術品</string>
 	<string name="type.tourism.artwork.painting">藝術品</string>
@@ -1919,7 +1932,7 @@
 	<string name="type.tourism.picnic_site">野餐</string>
 	<string name="type.leisure.resort">度假酒店</string>
 	<string name="type.tourism.theme_park">旅遊景點</string>
-	<string name="type.tourism.viewpoint">視野</string>
+	<string name="type.tourism.viewpoint">觀景點</string>
 	<!-- Typically more basic, not staffed and free (compared to alpine_hut). -->
 	<string name="type.tourism.wilderness_hut">山屋</string>
 	<string name="type.tourism.zoo">動物園</string>
@@ -1933,7 +1946,6 @@
 	<string name="type.waterway.lock_gate">閘門</string>
 	<string name="type.waterway.river">河流</string>
 	<string name="type.waterway.river.tunnel">河流</string>
-	<string name="type.waterway.riverbank">河流</string>
 	<string name="type.waterway.stream">溪</string>
 	<string name="type.waterway.stream.ephemeral">溪</string>
 	<string name="type.waterway.stream.intermittent">溪</string>

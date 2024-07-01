@@ -84,14 +84,14 @@ NSString *const kPP2BookmarkEditingSegue = @"PP2BookmarkEditing";
 @property(strong, nonatomic) IBOutlet NSLayoutConstraint *placePageAreaKeyboard;
 @property(strong, nonatomic) IBOutlet NSLayoutConstraint *sideButtonsAreaBottom;
 @property(strong, nonatomic) IBOutlet NSLayoutConstraint *sideButtonsAreaKeyboard;
-@property(strong, nonatomic) IBOutlet UIImageView *carplayPlaceholderLogo;
+@property(strong, nonatomic) IBOutlet UIView *carplayPlaceholderView;
 @property(strong, nonatomic) BookmarksCoordinator * bookmarksCoordinator;
 
 @property(strong, nonatomic) NSHashTable<id<MWMLocationModeListener>> *listeners;
 
 @property(nonatomic) BOOL needDeferFocusNotification;
 @property(nonatomic) BOOL deferredFocusValue;
-@property(nonatomic) UIViewController *placePageVC;
+@property(nonatomic) PlacePageViewController *placePageVC;
 @property(nonatomic) IBOutlet UIView *placePageContainer;
 
 @end
@@ -104,6 +104,20 @@ NSString *const kPP2BookmarkEditingSegue = @"PP2BookmarkEditing";
 }
 
 #pragma mark - Map Navigation
+
+- (void)showOrUpdatePlacePage {
+  if (!PlacePageData.hasData) {
+    return;
+  }
+
+  self.controlsManager.trafficButtonHidden = YES;
+
+  if (self.placePageVC != nil) {
+    [PlacePageBuilder update:(PlacePageViewController *)self.placePageVC];
+    return;
+  }
+  [self showRegularPlacePage];
+}
 
 - (void)showRegularPlacePage {
   self.placePageVC = [PlacePageBuilder build];
@@ -121,26 +135,19 @@ NSString *const kPP2BookmarkEditingSegue = @"PP2BookmarkEditing";
   [self.placePageVC didMoveToParentViewController:self];
 }
 
-- (void)showPlacePage {
-  if (!PlacePageData.hasData) {
-    return;
-  }
-  
-  self.controlsManager.trafficButtonHidden = YES;
-  [self showRegularPlacePage];
-}
-
 - (void)dismissPlacePage {
-  GetFramework().DeactivateMapSelection(true);
+  GetFramework().DeactivateMapSelection();
 }
 
 - (void)hideRegularPlacePage {
-  [self.placePageVC.view removeFromSuperview];
-  [self.placePageVC willMoveToParentViewController:nil];
-  [self.placePageVC removeFromParentViewController];
-  self.placePageVC = nil;
-  self.placePageContainer.hidden = YES;
-  [self setPlacePageTopBound:0 duration:0];
+  [self.placePageVC closeAnimatedWithCompletion:^{
+    [self.placePageVC.view removeFromSuperview];
+    [self.placePageVC willMoveToParentViewController:nil];
+    [self.placePageVC removeFromParentViewController];
+    self.placePageVC = nil;
+    self.placePageContainer.hidden = YES;
+    [self setPlacePageTopBound:0 duration:0];
+  }];
 }
 
 - (void)hidePlacePage {
@@ -150,7 +157,7 @@ NSString *const kPP2BookmarkEditingSegue = @"PP2BookmarkEditing";
   self.controlsManager.trafficButtonHidden = NO;
 }
 
-- (void)onMapObjectDeselected:(bool)switchFullScreenMode {
+- (void)onMapObjectDeselected {
   [self hidePlacePage];
 
   MWMSearchManager * searchManager = MWMSearchManager.manager;
@@ -163,24 +170,23 @@ NSString *const kPP2BookmarkEditingSegue = @"PP2BookmarkEditing";
       searchManager.state = MWMSearchManagerStateHidden;
     }
   }
+  // Always show the controls during the navigation or planning mode.
+  if (!isNavigationDashboardHidden)
+    self.controlsManager.hidden = NO;
+}
 
-  if (!switchFullScreenMode)
-    return;
-
-  // TODO(AB): Switch to full screen mode directly from the tap, in one place, instead of
-  // every call to onMapObjectDeselected.
-  if (DeepLinkHandler.shared.isLaunchedByDeeplink)
-    return;
-
-  BOOL const isSearchHidden = searchManager.state == MWMSearchManagerStateHidden;
+- (void)onSwitchFullScreen {
+  BOOL const isNavigationDashboardHidden = MWMNavigationDashboardManager.sharedManager.state == MWMNavigationDashboardStateHidden;
+  BOOL const isSearchHidden = MWMSearchManager.manager.state == MWMSearchManagerStateHidden;
   if (isSearchHidden && isNavigationDashboardHidden) {
+    if (!self.controlsManager.hidden)
+      [self dismissPlacePage];
     self.controlsManager.hidden = !self.controlsManager.hidden;
   }
 }
 
 - (void)onMapObjectSelected {
-  [self hidePlacePage];
-  [self showPlacePage];
+  [self showOrUpdatePlacePage];
 }
 
 - (void)onMapObjectUpdated {
@@ -343,7 +349,6 @@ NSString *const kPP2BookmarkEditingSegue = @"PP2BookmarkEditing";
   // After all users migrate to OAuth2 we can remove next code
   [self migrateOAuthCredentials];
 
-
   /// @todo: Uncomment update dialog when will be ready to handle big traffic bursts.
   /*
   if (!DeepLinkHandler.shared.isLaunchedByDeeplink)
@@ -372,7 +377,7 @@ NSString *const kPP2BookmarkEditingSegue = @"PP2BookmarkEditing";
 
 - (void)viewDidLayoutSubviews {
   [super viewDidLayoutSubviews];
-  if (!self.mapView.drapeEngineCreated)
+  if (!self.mapView.drapeEngineCreated && !MapsAppDelegate.isTestsEnvironment)
     [self.mapView createDrapeEngine];
 }
 
@@ -445,8 +450,9 @@ NSString *const kPP2BookmarkEditingSegue = @"PP2BookmarkEditing";
   Framework &f = GetFramework();
   // TODO: Review and improve this code.
   f.SetPlacePageListeners([self]() { [self onMapObjectSelected]; },
-                          [self](bool switchFullScreen) { [self onMapObjectDeselected:switchFullScreen]; },
-                          [self]() { [self onMapObjectUpdated]; });
+                          [self]() { [self onMapObjectDeselected]; },
+                          [self]() { [self onMapObjectUpdated]; },
+                          [self]() { [self onSwitchFullScreen]; });
   // TODO: Review and improve this code.
   f.SetMyPositionModeListener([self](location::EMyPositionMode mode, bool routingActive) {
     // TODO: Two global listeners are subscribed to the same event from the core.
@@ -664,7 +670,7 @@ NSString *const kPP2BookmarkEditingSegue = @"PP2BookmarkEditing";
 #pragma mark - CarPlay map append/remove
 
 - (void)disableCarPlayRepresentation {
-  self.carplayPlaceholderLogo.hidden = YES;
+  self.carplayPlaceholderView.hidden = YES;
   self.mapView.frame = self.view.bounds;
   [self.view insertSubview:self.mapView atIndex:0];
   [[self.mapView.topAnchor constraintEqualToAnchor:self.view.topAnchor] setActive:YES];
@@ -686,7 +692,7 @@ NSString *const kPP2BookmarkEditingSegue = @"PP2BookmarkEditing";
   if (!self.controlsView.isHidden) {
     self.controlsView.hidden = YES;
   }
-  self.carplayPlaceholderLogo.hidden = NO;
+  self.carplayPlaceholderView.hidden = NO;
 }
 
 #pragma mark - MWMBookmarksObserver

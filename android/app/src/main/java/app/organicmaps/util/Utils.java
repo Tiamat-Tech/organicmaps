@@ -191,7 +191,7 @@ public class Utils
     for (final K key : map.keySet())
     {
       final String keyVal = key + "=" + map.get(key);
-      if (joined.length() > 0)
+      if (!joined.isEmpty())
         joined = TextUtils.join(",", new Object[]{joined, keyVal});
       else
         joined = keyVal;
@@ -660,6 +660,13 @@ public class Utils
     {
     }
     return brand;
+  }
+
+  public static String getLocalizedLevel(@NonNull Context context, @Nullable String level)
+  {
+    if (TextUtils.isEmpty(level))
+      return "";
+    return context.getString(R.string.level_value_generic, level);
   }
 
   private static class SupportInfoWithLogsCallback implements LogsManager.OnZipCompletedListener

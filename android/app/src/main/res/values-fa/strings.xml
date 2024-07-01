@@ -209,6 +209,10 @@
 	<string name="pref_map_3d_buildings_disabled_summary">ساختمان های سه بعدی در حالت صرفه جویی در مصرف برق خاموش می شوند</string>
 	<!-- Settings «Route» category: «Tts enabled» title -->
 	<string name="pref_tts_enable_title">دستور العمل صوتی</string>
+	<!-- Settings «Route» category: «Tts announce street names» title -->
+	<string name="pref_tts_street_names_title">نام خیابان ها را اعلام کنید</string>
+	<!-- Settings «Route» category: «Tts announce street names» description -->
+	<string name="pref_tts_street_names_description">وقتی فعال باشد، نام خیابان یا خروجی که باید به آن بپیچید با صدای بلند گفته می شود.</string>
 	<!-- Settings «Route» category: «Tts language» title -->
 	<string name="pref_tts_language_title">زبان صوت</string>
 	<!-- Settings «Route» category: «Test Voice Directions» title -->
@@ -250,6 +254,8 @@
 	<string name="compass_calibration_recommended">برای کالیبره کردن قطب نما، جهت پیکان را با حرکت دادن تلفن در یک حرکت شکل هشت بهبود دهید.</string>
 	<!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
 	<string name="compass_calibration_required">تلفن را به شکل هشت حرکت دهید تا قطب نما را کالیبره کنید و جهت پیکان را روی نقشه ثابت کنید.</string>
+	<!-- Toast text when user hides UI with a long tap anywhere on the map -->
+	<string name="long_tap_toast">دوباره روی نقشه ضربه طولانی بزنید تا رابط کاربری را ببینید</string>
 	<!-- Update all button text -->
 	<string name="downloader_update_all_button">آپدیت همه</string>
 	<!-- Cancel all button text -->
@@ -448,6 +454,8 @@
 	<string name="editor_edit_place_title">درحال ویرایش</string>
 	<string name="editor_add_place_title">درحال افزودن</string>
 	<string name="editor_edit_place_name_hint">نام مکان</string>
+	<!-- The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name -->
+	<string name="editor_default_language_hint">همانطور که به زبان محلی نوشته شده است</string>
 	<string name="editor_edit_place_category_title">دسته بندی</string>
 	<string name="detailed_problem_description">توضیح مفصل در مورد مشکل</string>
 	<string name="editor_report_problem_other_title">مشکلی دیگر</string>
@@ -473,6 +481,8 @@
 	<string name="editor_detailed_description">شما یک سری تغییرات در نقشه را برای انجمن OpenStreetMap ارسال کردید.جزئیات اضافی را که نتوانستید در Organic Maps ویرایش کنید را برایشان بنویسید.</string>
 	<string name="editor_more_about_osm">در مورد OpenStreetMap بیشتر بدانید</string>
 	<string name="editor_operator">مالک</string>
+	<string name="editor_category_unsuitable_title">آیا نمی توانید یک دسته بندی مناسب پیدا کنید؟</string>
+	<string name="editor_category_unsuitable_text">Organic Maps اجازه میu200cدهد فقط دستهu200cهای نقطهu200cای ساده را اضافه کند، یعنی هیچ شهر، جاده، دریاچه، طرح کلی ساختمان و غیره وجود ندارد. لطفاً این دستهu200cها را مستقیماً به <a href="https://www.openstreetmap.org">OpenStreetMap.org</a> اضافه کنید. برای دستورالعملu200cهای گام به گام، <a href="https://organicmaps.app/faq/editing/advanced-map-editing">راهنمای</a> ما را بررسی کنید.</string>
 	<string name="downloader_no_downloaded_maps_title">شما هیچ نقشه دانلود شده ای ندارید</string>
 	<string name="downloader_no_downloaded_maps_message">برای جست وجو یک مکان و استفاده از قابلیت ناوبری، نقشه‌ها را دانلود کنید.</string>
 	<!-- abbreviation for meters -->
@@ -541,8 +551,10 @@
 	<string name="learn_more">بیشتر بدانید</string>
 	<!-- Subway exits for public transport marks on the map -->
 	<string name="core_exit">خروج</string>
-	<string name="routing_add_start_point">یک نقطه شروع برای برنامه ریزی یک مسیر اضافه کنید</string>
-	<string name="routing_add_finish_point">یک مقصد برای برنامه ریزی یک مسیر اضافه کنید</string>
+	<!-- User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". -->
+	<string name="routing_add_start_point">برای افزودن نقطه شروع مسیر، از جستجو استفاده کنید یا روی نقشه ضربه بزنید</string>
+	<!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
+	<string name="routing_add_finish_point">برای افزودن نقطه مقصد، از جستجو استفاده کنید یا روی نقشه ضربه بزنید</string>
 	<string name="placepage_remove_stop">حذف</string>
 	<string name="placepage_add_stop">اضافه کردن توقف</string>
 	<!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
@@ -556,6 +568,10 @@
 	<!-- Do not display all bookmark lists on the map -->
 	<string name="bookmark_lists_hide_all">پنهان کردن همه</string>
 	<string name="bookmark_lists_show_all">نمایش همه</string>
+	<plurals name="bookmarks_places">
+	  <item quantity="one">%d نشانه</item>
+	  <item quantity="other">%d نشانه‌ها</item>
+	</plurals>
 	<string name="bookmarks_create_new_group">ایجاد لیست جدید</string>
 	<!-- Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files -->
 	<string name="bookmarks_import">وارد کردن نشانکu200cها و آهنگu200cها</string>
@@ -574,14 +590,7 @@
 	  <item quantity="one">%d فایل پیدا شد. بعد از تبدیل آن را می‌بینید.</item>
 	  <item quantity="other">%d فایل پیدا شد. بعد از تبدیل آن‌ها را می‌بینید.</item>
 	</plurals>
-	<plurals name="objects">
-	  <item quantity="one">%d شیء</item>
-	  <item quantity="other">%d شیء</item>
-	</plurals>
-	<plurals name="places">
-	  <item quantity="one">%d مکان</item>
-	  <item quantity="other">%d مکان</item>
-	</plurals>
+	<string name="restore">بازیابی</string>
 	<plurals name="tracks">
 	  <item quantity="one">%d رد</item>
 	  <item quantity="other">%d رد</item>
@@ -597,7 +606,8 @@
 	<string name="bookmarks_empty_list_title">این لیست خالی است</string>
 	<string name="bookmarks_empty_list_message">برای افزودن یک نشانه، روی یک مکان روی نقشه ضربه بزنید و سپس روی نماد ستاره ضربه بزنید</string>
 	<string name="category_desc_more">بیشتر…</string>
-	<string name="export_file">ارسال فایل</string>
+	<string name="export_file">صادرات KMZ</string>
+	<string name="export_file_gpx">صادرات GPX</string>
 	<string name="delete_list">حذف لیست</string>
 	<string name="public_access">دسترسی عمومی</string>
 	<string name="limited_access">دسترسی محدود</string>
@@ -730,16 +740,16 @@
 	<string name="app_tip_08">شما به راحتی می توانید داده های نقشه را اصلاح و بهبود دهید.</string>
 	<!-- App tip #09 -->
 	<string name="app_tip_09">هدف اصلی ما ساختن نقشه هایی سریع، متمرکز بر حریم خصوصی و با کاربری آسان است که شما عاشق آن خواهید شد.</string>
-	<!-- Text on the Android Auto placeholder screen that maps are displayed on the phone screen -->
-	<string name="aa_used_on_the_phone_screen">اکنون در حال استفاده از نقشه های ارگانیک در صفحه گوشی هستید</string>
+	<!-- Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen -->
+	<string name="car_used_on_the_phone_screen">اکنون در حال استفاده از نقشه های ارگانیک در صفحه گوشی هستید</string>
 	<!-- Text on the phone placeholder screen that maps are displayed on the car screen -->
-	<string name="aa_used_on_the_car_screen">اکنون از نقشه های ارگانیک در صفحه ماشین استفاده می کنید</string>
+	<string name="car_used_on_the_car_screen">اکنون از نقشه های ارگانیک در صفحه ماشین استفاده می کنید</string>
 	<!-- Displayed on the phone screen. Android Auto connected -->
 	<string name="aa_connected_title">شما به Android Auto متصل هستید</string>
 	<!-- Displayed on the phone screen. Button to display maps on the phone screen instead of a car -->
-	<string name="aa_continue_on_the_phone">با تلفن ادامه دهید</string>
-	<!-- Displayed on the Android Auto screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
-	<string name="aa_continue_in_the_car">به صفحه ماشین</string>
+	<string name="car_continue_on_the_phone">با تلفن ادامه دهید</string>
+	<!-- Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
+	<string name="car_continue_in_the_car">به صفحه ماشین</string>
 	<!-- Ask user to grant location permissions -->
 	<string name="aa_location_permissions_request">این برنامه برای اهداف ناوبری نیاز به دسترسی به موقعیت مکانی شما دارد.</string>
 	<!-- Displayed on the Android Auto screen. Grant Permissions button. Must be no more than 18 symbols! -->
@@ -757,6 +767,15 @@
 	<string name="pref_tts_open_system_settings">تنظیمات سنتز گفتار سیستم</string>
 	<!-- toast displayed when pressing the "Speech synthesis system settings" button, and the system settings aren't found. -->
 	<string name="pref_tts_no_system_tts">تنظیمات Speech Synthesis پیدا نشد، آیا مطمئن هستید که دستگاه شما از آن پشتیبانی می کند؟</string>
+	<string name="drive_through">رانندگی از طریق</string>
+	<string name="clear_the_search">جستجو را پاک کنید</string>
+	<string name="zoom_in">بزرگنمایی</string>
+	<!-- Accessibility text for the zoom-out button on the map -->
+	<string name="zoom_out">کوچک نمایی</string>
+	<!-- Restaurant or other food place's menu URL field in the Editor -->
+	<string name="website_menu">لینک منو</string>
+	<!-- Button in the Place Page which opens a restaurant or other food place's menu in a browser -->
+	<string name="view_menu">مشاهده منو</string>
 
 	<!-- SECTION: Types -->
 	<string name="type.addr_interpolation">آدرس/بلاک</string>
@@ -770,7 +789,7 @@
 	<string name="type.amenity.atm">خودپرداز</string>
 	<string name="type.amenity.bank">بانک</string>
 	<string name="type.amenity.bar">میکده</string>
-	<string name="type.amenity.bbq">مکان پیک نیک</string>
+	<string name="type.amenity.bbq">منقل کباب</string>
 	<string name="type.amenity.bench">سَکو</string>
 	<string name="type.amenity.bicycle_parking">پارکینگ دوچرخه</string>
 	<string name="type.amenity.bicycle_rental">مکان اجاره دوچرخه</string>
@@ -886,6 +905,10 @@
 	<string name="type.amenity.school">مدرسه</string>
 	<!-- Weather shelter (including sun shelters and natural rock shelters). -->
 	<string name="type.amenity.shelter">پناهگاه</string>
+	<!-- A weather shelter by the public transport stop. -->
+	<string name="type.amenity.shelter.public_transport">پناهگاه</string>
+	<!-- Compared to wilderness_hut its smaller and simpler, without a fireplace. -->
+	<string name="type.amenity.shelter.basic_hut">کلبه بیواک</string>
 	<string name="type.amenity.public_bath">حمام عمومی</string>
 	<string name="type.amenity.shower">حمام</string>
 	<string name="type.amenity.stripclub">باشگاه استریپ</string>
@@ -1002,15 +1025,9 @@
 	<string name="type.highway.footway">مسیر</string>
 	<string name="type.highway.footway.sidewalk">پیاده رو</string>
 	<string name="type.highway.footway.crossing">محل عبور عابر پیاده</string>
-	<string name="type.highway.footway.alpine_hiking">مسیر</string>
 	<string name="type.highway.footway.area">مسیر</string>
 	<!-- These translations are used for all type.highway.*.bridge. -->
 	<string name="type.highway.footway.bridge">پل</string>
-	<string name="type.highway.footway.demanding_alpine_hiking">مسیر</string>
-	<string name="type.highway.footway.demanding_mountain_hiking">مسیر</string>
-	<string name="type.highway.footway.difficult_alpine_hiking">مسیر</string>
-	<string name="type.highway.footway.hiking">مسیر</string>
-	<string name="type.highway.footway.mountain_hiking">مسیر</string>
 	<!-- These translations are used for all type.highway.*.tunnel. -->
 	<string name="type.highway.footway.tunnel">تونل</string>
 	<string name="type.highway.ford">گدار</string>
@@ -1031,17 +1048,15 @@
 	<!-- These translations are used for all type.highway.*.tunnel. -->
 	<string name="type.highway.motorway_link.tunnel">تونل</string>
 	<string name="type.highway.path">مسیر</string>
-	<string name="type.highway.path.alpine_hiking">مسیر</string>
+	<!-- Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. -->
+	<string name="type.highway.path.difficult">مسیر</string>
+	<!-- Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. -->
+	<string name="type.highway.path.expert">مسیر</string>
 	<string name="type.highway.path.bicycle">مسیر</string>
+	<string name="type.highway.footway.bicycle">مسیر</string>
 	<!-- These translations are used for all type.highway.*.bridge. -->
 	<string name="type.highway.path.bridge">پل</string>
-	<string name="type.highway.path.demanding_alpine_hiking">مسیر</string>
-	<string name="type.highway.path.demanding_mountain_hiking">مسیر</string>
-	<string name="type.highway.path.difficult_alpine_hiking">مسیر</string>
-	<string name="type.highway.path.hiking">مسیر</string>
 	<string name="type.highway.path.horse">مسیر</string>
-	<string name="type.highway.path.mountain_hiking">مسیر</string>
-	<string name="type.highway.path.permissive">مسیر</string>
 	<!-- These translations are used for all type.highway.*.tunnel. -->
 	<string name="type.highway.path.tunnel">تونل</string>
 	<string name="type.highway.pedestrian">جاده</string>
@@ -1113,12 +1128,7 @@
 	<!-- These translations are used for all type.highway.*.bridge. -->
 	<string name="type.highway.track.bridge">پل</string>
 	<string name="type.highway.track.grade1">جاده</string>
-	<string name="type.highway.track.grade2">جاده</string>
-	<string name="type.highway.track.grade3">جاده</string>
-	<string name="type.highway.track.grade4">جاده</string>
-	<string name="type.highway.track.grade5">جاده</string>
 	<string name="type.highway.track.no.access">جاده</string>
-	<string name="type.highway.track.permissive">جاده</string>
 	<!-- These translations are used for all type.highway.*.tunnel. -->
 	<string name="type.highway.track.tunnel">تونل</string>
 	<string name="type.highway.traffic_signals">چراغ راهنما</string>
@@ -1756,7 +1766,7 @@
 	<string name="type.tourism.aquarium">آکواریوم</string>
 	<!-- Typically serviced, staff is present and food is available (compared to wilderness_hut). -->
 	<string name="type.tourism.alpine_hut">اقامتگاه کوهستانی</string>
-	<string name="type.tourism.apartment">اپارتمان</string>
+	<string name="type.tourism.apartment">آپارتمان تعطیلات</string>
 	<string name="type.tourism.artwork">گردشگری</string>
 	<string name="type.tourism.artwork.architecture">گردشگری</string>
 	<string name="type.tourism.artwork.painting">گردشگری</string>
@@ -1796,7 +1806,6 @@
 	<string name="type.waterway.drain.tunnel">کولورت</string>
 	<string name="type.waterway.river">رودخانه</string>
 	<string name="type.waterway.river.tunnel">رودخانه</string>
-	<string name="type.waterway.riverbank">رودخانه</string>
 	<string name="type.waterway.stream">رودخانه</string>
 	<string name="type.waterway.stream.ephemeral">رودخانه</string>
 	<string name="type.waterway.stream.intermittent">رودخانه</string>

@@ -33,6 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSUInteger)badgeNumber;
 
++ (BOOL)isTestsEnvironment;
+
 @end
 
 NS_ASSUME_NONNULL_END

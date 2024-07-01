@@ -1,3 +1,4 @@
+#include "qt/place_page_dialog_common.hpp"
 #include "qt/place_page_dialog_developer.hpp"
 
 #include "qt/qt_common/text_dialog.hpp"
@@ -6,9 +7,9 @@
 
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
 
 #include <string>
 
@@ -16,6 +17,7 @@ PlacePageDialogDeveloper::PlacePageDialogDeveloper(QWidget * parent, place_page:
                                                    search::ReverseGeocoder::Address const & address)
   : QDialog(parent)
 {
+  QVBoxLayout * layout = new QVBoxLayout();
   QGridLayout * grid = new QGridLayout();
   int row = 0;
 
@@ -83,18 +85,10 @@ PlacePageDialogDeveloper::PlacePageDialogDeveloper(QWidget * parent, place_page:
   if (auto cuisines = info.FormatCuisines(); !cuisines.empty())
     addEntry(DebugPrint(PropID::FMD_CUISINE), cuisines);
 
-  QDialogButtonBox * dbb = new QDialogButtonBox();
-  QPushButton * closeButton = new QPushButton("Close");
-  closeButton->setDefault(true);
-  connect(closeButton, &QAbstractButton::clicked, this, &PlacePageDialogDeveloper::OnClose);
-  dbb->addButton(closeButton, QDialogButtonBox::RejectRole);
+  layout->addLayout(grid);
 
-  if (info.ShouldShowEditPlace())
-  {
-    QPushButton * editButton = new QPushButton("Edit Place");
-    connect(editButton, &QAbstractButton::clicked, this, &PlacePageDialogDeveloper::OnEdit);
-    dbb->addButton(editButton, QDialogButtonBox::AcceptRole);
-  }
+  QDialogButtonBox * dbb = new QDialogButtonBox();
+  place_page_dialog::addCommonButtons(this, dbb, info.ShouldShowEditPlace());
 
   if (auto const & descr = info.GetWikiDescription(); !descr.empty())
   {
@@ -130,12 +124,9 @@ PlacePageDialogDeveloper::PlacePageDialogDeveloper(QWidget * parent, place_page:
     addEntry(DebugPrint(id), value, isLink);
   });
 
-  grid->addWidget(dbb);
-  setLayout(grid);
+  layout->addWidget(dbb);
+  setLayout(layout);
 
   auto const ppTitle = std::string("Place Page") + (info.IsBookmark() ? " (bookmarked)" : "");
   setWindowTitle(ppTitle.c_str());
 }
-
-void PlacePageDialogDeveloper::OnClose() { reject(); }
-void PlacePageDialogDeveloper::OnEdit() { accept(); }

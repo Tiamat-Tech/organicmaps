@@ -288,4 +288,67 @@ UNIT_TEST(NormalizeAndSimplifyString_Apostrophe)
   TEST_EQUAL(NormalizeAndSimplifyStringUtf8("Pop’s"), "pop's", ());
 }
 
+UNIT_TEST(Steet_GetStreetNameAsKey)
+{
+  auto const Check = [](std::string_view src, std::string_view expected)
+  {
+    TEST_EQUAL(GetStreetNameAsKey(src, true /* ignoreStreetSynonyms */), strings::MakeUniString(expected), ());
+  };
+
+  {
+    std::string_view const ethalon = "680northwest";
+    Check("N 680 W", ethalon);
+    Check("North 680 West", ethalon);
+    Check("680 NW", ethalon);
+  }
+
+  Check("North 20th Rd", "20thnorth");
+  Check("Lane st", "lane st");         /// @todo Probably, doesn't matter here?
+  Check("West North", "westnorth");    /// @todo Should order?
+  Check("NW", "northwest");
+}
+
+UNIT_TEST(Steet_GetNormalizedStreetName)
+{
+  auto const Check = [](std::string_view s1, std::string_view s2)
+  {
+    TEST_EQUAL(GetNormalizedStreetName(s1), GetNormalizedStreetName(s2), ());
+  };
+
+  Check("Lane G", "G Ln");
+  Check("South Grapetree Road", "S Grape Tree Rd");
+  Check("Peter's Farm Road", "Peters Farm Rd");
+  Check("Farrelly - Soto Avenue", "Farrelly-Soto Ave");
+  Check("2nd Loop South", "2nd Lp S");
+  Check("Circle Street", "Circle St");
+  Check("Rue de St. Anne", "Rue de St Anne");
+  Check("St. Lucia Drive", "St Lucia Dr");
+  Check("County Road 87", "Co Rd 87");
+  Check("Mountain Vista", "Mtn Vis");
+  Check("Scott's Trace", "Scotts Trce");
+  Check("Inverness Cliffs Drive", "Inverness Clfs Dr");
+  Check("Pine Crest Loop", "Pine Crst Lp");
+  Check("8th Street North East", "N Eighth E St");
+  Check("Black Creek Crossing", "Black Creek Xing");
+  Check("Magruders Bluff", "Magruders Blf");
+  Check("5th Avenue", "Fifth ave");
+  Check("Northeast 26th Avenue", "NE 26th Ave");
+
+  /// @todo Fancy examples:
+  // https://www.openstreetmap.org/way/1188750428
+  //Check("East Ridge Road", "E Rdg");
+  //Check("7th Street", "Sevens St");
+  // https://www.openstreetmap.org/way/8605899
+  //Check("Beaver Crest Drive", "Beaver Crst");
+  // https://www.openstreetmap.org/way/8607254
+  //Check("St Annes Drive", "Saint Annes Dr");
+  // https://www.openstreetmap.org/way/7703018
+  //Check("AL 60", "Al Highway 60");
+  // https://www.openstreetmap.org/way/7705380
+  // Seems like it means "Centerville Street" or "County Road 25"
+  //Check("Centreville Street", "Centerville St Co Rd 25");
+  // https://www.openstreetmap.org/way/23629713
+  //Check("Northeast Martin Luther King Junior Boulevard", "NE M L King Blvd");
+}
+
 } // namespace search_string_utils_test

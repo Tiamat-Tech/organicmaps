@@ -1,3 +1,4 @@
+#include "qt/place_page_dialog_common.hpp"
 #include "qt/place_page_dialog_user.hpp"
 
 #include "qt/qt_common/text_dialog.hpp"
@@ -8,12 +9,10 @@
 
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QBoxLayout>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QGridLayout>
 
 #include <sstream>
 #include <string>
@@ -23,10 +22,26 @@ namespace
 static int constexpr kMaxLengthOfPlacePageDescription = 500;
 static int constexpr kMinWidthOfShortDescription = 390;
 
+std::string getShortDescription(const std::string & description)
+{
+  std::string_view view(description);
+
+  auto const paragraphStart = view.find("<p>");
+  auto const paragraphEnd = view.find("</p>");
+
+  if (paragraphStart == 0 && paragraphEnd != std::string::npos)
+    view = view.substr(3, paragraphEnd - 3);
+
+  if (view.length() > kMaxLengthOfPlacePageDescription)
+    return std::string(view.substr(0, kMaxLengthOfPlacePageDescription - 3)) + "...";
+
+  return std::string(view);
+}
+
 std::string_view stripSchemeFromURI(std::string_view uri) {
   for (std::string_view prefix : {"https://", "http://"})
   {
-    if (strings::StartsWith(uri, prefix))
+    if (uri.starts_with(prefix))
       return uri.substr(prefix.size());
   }
   return uri;
@@ -54,13 +69,25 @@ PlacePageDialogUser::PlacePageDialogUser(QWidget * parent, place_page::Info cons
     QVBoxLayout * header = new QVBoxLayout();
 
     if (!title.empty())
-      header->addWidget(new QLabel(QString::fromStdString("<h1>" + title + "</h1>")));
+    {
+      QLabel * titleLabel = new QLabel(QString::fromStdString("<h1>" + title + "</h1>"));
+      titleLabel->setWordWrap(true);
+      header->addWidget(titleLabel);
+    }
 
-    if (auto subTitle = info.GetSubtitle(); !subTitle.empty())
-      header->addWidget(new QLabel(QString::fromStdString(subTitle)));
+    if (auto const subTitle = info.GetSubtitle(); !subTitle.empty())
+    {
+      QLabel * subtitleLabel = new QLabel(QString::fromStdString(subTitle));
+      subtitleLabel->setWordWrap(true);
+      header->addWidget(subtitleLabel);
+    }
 
-    if (auto addressFormatted = address.FormatAddress(); !addressFormatted.empty())
-      header->addWidget(new QLabel(QString::fromStdString(addressFormatted)));
+    if (auto const addressFormatted = address.FormatAddress(); !addressFormatted.empty())
+    {
+      QLabel * addressLabel = new QLabel(QString::fromStdString(addressFormatted));
+      addressLabel->setWordWrap(true);
+      header->addWidget(addressLabel);
+    }
 
     layout->addLayout(header);
   }
@@ -80,6 +107,7 @@ PlacePageDialogUser::PlacePageDialogUser(QWidget * parent, place_page::Info cons
       data->addWidget(new QLabel(QString::fromStdString(key)), row, 0);
       QLabel * label = new QLabel(QString::fromStdString(value));
       label->setTextInteractionFlags(Qt::TextSelectableByMouse);
+      label->setWordWrap(true);
       if (isLink)
       {
         label->setOpenExternalLinks(true);
@@ -105,9 +133,16 @@ PlacePageDialogUser::PlacePageDialogUser(QWidget * parent, place_page::Info cons
     }
 
     // Description
-    if (auto description = info.GetWikiDescription(); !description.empty())
+    if (const auto & description = info.GetWikiDescription(); !description.empty())
     {
-      QPushButton * wikiButton = new QPushButton("Wikipedia Description");
+      auto descriptionShort = getShortDescription(description);
+
+      QLabel * value = new QLabel(QString::fromStdString(descriptionShort));
+      value->setWordWrap(true);
+
+      data->addWidget(value, row++, 0, 1, 2);
+
+      QPushButton * wikiButton = new QPushButton("More...", value);
       wikiButton->setAutoDefault(false);
       connect(wikiButton, &QAbstractButton::clicked, this, [this, description, title]()
       {
@@ -180,7 +215,6 @@ PlacePageDialogUser::PlacePageDialogUser(QWidget * parent, place_page::Info cons
 
       addSocialNetworkWidget("Facebook", feature::Metadata::EType::FMD_CONTACT_FACEBOOK);
       addSocialNetworkWidget("Instagram", feature::Metadata::EType::FMD_CONTACT_INSTAGRAM);
-      addSocialNetworkWidget("Instagram", feature::Metadata::EType::FMD_CONTACT_INSTAGRAM);
       addSocialNetworkWidget("Twitter", feature::Metadata::EType::FMD_CONTACT_TWITTER);
       addSocialNetworkWidget("VK", feature::Metadata::EType::FMD_CONTACT_VK);
       addSocialNetworkWidget("Line", feature::Metadata::EType::FMD_CONTACT_LINE);
@@ -188,11 +222,13 @@ PlacePageDialogUser::PlacePageDialogUser(QWidget * parent, place_page::Info cons
 
     if (auto wikimedia_commons = info.GetMetadata(feature::Metadata::EType::FMD_WIKIMEDIA_COMMONS); !wikimedia_commons.empty())
     {
+      data->addWidget(new QLabel("Wikimedia Commons"), row, 0);
+
       QLabel * value = new QLabel(QString::fromStdString("<a href='" + feature::Metadata::ToWikimediaCommonsURL(std::string(wikimedia_commons)) + "'>Wikimedia Commons</a>"));
       value->setOpenExternalLinks(true);
       value->setTextInteractionFlags(Qt::TextBrowserInteraction);
 
-      data->addWidget(value, row++, 0);
+      data->addWidget(value, row++, 1);
     }
 
     // Level fragment
@@ -210,8 +246,13 @@ PlacePageDialogUser::PlacePageDialogUser(QWidget * parent, place_page::Info cons
       addEntry("Coordinates", strings::to_string_dac(ll.m_lat, 7) + ", " + strings::to_string_dac(ll.m_lon, 7));
     }
 
+    data->setColumnStretch(0, 0);
+    data->setColumnStretch(1, 1);
+
     layout->addLayout(data);
   }
+
+  layout->addStretch(); 
 
   {
     QHLine * line = new QHLine();
@@ -220,19 +261,7 @@ PlacePageDialogUser::PlacePageDialogUser(QWidget * parent, place_page::Info cons
 
   {
     QDialogButtonBox * dbb = new QDialogButtonBox();
-
-    QPushButton * closeButton = new QPushButton("Close");
-    closeButton->setDefault(true);
-    connect(closeButton, &QAbstractButton::clicked, this, &PlacePageDialogUser::OnClose);
-    dbb->addButton(closeButton, QDialogButtonBox::RejectRole);
-
-    if (info.ShouldShowEditPlace())
-    {
-      QPushButton * editButton = new QPushButton("Edit Place");
-      connect(editButton, &QAbstractButton::clicked, this, &PlacePageDialogUser::OnEdit);
-      dbb->addButton(editButton, QDialogButtonBox::ActionRole);
-    }
-
+    place_page_dialog::addCommonButtons(this, dbb, info.ShouldShowEditPlace());
     layout->addWidget(dbb, Qt::AlignCenter);
   }
 
@@ -241,6 +270,3 @@ PlacePageDialogUser::PlacePageDialogUser(QWidget * parent, place_page::Info cons
   auto const ppTitle = std::string("Place Page") + (info.IsBookmark() ? " (bookmarked)" : "");
   setWindowTitle(ppTitle.c_str());
 }
-
-void PlacePageDialogUser::OnClose() { reject(); }
-void PlacePageDialogUser::OnEdit() { accept(); }

@@ -83,12 +83,12 @@ public:
   DECLARE_CHECKER_INSTANCE(IsPostBoxChecker);
 };
 
-class IsPostOfficeChecker : public BaseChecker
+class IsPostPoiChecker : public BaseChecker
 {
-  IsPostOfficeChecker();
+  IsPostPoiChecker();
 
 public:
-  DECLARE_CHECKER_INSTANCE(IsPostOfficeChecker);
+  DECLARE_CHECKER_INSTANCE(IsPostPoiChecker);
 };
 
 class IsFuelStationChecker : public BaseChecker
@@ -322,6 +322,15 @@ class IsPoiChecker : public BaseChecker
   IsPoiChecker();
 public:
   DECLARE_CHECKER_INSTANCE(IsPoiChecker);
+};
+
+class IsAmenityChecker : public BaseChecker
+{
+  IsAmenityChecker();
+public:
+  DECLARE_CHECKER_INSTANCE(IsAmenityChecker);
+
+  uint32_t GetType() const { return m_types[0]; }
 };
 
 class AttractionsChecker : public BaseChecker
@@ -588,7 +597,27 @@ class IsAddressInterpolChecker : public BaseChecker
 public:
   DECLARE_CHECKER_INSTANCE(IsAddressInterpolChecker);
 
-  feature::InterpolType GetInterpolType(FeatureType & ft) const;
+  template <class Range> feature::InterpolType GetInterpolType(Range const & range) const
+  {
+    for (uint32_t t : range)
+    {
+      if (t == m_odd)
+        return feature::InterpolType::Odd;
+      if (t == m_even)
+        return feature::InterpolType::Even;
+
+      ftype::TruncValue(t, 1);
+      if (t == m_types[0])
+        return feature::InterpolType::Any;
+    }
+
+    return feature::InterpolType::None;
+  }
+
+  feature::InterpolType GetInterpolType(FeatureType & ft) const
+  {
+    return GetInterpolType(feature::TypesHolder(ft));
+  }
 };
 
 

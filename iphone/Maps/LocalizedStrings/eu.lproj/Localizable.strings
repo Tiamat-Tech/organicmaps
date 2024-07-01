@@ -27,7 +27,7 @@
 "leave_a_review" = "Idatzi iritzia";
 
 /* Choose measurement on first launch alert - choose imperial system button */
-"miles" = "Milia";
+"miles" = "Miliak";
 
 /* A text for current gps location point/arrow selected on the map */
 "core_my_position" = "Nire kokapena";
@@ -254,6 +254,12 @@
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "Ahots argibideak";
 
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "Kaleen izenak iragarri";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "Gaituta dagoenean, biratzeko kalearen edo irteeraren izena ozen esango da.";
+
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "Ahots hizkuntza";
 
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "Iparrorratzaren kalibrazioa";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "Sakatu luze berriro mapan interfazea ikusteko";
 
 /* Update all button text */
 "downloader_update_all_button" = "Eguneratu guztiak";
@@ -499,8 +508,6 @@
 "dialog_routing_application_error" = "Ibilbidea ezin izan da sortu aplikazioaren errore baten ondorioz.";
 
 "dialog_routing_try_again" = "Saiatu berriro";
-
-"not_now" = "Orain ez";
 
 "dialog_routing_download_and_build_cross_route" = "Mapa deskargatu eta mapa bat baino gehiago hartzen duen ibilbide hobe bat sortu nahi duzu?";
 
@@ -675,7 +682,7 @@
 
 "please_note" = "Abisua";
 
-"downloader_delete_map_dialog" = "Maparen aldaketa guztiak maparekin batera ezabatuko dira.";
+"downloader_delete_map_dialog" = "Mapan egin dituzun aldaketa guztiak maparekin batera ezabatuko dira.";
 
 "downloader_update_maps" = "Eguneratu mapak";
 
@@ -704,6 +711,9 @@
 "editor_add_place_title" = "Gehitzen";
 
 "editor_edit_place_name_hint" = "Tokiaren izena";
+
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "Bertako hizkuntzan idatzita dagoenez";
 
 "editor_edit_place_category_title" = "Kategoria";
 
@@ -860,7 +870,7 @@
 
 "editor_share_to_all_dialog_message_2" = "OpenStreetMap editoreek aldaketak egiaztatuko dituzte eta zurekin harremanetan jarriko dira zalantzaren bat izanez gero.";
 
-"navigation_stop_button" = "gelditu";
+"navigation_stop_button" = "Gelditu";
 
 /* iOS dialog for the case when recent track recording is on and the app comes back from background */
 "recent_track_background_dialog_title" = "Bidaiatutako azken ibilbidearen grabaketa desaktibatu nahi duzu?";
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "Trafiko datuak ez daude eskuragarri";
 
+"enable_logging" = "Historia gaitu";
+
+"log_file_size" = "Erregistro fitxategiaren tamaina: %@";
+
 "transliteration_title" = "Latinezko transliterazioa";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "Irten";
 
-"routing_add_start_point" = "Gehitu abiapuntu bat ibilbide bat antolatzeko";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "Erabili bilaketa edo sakatu mapan ibilbidearen abiapuntua gehitzeko";
 
-"routing_add_finish_point" = "Gehitu helmuga bat ibilbide bat antolatzeko";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "Erabili bilaketa edo sakatu mapan helmuga puntu bat gehitzeko";
 
 "planning_route_manage_route" = "Kudeatu ibilbidea";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "Gehitu geldiunea";
 
 "start_from_my_position" = "Hasi hemendik";
-
-"profile_authorization_error" = "Errore bat gertatu da. Saiatu berriro saioa hasten.";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "Hasi saioa OpenStreetMap-en zure mapen aldaketa guztiak automatikoki kargatzeko. Lortu informazio gehiago";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "Erakutsi guztiak";
 
 "bookmarks_create_new_group" = "Sortu zerrenda berria";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "Laster-markak eta ibilbideak inportatu";
 
 "downloader_hide_screen" = "Ezkutatu pantaila";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "Fitxategi batzuk ez dira bihurtu.";
 
-"bookmarks_restore_title" = "Bertsio hau berreskuratu nahi duzu?";
-
-"error_system_message" = "Errore ezezagun bat gertatu da";
-
 "restore" = "Berreskuratu";
 
 "privacy_policy" = "Pribatutasun politika";
 
 "terms_of_use" = "Erabilera baldintzak";
-
-"button_layer_traffic" = "Trafikoa";
 
 "button_layer_subway" = "Metroa";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "Ospetsua";
 
-"export_file" = "Esportatu fitxategia";
+"export_file" = "Esportatu KMZ";
+
+"export_file_gpx" = "Esportatu GPX";
 
 "delete_list" = "Ezabatu zerrenda";
 
@@ -1038,6 +1051,8 @@
 "power_managment_setting_auto" = "Automatikoa";
 
 "power_managment_setting_manual_max" = "Energia aurrezpen handiena";
+
+"enable_logging_warning_message" = "Aukera hau diagnostiko helburua duten erregistro ekintzetarako gaituta dago. Honek gure taldeari aplikazioarekin arazoak identifikatzen laguntzen dio. Gaitu aukera Organic Maps laguntzari eskatuta soilik.";
 
 "driving_options_title" = "Bideratzeko aukerak";
 
@@ -1258,8 +1273,20 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/About_OpenStreetMap";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "Organic Maps telefonoaren pantailan erabiltzen ari zara";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "Organic Maps autoaren pantailan erabiltzen ari zara";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "Jarraitu telefonoan";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "Autoaren pantailara";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
-"button_layer_outdoor" = "Mendi ibilaldiak";
+"button_layer_outdoor" = "Landa-eremua";
 
 /* Bookmark categories screen, button that opens share dialog to export all bookmarks and tracks */
 "bookmarks_export" = "Esportatu Laster-marka eta Pista guztiak";
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "Mapa";
+
+"drive_through" = "Drive-through";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "Menuaren esteka";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "Gaitu iCloud sinkronizazioa";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "iCloud sinkronizazioa garatzen ari den ezaugarri esperimental bat da. Ziurtatu zure laster-marka eta ibilbide guztien babeskopia egin duzula.";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "iCloud desgaituta dago";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "Mesedez, gaitu iCloud zure gailuaren ezarpenetan eginbide hau erabiltzeko.";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "Gaitu";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "Babeskopia";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "Errorea: Ezin izan da sinkronizatu konexio-errore baten ondorioz";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "Errorea: Ezin izan da sinkronizatu iCloud kuota gainditu delako";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "Errorea: iCloud ez dago erabilgarri";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "Taberna";
 
-"type.amenity.bbq" = "Piknika";
+"type.amenity.bbq" = "Barbakoa parrilla";
 
 "type.amenity.bench" = "Bankua";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "Aterpea";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "Aterpea";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "Bivouac Borda";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
 
 "type.amenity.public_bath" = "Bainu Publikoa";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "Irten";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "Doan";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "Oinezkoen pasabidea";
 
-"type.highway.footway.alpine_hiking" = "Bidea";
-
 "type.highway.footway.area" = "Bidea";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "Zubia";
-
-"type.highway.footway.demanding_alpine_hiking" = "Bidea";
-
-"type.highway.footway.demanding_mountain_hiking" = "Bidea";
-
-"type.highway.footway.difficult_alpine_hiking" = "Bidea";
-
-"type.highway.footway.hiking" = "Bidea";
-
-"type.highway.footway.mountain_hiking" = "Bidea";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "Tunel";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "Bidea";
 
-"type.highway.path.alpine_hiking" = "Bidea";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "Bidea";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "Bidea";
 
 "type.highway.path.bicycle" = "Bidea";
+
+"type.highway.footway.bicycle" = "Bidea";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "Zubia";
 
-"type.highway.path.demanding_alpine_hiking" = "Bidea";
-
-"type.highway.path.demanding_mountain_hiking" = "Bidea";
-
-"type.highway.path.difficult_alpine_hiking" = "Bidea";
-
-"type.highway.path.hiking" = "Bidea";
-
 "type.highway.path.horse" = "Bidea";
-
-"type.highway.path.mountain_hiking" = "Bidea";
-
-"type.highway.path.permissive" = "Bidea";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "Tunel";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "Kalea";
 
-"type.highway.track.grade2" = "Kalea";
-
-"type.highway.track.grade3" = "Kalea";
-
-"type.highway.track.grade4" = "Kalea";
-
-"type.highway.track.grade5" = "Kalea";
-
 "type.highway.track.no.access" = "Kalea";
-
-"type.highway.track.permissive" = "Kalea";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "Tunel";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Educational Facility";
 
-"type.landuse.farm" = "Farm";
-
 "type.landuse.farmland" = "Nekazaritza-lurra";
 
 "type.landuse.farmyard" = "Farmyard";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "Lorategi";
 
 "type.leisure.golf_course" = "Golf kurtsoa";
+
+"type.leisure.miniature_golf" = "Minigolf";
 
 "type.leisure.hackerspace" = "Hackerspace";
 
@@ -3726,7 +3766,7 @@
 /* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
 "type.tourism.alpine_hut" = "Mendiko ostatua";
 
-"type.tourism.apartment" = "Apartamentuak";
+"type.tourism.apartment" = "Oporretako apartamentua";
 
 "type.tourism.artwork" = "Artelanak";
 
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "Ibai";
 
 "type.waterway.river.tunnel" = "Ibai";
-
-"type.waterway.riverbank" = "Ibai";
 
 "type.waterway.stream" = "Ibai";
 

@@ -12123,6 +12123,391 @@ cont {
   }
 }
 cont {
+  name: "amenity-shelter-basic_hut"
+  element {
+    scale: 13
+    symbol {
+      name: "alpine_hut-s"
+      priority: 3900
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 11
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+  element {
+    scale: 14
+    symbol {
+      name: "alpine_hut-m"
+      priority: 3900
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 11
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "alpine_hut-m"
+      priority: 3900
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 11
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+  element {
+    scale: 16
+    symbol {
+      name: "alpine_hut-m"
+      priority: 3900
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "alpine_hut-m"
+      priority: 3900
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "alpine_hut-m"
+      priority: 3900
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "alpine_hut-m"
+      priority: 3900
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "alpine_hut-m"
+      priority: 3900
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+}
+cont {
+  name: "amenity-shelter-lean_to"
+  element {
+    scale: 13
+    symbol {
+      name: "shelter-s"
+      priority: 3900
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 11
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+  element {
+    scale: 14
+    symbol {
+      name: "shelter-m"
+      priority: 3900
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 11
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "shelter-m"
+      priority: 3900
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 11
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+  element {
+    scale: 16
+    symbol {
+      name: "shelter-m"
+      priority: 3900
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "shelter-m"
+      priority: 3900
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "shelter-m"
+      priority: 3900
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "shelter-m"
+      priority: 3900
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "shelter-m"
+      priority: 3900
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -6100
+    }
+  }
+}
+cont {
+  name: "amenity-shelter-public_transport"
+  element {
+    scale: 14
+    symbol {
+      name: "shelter-public_transport-m"
+      priority: 1500
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 11
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8500
+    }
+  }
+  element {
+    scale: 15
+    symbol {
+      name: "shelter-public_transport-m"
+      priority: 1500
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 11
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8500
+    }
+  }
+  element {
+    scale: 16
+    symbol {
+      name: "shelter-public_transport-m"
+      priority: 1500
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8500
+    }
+  }
+  element {
+    scale: 17
+    symbol {
+      name: "shelter-public_transport-m"
+      priority: 1500
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8500
+    }
+  }
+  element {
+    scale: 18
+    symbol {
+      name: "shelter-public_transport-m"
+      priority: 1500
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8500
+    }
+  }
+  element {
+    scale: 19
+    symbol {
+      name: "shelter-public_transport-m"
+      priority: 1500
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8500
+    }
+  }
+  element {
+    scale: 20
+    symbol {
+      name: "shelter-public_transport-m"
+      priority: 1500
+    }
+    caption {
+      primary {
+        height: 12
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8500
+    }
+  }
+}
+cont {
   name: "amenity-shower"
   element {
     scale: 17
@@ -15825,7 +16210,7 @@ cont {
   element {
     scale: 10
     area {
-      color: 3430108454
+      color: 4000533798
       priority: 20
     }
     caption {
@@ -15840,7 +16225,7 @@ cont {
   element {
     scale: 11
     area {
-      color: 3430108454
+      color: 4000533798
       priority: 20
     }
     caption {
@@ -15855,7 +16240,7 @@ cont {
   element {
     scale: 12
     area {
-      color: 3430108454
+      color: 4000533798
       priority: 20
     }
     caption {
@@ -15870,7 +16255,7 @@ cont {
   element {
     scale: 13
     area {
-      color: 3430108454
+      color: 4000533798
       priority: 20
     }
     caption {
@@ -15885,7 +16270,7 @@ cont {
   element {
     scale: 14
     area {
-      color: 3430108454
+      color: 4000533798
       priority: 20
     }
     caption {
@@ -15900,7 +16285,7 @@ cont {
   element {
     scale: 15
     area {
-      color: 3430108454
+      color: 4000533798
       priority: 20
     }
     caption {
@@ -15915,72 +16300,12 @@ cont {
   element {
     scale: 16
     area {
-      color: 3430108454
+      color: 4000533798
       priority: 20
     }
     caption {
       primary {
         height: 10
-        color: 6967599
-        stroke_color: 856032768
-      }
-      priority: 6700
-    }
-  }
-  element {
-    scale: 17
-    area {
-      color: 3430108454
-      priority: 20
-    }
-    caption {
-      primary {
-        height: 11
-        color: 6967599
-        stroke_color: 856032768
-      }
-      priority: 6700
-    }
-  }
-  element {
-    scale: 18
-    area {
-      color: 3430108454
-      priority: 20
-    }
-    caption {
-      primary {
-        height: 11
-        color: 6967599
-        stroke_color: 856032768
-      }
-      priority: 6700
-    }
-  }
-  element {
-    scale: 19
-    area {
-      color: 3430108454
-      priority: 20
-    }
-    caption {
-      primary {
-        height: 11
-        color: 6967599
-        stroke_color: 856032768
-      }
-      priority: 6700
-    }
-  }
-  element {
-    scale: 20
-    area {
-      color: 3430108454
-      priority: 20
-    }
-    caption {
-      primary {
-        height: 11
         color: 6967599
         stroke_color: 856032768
       }
@@ -16563,69 +16888,6 @@ cont {
       priority: -3300
     }
   }
-  element {
-    scale: 18
-    area {
-      color: 3425648640
-      priority: 20
-    }
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 19
-    area {
-      color: 3425648640
-      priority: 20
-    }
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 20
-    area {
-      color: 3425648640
-      priority: 20
-    }
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
 }
 cont {
   name: "boundary-protected_area"
@@ -16744,57 +17006,6 @@ cont {
   }
   element {
     scale: 17
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 18
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 19
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 20
     symbol {
       name: "nparkf-outline-m"
       priority: 6700
@@ -16975,69 +17186,6 @@ cont {
       priority: -3300
     }
   }
-  element {
-    scale: 18
-    area {
-      color: 3425648640
-      priority: 20
-    }
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 19
-    area {
-      color: 3425648640
-      priority: 20
-    }
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 20
-    area {
-      color: 3425648640
-      priority: 20
-    }
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
 }
 cont {
   name: "boundary-protected_area-2"
@@ -17156,57 +17304,6 @@ cont {
   }
   element {
     scale: 17
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 18
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 19
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 20
     symbol {
       name: "nparkf-outline-m"
       priority: 6700
@@ -17355,57 +17452,6 @@ cont {
       priority: -3300
     }
   }
-  element {
-    scale: 18
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 19
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 20
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
 }
 cont {
   name: "boundary-protected_area-4"
@@ -17524,57 +17570,6 @@ cont {
   }
   element {
     scale: 17
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 18
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 19
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 20
     symbol {
       name: "nparkf-outline-m"
       priority: 6700
@@ -17723,57 +17718,6 @@ cont {
       priority: -3300
     }
   }
-  element {
-    scale: 18
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 19
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 20
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
 }
 cont {
   name: "boundary-protected_area-6"
@@ -17892,57 +17836,6 @@ cont {
   }
   element {
     scale: 17
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 18
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 19
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
-    caption {
-      primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
-        offset_y: 1
-        is_optional: true
-      }
-      priority: -3300
-    }
-  }
-  element {
-    scale: 20
     symbol {
       name: "nparkf-outline-m"
       priority: 6700
@@ -22238,8 +22131,8 @@ cont {
   element {
     scale: 11
     lines {
-      width: 0.7
-      color: 1718500679
+      width: 0.9
+      color: 1299070279
       priority: 330
       join: BEVELJOIN
       cap: BUTTCAP
@@ -22248,7 +22141,7 @@ cont {
   element {
     scale: 12
     lines {
-      width: 0.8
+      width: 1.0
       color: 1299070279
       priority: 330
       join: BEVELJOIN
@@ -22259,7 +22152,7 @@ cont {
     scale: 13
     lines {
       width: 1.1
-      color: 7224647
+      color: 862862663
       priority: 330
       cap: BUTTCAP
     }
@@ -22275,7 +22168,7 @@ cont {
   element {
     scale: 14
     lines {
-      width: 1.4
+      width: 1.3
       color: 7224647
       priority: 330
       cap: BUTTCAP
@@ -22292,7 +22185,7 @@ cont {
   element {
     scale: 15
     lines {
-      width: 1.6
+      width: 1.5
       color: 7224647
       priority: 330
       cap: BUTTCAP
@@ -22309,7 +22202,7 @@ cont {
   element {
     scale: 16
     lines {
-      width: 1.9
+      width: 1.7
       color: 7224647
       priority: 330
     }
@@ -22325,7 +22218,7 @@ cont {
   element {
     scale: 17
     lines {
-      width: 2.3
+      width: 2.0
       color: 7224647
       priority: 330
     }
@@ -22341,7 +22234,7 @@ cont {
   element {
     scale: 18
     lines {
-      width: 2.8
+      width: 2.4
       color: 7224647
       priority: 330
     }
@@ -22357,7 +22250,7 @@ cont {
   element {
     scale: 19
     lines {
-      width: 2.8
+      width: 2.4
       color: 7224647
       priority: 330
     }
@@ -22373,7 +22266,7 @@ cont {
   element {
     scale: 20
     lines {
-      width: 2.8
+      width: 2.4
       color: 7224647
       priority: 330
     }
@@ -22392,8 +22285,8 @@ cont {
   element {
     scale: 11
     lines {
-      width: 0.7
-      color: 1718500679
+      width: 0.9
+      color: 1299070279
       priority: 330
       join: BEVELJOIN
       cap: BUTTCAP
@@ -22402,7 +22295,7 @@ cont {
   element {
     scale: 12
     lines {
-      width: 0.8
+      width: 1.0
       color: 1299070279
       priority: 330
       join: BEVELJOIN
@@ -22413,7 +22306,7 @@ cont {
     scale: 13
     lines {
       width: 1.1
-      color: 7224647
+      color: 862862663
       priority: 330
       cap: BUTTCAP
     }
@@ -22429,7 +22322,7 @@ cont {
   element {
     scale: 14
     lines {
-      width: 1.4
+      width: 1.3
       color: 7224647
       priority: 330
       cap: BUTTCAP
@@ -22446,13 +22339,13 @@ cont {
   element {
     scale: 15
     lines {
-      width: 4.2
+      width: 4.0
       color: 858532890
       priority: 150
       cap: BUTTCAP
     }
     lines {
-      width: 1.6
+      width: 1.5
       color: 7224647
       priority: 330
       cap: BUTTCAP
@@ -22469,13 +22362,13 @@ cont {
   element {
     scale: 16
     lines {
-      width: 4.8
+      width: 4.4
       color: 858532890
       priority: 150
       cap: BUTTCAP
     }
     lines {
-      width: 1.9
+      width: 1.7
       color: 7224647
       priority: 330
     }
@@ -22491,19 +22384,19 @@ cont {
   element {
     scale: 17
     lines {
-      width: 7.6
+      width: 7.0
       color: 1297109072
       priority: 140
       cap: BUTTCAP
     }
     lines {
-      width: 6.6
+      width: 6.0
       color: 858532890
       priority: 150
       cap: BUTTCAP
     }
     lines {
-      width: 2.3
+      width: 2.0
       color: 7224647
       priority: 330
     }
@@ -22519,19 +22412,19 @@ cont {
   element {
     scale: 18
     lines {
-      width: 10.6
+      width: 9.8
       color: 1297109072
       priority: 140
       cap: BUTTCAP
     }
     lines {
-      width: 9.6
+      width: 8.8
       color: 858532890
       priority: 150
       cap: BUTTCAP
     }
     lines {
-      width: 2.8
+      width: 2.4
       color: 7224647
       priority: 330
     }
@@ -22547,19 +22440,19 @@ cont {
   element {
     scale: 19
     lines {
-      width: 11.6
+      width: 10.8
       color: 1297109072
       priority: 140
       cap: BUTTCAP
     }
     lines {
-      width: 10.6
+      width: 9.8
       color: 858532890
       priority: 150
       cap: BUTTCAP
     }
     lines {
-      width: 2.8
+      width: 2.4
       color: 7224647
       priority: 330
     }
@@ -22575,19 +22468,19 @@ cont {
   element {
     scale: 20
     lines {
-      width: 11.6
+      width: 10.8
       color: 1297109072
       priority: 140
       cap: BUTTCAP
     }
     lines {
-      width: 10.6
+      width: 9.8
       color: 858532890
       priority: 150
       cap: BUTTCAP
     }
     lines {
-      width: 2.8
+      width: 2.4
       color: 7224647
       priority: 330
     }
@@ -22606,8 +22499,8 @@ cont {
   element {
     scale: 11
     lines {
-      width: 0.7
-      color: 1718500679
+      width: 0.9
+      color: 1299070279
       priority: 330
       join: BEVELJOIN
       cap: BUTTCAP
@@ -22616,7 +22509,7 @@ cont {
   element {
     scale: 12
     lines {
-      width: 0.8
+      width: 1.0
       color: 1299070279
       priority: 330
       join: BEVELJOIN
@@ -22627,7 +22520,7 @@ cont {
     scale: 13
     lines {
       width: 1.1
-      color: 7224647
+      color: 862862663
       priority: 330
       cap: BUTTCAP
     }
@@ -22643,7 +22536,7 @@ cont {
   element {
     scale: 14
     lines {
-      width: 1.4
+      width: 1.3
       color: 7224647
       priority: 330
       cap: BUTTCAP
@@ -22660,7 +22553,7 @@ cont {
   element {
     scale: 15
     lines {
-      width: 1.6
+      width: 1.5
       color: 7224647
       priority: 330
       cap: BUTTCAP
@@ -22677,7 +22570,7 @@ cont {
   element {
     scale: 16
     lines {
-      width: 1.9
+      width: 1.7
       color: 7224647
       priority: 330
     }
@@ -22693,18 +22586,18 @@ cont {
   element {
     scale: 17
     lines {
-      width: 2.3
+      width: 2.0
       color: 7224647
       priority: 330
     }
     lines {
-      width: 6.6
+      width: 6.0
       color: 1294740506
       priority: 50
       cap: BUTTCAP
     }
     lines {
-      width: 7.6
+      width: 7.0
       color: 1297109072
       dashdot {
         dd: 2.0
@@ -22725,18 +22618,18 @@ cont {
   element {
     scale: 18
     lines {
-      width: 2.8
+      width: 2.4
       color: 7224647
       priority: 330
     }
     lines {
-      width: 9.6
+      width: 8.8
       color: 1294740506
       priority: 50
       cap: BUTTCAP
     }
     lines {
-      width: 10.6
+      width: 9.8
       color: 1297109072
       dashdot {
         dd: 2.0
@@ -22757,18 +22650,18 @@ cont {
   element {
     scale: 19
     lines {
-      width: 2.8
+      width: 2.4
       color: 7224647
       priority: 330
     }
     lines {
-      width: 10.6
+      width: 9.8
       color: 1294740506
       priority: 50
       cap: BUTTCAP
     }
     lines {
-      width: 11.6
+      width: 10.8
       color: 1297109072
       dashdot {
         dd: 2.0
@@ -22789,18 +22682,18 @@ cont {
   element {
     scale: 20
     lines {
-      width: 2.8
+      width: 2.4
       color: 7224647
       priority: 330
     }
     lines {
-      width: 10.6
+      width: 9.8
       color: 1294740506
       priority: 50
       cap: BUTTCAP
     }
     lines {
-      width: 11.6
+      width: 10.8
       color: 1297109072
       dashdot {
         dd: 2.0
@@ -22824,28 +22717,28 @@ cont {
   element {
     scale: 17
     symbol {
-      name: "elevator"
+      name: "elevator-s"
       priority: 1200
     }
   }
   element {
     scale: 18
     symbol {
-      name: "elevator"
+      name: "elevator-s"
       priority: 1200
     }
   }
   element {
     scale: 19
     symbol {
-      name: "elevator"
+      name: "elevator-s"
       priority: 1200
     }
   }
   element {
     scale: 20
     symbol {
-      name: "elevator"
+      name: "elevator-s"
       priority: 1200
     }
   }
@@ -23041,200 +22934,6 @@ cont {
         stroke_color: 856032768
       }
       priority: 2950
-    }
-  }
-}
-cont {
-  name: "highway-footway-alpine_hiking"
-  element {
-    scale: 11
-    lines {
-      width: 1.0
-      color: 1720994322
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.1
-      color: 1301563922
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.3
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 1.6
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.0
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 2.6
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 3.3
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
     }
   }
 }
@@ -23461,7 +23160,7 @@ cont {
   }
 }
 cont {
-  name: "highway-footway-bridge"
+  name: "highway-footway-bicycle"
   element {
     scale: 11
     lines {
@@ -23480,12 +23179,249 @@ cont {
     scale: 12
     lines {
       width: 1.1
+      color: 1296778819
+      dashdot {
+        dd: 3.5
+        dd: 2.5
+      }
+      priority: 180
+      join: BEVELJOIN
+      cap: BUTTCAP
+    }
+  }
+  element {
+    scale: 13
+    lines {
+      width: 1.1
+      color: 862862663
+      priority: 170
+      cap: BUTTCAP
+    }
+    lines {
+      width: 1.3
+      color: 860571203
+      dashdot {
+        dd: 4.0
+        dd: 3.0
+      }
+      priority: 180
+      cap: BUTTCAP
+    }
+    path_text {
+      primary {
+        height: 10
+        color: 6710886
+        stroke_color: 856756480
+      }
+      priority: 2950
+    }
+  }
+  element {
+    scale: 14
+    lines {
+      width: 1.3
+      color: 862862663
+      priority: 170
+      cap: BUTTCAP
+    }
+    lines {
+      width: 1.6
+      color: 860571203
+      dashdot {
+        dd: 4.0
+        dd: 3.0
+      }
+      priority: 180
+      cap: BUTTCAP
+    }
+    path_text {
+      primary {
+        height: 11
+        color: 6710886
+        stroke_color: 856756480
+      }
+      priority: 2950
+    }
+  }
+  element {
+    scale: 15
+    lines {
+      width: 1.5
+      color: 862862663
+      priority: 170
+      cap: BUTTCAP
+    }
+    lines {
+      width: 2.0
+      color: 860571203
+      dashdot {
+        dd: 6.0
+        dd: 4.5
+      }
+      priority: 180
+      cap: BUTTCAP
+    }
+    path_text {
+      primary {
+        height: 11
+        color: 6710886
+        stroke_color: 856756480
+      }
+      priority: 2950
+    }
+  }
+  element {
+    scale: 16
+    lines {
+      width: 1.7
+      color: 862862663
+      priority: 170
+    }
+    lines {
+      width: 2.6
+      color: 860571203
+      dashdot {
+        dd: 6.0
+        dd: 4.5
+      }
+      priority: 180
+    }
+    path_text {
+      primary {
+        height: 12
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2950
+    }
+  }
+  element {
+    scale: 17
+    lines {
+      width: 2.0
+      color: 862862663
+      priority: 170
+    }
+    lines {
+      width: 3.3
+      color: 860571203
+      dashdot {
+        dd: 8.0
+        dd: 6.0
+      }
+      priority: 180
+    }
+    path_text {
+      primary {
+        height: 12
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2950
+    }
+  }
+  element {
+    scale: 18
+    lines {
+      width: 2.4
+      color: 862862663
+      priority: 170
+    }
+    lines {
+      width: 4.0
+      color: 4933187
+      dashdot {
+        dd: 8.0
+        dd: 6.0
+      }
+      priority: 180
+    }
+    path_text {
+      primary {
+        height: 12
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2950
+    }
+  }
+  element {
+    scale: 19
+    lines {
+      width: 2.4
+      color: 862862663
+      priority: 170
+    }
+    lines {
+      width: 4.0
+      color: 4933187
+      dashdot {
+        dd: 8.0
+        dd: 6.0
+      }
+      priority: 180
+    }
+    path_text {
+      primary {
+        height: 12
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2950
+    }
+  }
+  element {
+    scale: 20
+    lines {
+      width: 2.4
+      color: 862862663
+      priority: 170
+    }
+    lines {
+      width: 4.0
+      color: 4933187
+      dashdot {
+        dd: 8.0
+        dd: 6.0
+      }
+      priority: 180
+    }
+    path_text {
+      primary {
+        height: 12
+        color: 7829367
+        stroke_color: 856032768
+      }
+      priority: 2950
+    }
+  }
+}
+cont {
+  name: "highway-footway-bridge"
+  element {
+    scale: 11
+    lines {
+      width: 1.0
       color: 4933187
       dashdot {
         dd: 3.5
         dd: 2.0
       }
-      priority: 180
+      priority: 155
+      join: BEVELJOIN
+      cap: BUTTCAP
+    }
+  }
+  element {
+    scale: 12
+    lines {
+      width: 1.1
+      color: 4933187
+      dashdot {
+        dd: 3.5
+        dd: 2.0
+      }
+      priority: 155
       join: BEVELJOIN
       cap: BUTTCAP
     }
@@ -23499,7 +23435,7 @@ cont {
         dd: 4.0
         dd: 2.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -23520,7 +23456,7 @@ cont {
         dd: 4.0
         dd: 2.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -23547,7 +23483,7 @@ cont {
         dd: 6.0
         dd: 3.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -23574,7 +23510,7 @@ cont {
         dd: 6.0
         dd: 3.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -23606,7 +23542,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -23638,7 +23574,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -23670,7 +23606,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -23702,7 +23638,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -23778,976 +23714,6 @@ cont {
   }
 }
 cont {
-  name: "highway-footway-demanding_alpine_hiking"
-  element {
-    scale: 11
-    lines {
-      width: 1.0
-      color: 1720994322
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.1
-      color: 1301563922
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.3
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 1.6
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.0
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 2.6
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 3.3
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-}
-cont {
-  name: "highway-footway-demanding_mountain_hiking"
-  element {
-    scale: 11
-    lines {
-      width: 1.0
-      color: 1720994322
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.1
-      color: 1301563922
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.3
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 1.6
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.0
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 2.6
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 3.3
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-}
-cont {
-  name: "highway-footway-difficult_alpine_hiking"
-  element {
-    scale: 11
-    lines {
-      width: 1.0
-      color: 1720994322
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.1
-      color: 1301563922
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.3
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 1.6
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.0
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 2.6
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 3.3
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-}
-cont {
-  name: "highway-footway-hiking"
-  element {
-    scale: 11
-    lines {
-      width: 1.0
-      color: 1720994322
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.1
-      color: 1301563922
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.3
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 1.6
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.0
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 2.6
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 3.3
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-}
-cont {
-  name: "highway-footway-mountain_hiking"
-  element {
-    scale: 11
-    lines {
-      width: 1.0
-      color: 1720994322
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.1
-      color: 1301563922
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.3
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 1.6
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.0
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 2.6
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 3.3
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-}
-cont {
   name: "highway-footway-sidewalk"
   element {
     scale: 16
@@ -24758,7 +23724,7 @@ cont {
         dd: 6.0
         dd: 3.5
       }
-      priority: 180
+      priority: 155
     }
   }
   element {
@@ -24770,7 +23736,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
   }
   element {
@@ -24782,7 +23748,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
   }
   element {
@@ -24794,7 +23760,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
   }
   element {
@@ -24806,7 +23772,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
   }
 }
@@ -24821,7 +23787,7 @@ cont {
         dd: 3.5
         dd: 2.0
       }
-      priority: 180
+      priority: 155
       join: BEVELJOIN
       cap: BUTTCAP
     }
@@ -24835,7 +23801,7 @@ cont {
         dd: 3.5
         dd: 2.0
       }
-      priority: 180
+      priority: 155
       join: BEVELJOIN
       cap: BUTTCAP
     }
@@ -24849,7 +23815,7 @@ cont {
         dd: 4.0
         dd: 2.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -24870,7 +23836,7 @@ cont {
         dd: 4.0
         dd: 2.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -24891,7 +23857,7 @@ cont {
         dd: 6.0
         dd: 3.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -24912,7 +23878,7 @@ cont {
         dd: 6.0
         dd: 3.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -24932,7 +23898,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     lines {
       width: 7.6
@@ -24968,7 +23934,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     lines {
       width: 9.0
@@ -25004,7 +23970,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     lines {
       width: 9.0
@@ -25040,7 +24006,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     lines {
       width: 9.0
@@ -25699,6 +24665,16 @@ cont {
 cont {
   name: "highway-motorway"
   element {
+    scale: 6
+    lines {
+      width: 0.8
+      color: 1296640283
+      priority: 310
+      join: BEVELJOIN
+      cap: BUTTCAP
+    }
+  }
+  element {
     scale: 7
     lines {
       width: 0.9
@@ -25993,6 +24969,16 @@ cont {
 }
 cont {
   name: "highway-motorway-bridge"
+  element {
+    scale: 6
+    lines {
+      width: 0.8
+      color: 1296640283
+      priority: 310
+      join: BEVELJOIN
+      cap: BUTTCAP
+    }
+  }
   element {
     scale: 7
     lines {
@@ -26384,6 +25370,16 @@ cont {
 }
 cont {
   name: "highway-motorway-tunnel"
+  element {
+    scale: 6
+    lines {
+      width: 0.8
+      color: 1296640283
+      priority: 310
+      join: BEVELJOIN
+      cap: BUTTCAP
+    }
+  }
   element {
     scale: 7
     lines {
@@ -27984,200 +26980,6 @@ cont {
   }
 }
 cont {
-  name: "highway-path-alpine_hiking"
-  element {
-    scale: 11
-    lines {
-      width: 1.0
-      color: 1720994322
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.1
-      color: 1301563922
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.3
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 1.6
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.0
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 2.6
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 3.3
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-}
-cont {
   name: "highway-path-bicycle"
   element {
     scale: 11
@@ -28196,11 +26998,18 @@ cont {
   element {
     scale: 12
     lines {
+      width: 1.0
+      color: 1299070279
+      priority: 170
+      join: BEVELJOIN
+      cap: BUTTCAP
+    }
+    lines {
       width: 1.1
       color: 1301563922
       dashdot {
         dd: 3.5
-        dd: 2.0
+        dd: 2.5
       }
       priority: 180
       join: BEVELJOIN
@@ -28210,11 +27019,17 @@ cont {
   element {
     scale: 13
     lines {
+      width: 1.1
+      color: 862862663
+      priority: 170
+      cap: BUTTCAP
+    }
+    lines {
       width: 1.3
-      color: 9718290
+      color: 865356306
       dashdot {
         dd: 4.0
-        dd: 2.5
+        dd: 3.0
       }
       priority: 180
       cap: BUTTCAP
@@ -28231,11 +27046,17 @@ cont {
   element {
     scale: 14
     lines {
+      width: 1.3
+      color: 7224647
+      priority: 170
+      cap: BUTTCAP
+    }
+    lines {
       width: 1.6
-      color: 9718290
+      color: 865356306
       dashdot {
         dd: 4.0
-        dd: 2.5
+        dd: 3.0
       }
       priority: 180
       cap: BUTTCAP
@@ -28252,11 +27073,17 @@ cont {
   element {
     scale: 15
     lines {
+      width: 1.5
+      color: 7224647
+      priority: 170
+      cap: BUTTCAP
+    }
+    lines {
       width: 2.0
-      color: 9718290
+      color: 865356306
       dashdot {
         dd: 6.0
-        dd: 3.5
+        dd: 4.5
       }
       priority: 180
       cap: BUTTCAP
@@ -28273,11 +27100,16 @@ cont {
   element {
     scale: 16
     lines {
+      width: 1.7
+      color: 7224647
+      priority: 170
+    }
+    lines {
       width: 2.6
-      color: 9718290
+      color: 865356306
       dashdot {
         dd: 6.0
-        dd: 3.5
+        dd: 4.5
       }
       priority: 180
     }
@@ -28293,11 +27125,16 @@ cont {
   element {
     scale: 17
     lines {
+      width: 2.0
+      color: 7224647
+      priority: 170
+    }
+    lines {
       width: 3.3
-      color: 9718290
+      color: 865356306
       dashdot {
         dd: 8.0
-        dd: 4.5
+        dd: 6.0
       }
       priority: 180
     }
@@ -28313,11 +27150,16 @@ cont {
   element {
     scale: 18
     lines {
+      width: 2.4
+      color: 7224647
+      priority: 170
+    }
+    lines {
       width: 4.0
       color: 9718290
       dashdot {
         dd: 8.0
-        dd: 4.5
+        dd: 6.0
       }
       priority: 180
     }
@@ -28333,11 +27175,16 @@ cont {
   element {
     scale: 19
     lines {
+      width: 2.4
+      color: 7224647
+      priority: 170
+    }
+    lines {
       width: 4.0
       color: 9718290
       dashdot {
         dd: 8.0
-        dd: 4.5
+        dd: 6.0
       }
       priority: 180
     }
@@ -28353,11 +27200,16 @@ cont {
   element {
     scale: 20
     lines {
+      width: 2.4
+      color: 7224647
+      priority: 170
+    }
+    lines {
       width: 4.0
       color: 9718290
       dashdot {
         dd: 8.0
-        dd: 4.5
+        dd: 6.0
       }
       priority: 180
     }
@@ -28382,7 +27234,7 @@ cont {
         dd: 3.5
         dd: 2.0
       }
-      priority: 180
+      priority: 155
       join: BEVELJOIN
       cap: BUTTCAP
     }
@@ -28396,7 +27248,7 @@ cont {
         dd: 3.5
         dd: 2.0
       }
-      priority: 180
+      priority: 155
       join: BEVELJOIN
       cap: BUTTCAP
     }
@@ -28410,7 +27262,7 @@ cont {
         dd: 4.0
         dd: 2.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -28431,7 +27283,7 @@ cont {
         dd: 4.0
         dd: 2.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -28458,7 +27310,7 @@ cont {
         dd: 6.0
         dd: 3.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -28485,7 +27337,7 @@ cont {
         dd: 6.0
         dd: 3.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -28517,7 +27369,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -28549,7 +27401,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -28581,7 +27433,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -28613,7 +27465,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -28626,14 +27478,14 @@ cont {
   }
 }
 cont {
-  name: "highway-path-demanding_alpine_hiking"
+  name: "highway-path-difficult"
   element {
     scale: 11
     lines {
       width: 1.0
-      color: 1720994322
+      color: 1301563922
       dashdot {
-        dd: 3.5
+        dd: 1.0
         dd: 2.0
       }
       priority: 180
@@ -28645,9 +27497,9 @@ cont {
     scale: 12
     lines {
       width: 1.1
-      color: 1301563922
+      color: 865356306
       dashdot {
-        dd: 3.5
+        dd: 1.0
         dd: 2.0
       }
       priority: 180
@@ -28661,7 +27513,7 @@ cont {
       width: 1.3
       color: 9718290
       dashdot {
-        dd: 4.0
+        dd: 1.5
         dd: 2.5
       }
       priority: 180
@@ -28682,7 +27534,7 @@ cont {
       width: 1.6
       color: 9718290
       dashdot {
-        dd: 4.0
+        dd: 1.5
         dd: 2.5
       }
       priority: 180
@@ -28703,8 +27555,8 @@ cont {
       width: 2.0
       color: 9718290
       dashdot {
-        dd: 6.0
-        dd: 3.5
+        dd: 2.5
+        dd: 4.0
       }
       priority: 180
       cap: BUTTCAP
@@ -28724,8 +27576,8 @@ cont {
       width: 2.6
       color: 9718290
       dashdot {
-        dd: 6.0
-        dd: 3.5
+        dd: 2.5
+        dd: 4.0
       }
       priority: 180
     }
@@ -28744,8 +27596,8 @@ cont {
       width: 3.3
       color: 9718290
       dashdot {
-        dd: 8.0
-        dd: 4.5
+        dd: 3.6
+        dd: 5.0
       }
       priority: 180
     }
@@ -28764,8 +27616,8 @@ cont {
       width: 4.0
       color: 9718290
       dashdot {
-        dd: 8.0
-        dd: 4.5
+        dd: 3.6
+        dd: 5.0
       }
       priority: 180
     }
@@ -28784,8 +27636,8 @@ cont {
       width: 4.0
       color: 9718290
       dashdot {
-        dd: 8.0
-        dd: 4.5
+        dd: 3.6
+        dd: 5.0
       }
       priority: 180
     }
@@ -28804,8 +27656,8 @@ cont {
       width: 4.0
       color: 9718290
       dashdot {
-        dd: 8.0
-        dd: 4.5
+        dd: 3.6
+        dd: 5.0
       }
       priority: 180
     }
@@ -28820,14 +27672,14 @@ cont {
   }
 }
 cont {
-  name: "highway-path-demanding_mountain_hiking"
+  name: "highway-path-expert"
   element {
     scale: 11
     lines {
       width: 1.0
-      color: 1720994322
+      color: 1297235507
       dashdot {
-        dd: 3.5
+        dd: 1.0
         dd: 2.0
       }
       priority: 180
@@ -28839,9 +27691,9 @@ cont {
     scale: 12
     lines {
       width: 1.1
-      color: 1301563922
+      color: 861027891
       dashdot {
-        dd: 3.5
+        dd: 1.0
         dd: 2.0
       }
       priority: 180
@@ -28853,10 +27705,10 @@ cont {
     scale: 13
     lines {
       width: 1.3
-      color: 9718290
+      color: 5389875
       dashdot {
-        dd: 4.0
-        dd: 2.5
+        dd: 1.4
+        dd: 5.0
       }
       priority: 180
       cap: BUTTCAP
@@ -28874,10 +27726,10 @@ cont {
     scale: 14
     lines {
       width: 1.6
-      color: 9718290
+      color: 5389875
       dashdot {
-        dd: 4.0
-        dd: 2.5
+        dd: 1.4
+        dd: 5.0
       }
       priority: 180
       cap: BUTTCAP
@@ -28895,10 +27747,10 @@ cont {
     scale: 15
     lines {
       width: 2.0
-      color: 9718290
+      color: 5389875
       dashdot {
-        dd: 6.0
-        dd: 3.5
+        dd: 2.3
+        dd: 9.0
       }
       priority: 180
       cap: BUTTCAP
@@ -28916,10 +27768,10 @@ cont {
     scale: 16
     lines {
       width: 2.6
-      color: 9718290
+      color: 5389875
       dashdot {
-        dd: 6.0
-        dd: 3.5
+        dd: 2.3
+        dd: 9.0
       }
       priority: 180
     }
@@ -28936,10 +27788,10 @@ cont {
     scale: 17
     lines {
       width: 3.3
-      color: 9718290
+      color: 5389875
       dashdot {
-        dd: 8.0
-        dd: 4.5
+        dd: 3.5
+        dd: 11.0
       }
       priority: 180
     }
@@ -28956,10 +27808,10 @@ cont {
     scale: 18
     lines {
       width: 4.0
-      color: 9718290
+      color: 5389875
       dashdot {
-        dd: 8.0
-        dd: 4.5
+        dd: 3.5
+        dd: 11.0
       }
       priority: 180
     }
@@ -28976,10 +27828,10 @@ cont {
     scale: 19
     lines {
       width: 4.0
-      color: 9718290
+      color: 5389875
       dashdot {
-        dd: 8.0
-        dd: 4.5
+        dd: 3.5
+        dd: 11.0
       }
       priority: 180
     }
@@ -28996,398 +27848,10 @@ cont {
     scale: 20
     lines {
       width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-}
-cont {
-  name: "highway-path-difficult_alpine_hiking"
-  element {
-    scale: 11
-    lines {
-      width: 1.0
-      color: 1720994322
+      color: 5389875
       dashdot {
         dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.1
-      color: 1301563922
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.3
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 1.6
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.0
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 2.6
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 3.3
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-}
-cont {
-  name: "highway-path-hiking"
-  element {
-    scale: 11
-    lines {
-      width: 1.0
-      color: 1720994322
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.1
-      color: 1301563922
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.3
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 1.6
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.0
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 2.6
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 3.3
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
+        dd: 11.0
       }
       priority: 180
     }
@@ -29412,7 +27876,7 @@ cont {
         dd: 3.5
         dd: 2.0
       }
-      priority: 180
+      priority: 155
       join: BEVELJOIN
       cap: BUTTCAP
     }
@@ -29426,7 +27890,7 @@ cont {
         dd: 3.5
         dd: 2.0
       }
-      priority: 180
+      priority: 155
       join: BEVELJOIN
       cap: BUTTCAP
     }
@@ -29440,7 +27904,7 @@ cont {
         dd: 4.0
         dd: 2.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -29461,7 +27925,7 @@ cont {
         dd: 4.0
         dd: 2.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -29482,7 +27946,7 @@ cont {
         dd: 6.0
         dd: 3.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -29503,7 +27967,7 @@ cont {
         dd: 6.0
         dd: 3.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -29523,7 +27987,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -29543,7 +28007,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -29563,7 +28027,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -29583,201 +28047,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-}
-cont {
-  name: "highway-path-mountain_hiking"
-  element {
-    scale: 11
-    lines {
-      width: 1.0
-      color: 1720994322
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.1
-      color: 1301563922
-      dashdot {
-        dd: 3.5
-        dd: 2.0
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.3
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 1.6
-      color: 9718290
-      dashdot {
-        dd: 4.0
-        dd: 2.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.0
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 2.6
-      color: 9718290
-      dashdot {
-        dd: 6.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 3.3
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2820
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 4.0
-      color: 9718290
-      dashdot {
-        dd: 8.0
-        dd: 4.5
-      }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -29800,7 +28070,7 @@ cont {
         dd: 3.5
         dd: 2.0
       }
-      priority: 180
+      priority: 155
       join: BEVELJOIN
       cap: BUTTCAP
     }
@@ -29814,7 +28084,7 @@ cont {
         dd: 3.5
         dd: 2.0
       }
-      priority: 180
+      priority: 155
       join: BEVELJOIN
       cap: BUTTCAP
     }
@@ -29828,7 +28098,7 @@ cont {
         dd: 4.0
         dd: 2.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -29849,7 +28119,7 @@ cont {
         dd: 4.0
         dd: 2.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -29870,7 +28140,7 @@ cont {
         dd: 6.0
         dd: 3.5
       }
-      priority: 180
+      priority: 155
       cap: BUTTCAP
     }
     path_text {
@@ -29891,7 +28161,7 @@ cont {
         dd: 6.0
         dd: 3.5
       }
-      priority: 180
+      priority: 155
     }
     path_text {
       primary {
@@ -29911,7 +28181,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     lines {
       width: 7.6
@@ -29947,7 +28217,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     lines {
       width: 9.0
@@ -29983,7 +28253,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     lines {
       width: 9.0
@@ -30019,7 +28289,7 @@ cont {
         dd: 8.0
         dd: 4.5
       }
-      priority: 180
+      priority: 155
     }
     lines {
       width: 9.0
@@ -38911,976 +37181,6 @@ cont {
   }
 }
 cont {
-  name: "highway-track-grade1"
-  element {
-    scale: 11
-    lines {
-      width: 1.1
-      color: 1717523245
-      dashdot {
-        dd: 6.0
-        dd: 2.5
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.3
-      color: 1298092845
-      dashdot {
-        dd: 6.0
-        dd: 2.5
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.6
-      color: 6247213
-      dashdot {
-        dd: 7.0
-        dd: 3.0
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 2.0
-      color: 6247213
-      dashdot {
-        dd: 7.0
-        dd: 3.0
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.5
-      color: 6247213
-      dashdot {
-        dd: 9.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 3.2
-      color: 6247213
-      dashdot {
-        dd: 9.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 4.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-}
-cont {
-  name: "highway-track-grade2"
-  element {
-    scale: 11
-    lines {
-      width: 1.1
-      color: 1717523245
-      dashdot {
-        dd: 6.0
-        dd: 2.5
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.3
-      color: 1298092845
-      dashdot {
-        dd: 6.0
-        dd: 2.5
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.6
-      color: 6247213
-      dashdot {
-        dd: 7.0
-        dd: 3.0
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 2.0
-      color: 6247213
-      dashdot {
-        dd: 7.0
-        dd: 3.0
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.5
-      color: 6247213
-      dashdot {
-        dd: 9.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 3.2
-      color: 6247213
-      dashdot {
-        dd: 9.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 4.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-}
-cont {
-  name: "highway-track-grade3"
-  element {
-    scale: 11
-    lines {
-      width: 1.1
-      color: 1717523245
-      dashdot {
-        dd: 6.0
-        dd: 2.5
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.3
-      color: 1298092845
-      dashdot {
-        dd: 6.0
-        dd: 2.5
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.6
-      color: 6247213
-      dashdot {
-        dd: 7.0
-        dd: 3.0
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 2.0
-      color: 6247213
-      dashdot {
-        dd: 7.0
-        dd: 3.0
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.5
-      color: 6247213
-      dashdot {
-        dd: 9.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 3.2
-      color: 6247213
-      dashdot {
-        dd: 9.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 4.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-}
-cont {
-  name: "highway-track-grade4"
-  element {
-    scale: 11
-    lines {
-      width: 1.1
-      color: 1717523245
-      dashdot {
-        dd: 6.0
-        dd: 2.5
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.3
-      color: 1298092845
-      dashdot {
-        dd: 6.0
-        dd: 2.5
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.6
-      color: 6247213
-      dashdot {
-        dd: 7.0
-        dd: 3.0
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 2.0
-      color: 6247213
-      dashdot {
-        dd: 7.0
-        dd: 3.0
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.5
-      color: 6247213
-      dashdot {
-        dd: 9.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 3.2
-      color: 6247213
-      dashdot {
-        dd: 9.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 4.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-}
-cont {
-  name: "highway-track-grade5"
-  element {
-    scale: 11
-    lines {
-      width: 1.1
-      color: 1717523245
-      dashdot {
-        dd: 6.0
-        dd: 2.5
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 1.3
-      color: 1298092845
-      dashdot {
-        dd: 6.0
-        dd: 2.5
-      }
-      priority: 180
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 1.6
-      color: 6247213
-      dashdot {
-        dd: 7.0
-        dd: 3.0
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 2.0
-      color: 6247213
-      dashdot {
-        dd: 7.0
-        dd: 3.0
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 2.5
-      color: 6247213
-      dashdot {
-        dd: 9.0
-        dd: 3.5
-      }
-      priority: 180
-      cap: BUTTCAP
-    }
-    path_text {
-      primary {
-        height: 11
-        color: 6710886
-        stroke_color: 856756480
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 3.2
-      color: 6247213
-      dashdot {
-        dd: 9.0
-        dd: 3.5
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 4.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 5.0
-      color: 6247213
-      dashdot {
-        dd: 12.0
-        dd: 4.0
-      }
-      priority: 180
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 7829367
-        stroke_color: 856032768
-      }
-      priority: 2780
-    }
-  }
-}
-cont {
   name: "highway-track-no-access"
   element {
     scale: 11
@@ -40335,6 +37635,16 @@ cont {
 cont {
   name: "highway-trunk"
   element {
+    scale: 6
+    lines {
+      width: 0.8
+      color: 1296640283
+      priority: 310
+      join: BEVELJOIN
+      cap: BUTTCAP
+    }
+  }
+  element {
     scale: 7
     lines {
       width: 0.9
@@ -40629,6 +37939,16 @@ cont {
 }
 cont {
   name: "highway-trunk-bridge"
+  element {
+    scale: 6
+    lines {
+      width: 0.8
+      color: 1296640283
+      priority: 310
+      join: BEVELJOIN
+      cap: BUTTCAP
+    }
+  }
   element {
     scale: 7
     lines {
@@ -41020,6 +38340,16 @@ cont {
 }
 cont {
   name: "highway-trunk-tunnel"
+  element {
+    scale: 6
+    lines {
+      width: 0.8
+      color: 1296640283
+      priority: 310
+      join: BEVELJOIN
+      cap: BUTTCAP
+    }
+  }
   element {
     scale: 7
     lines {
@@ -53896,6 +51226,114 @@ cont {
   }
 }
 cont {
+  name: "leisure-miniature_golf"
+  element {
+    scale: 14
+    area {
+      color: 1251584
+      priority: -1860
+    }
+  }
+  element {
+    scale: 15
+    area {
+      color: 1251584
+      priority: -1860
+    }
+  }
+  element {
+    scale: 16
+    area {
+      color: 1251584
+      priority: -1860
+    }
+  }
+  element {
+    scale: 17
+    area {
+      color: 1251584
+      priority: -1860
+    }
+    symbol {
+      name: "golf-m"
+      priority: 1800
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 10
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8200
+    }
+  }
+  element {
+    scale: 18
+    area {
+      color: 1251584
+      priority: -1860
+    }
+    symbol {
+      name: "golf-m"
+      priority: 1800
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 10
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8200
+    }
+  }
+  element {
+    scale: 19
+    area {
+      color: 1251584
+      priority: -1860
+    }
+    symbol {
+      name: "golf-m"
+      priority: 1800
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 10
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8200
+    }
+  }
+  element {
+    scale: 20
+    area {
+      color: 1251584
+      priority: -1860
+    }
+    symbol {
+      name: "golf-m"
+      priority: 1800
+      min_distance: 10
+    }
+    caption {
+      primary {
+        height: 10
+        color: 9211020
+        offset_y: 1
+        is_optional: true
+      }
+      priority: -8200
+    }
+  }
+}
+cont {
   name: "leisure-nature_reserve"
   element {
     scale: 10
@@ -54061,65 +51499,35 @@ cont {
   }
   element {
     scale: 18
-    area {
-      color: 3425648640
-      priority: 20
-    }
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
     caption {
       primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
+        height: 10
+        color: 9211020
         offset_y: 1
-        is_optional: true
       }
-      priority: -3300
+      priority: 6700
     }
   }
   element {
     scale: 19
-    area {
-      color: 3425648640
-      priority: 20
-    }
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
     caption {
       primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
+        height: 10
+        color: 9211020
         offset_y: 1
-        is_optional: true
       }
-      priority: -3300
+      priority: 6700
     }
   }
   element {
     scale: 20
-    area {
-      color: 3425648640
-      priority: 20
-    }
-    symbol {
-      name: "nparkf-outline-m"
-      priority: 6700
-    }
     caption {
       primary {
-        height: 12
-        color: 2836760
-        stroke_color: 436602368
+        height: 10
+        color: 9211020
         offset_y: 1
-        is_optional: true
       }
-      priority: -3300
+      priority: 6700
     }
   }
 }
@@ -56336,7 +53744,7 @@ cont {
     lines {
       width: 1.5
       color: 1294016795
-      priority: 180
+      priority: 160
       cap: BUTTCAP
     }
   }
@@ -56345,7 +53753,7 @@ cont {
     lines {
       width: 1.8
       color: 1294016795
-      priority: 180
+      priority: 160
     }
     caption {
       primary {
@@ -56361,7 +53769,7 @@ cont {
     lines {
       width: 3.0
       color: 857809179
-      priority: 180
+      priority: 160
     }
     caption {
       primary {
@@ -56378,7 +53786,7 @@ cont {
     lines {
       width: 3.0
       color: 857809179
-      priority: 180
+      priority: 160
     }
     caption {
       primary {
@@ -56395,7 +53803,7 @@ cont {
     lines {
       width: 4.0
       color: 857809179
-      priority: 180
+      priority: 160
     }
     caption {
       primary {
@@ -56412,7 +53820,7 @@ cont {
     lines {
       width: 4.0
       color: 857809179
-      priority: 180
+      priority: 160
     }
     caption {
       primary {
@@ -68078,31 +65486,31 @@ cont {
     scale: 12
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 13
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 11
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
       priority: 7350
     }
-    apply_if: "population<40000"
+    apply_if: "population>=0"
   }
   element {
     scale: 13
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68114,13 +65522,13 @@ cont {
     scale: 14
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68132,13 +65540,13 @@ cont {
     scale: 15
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68150,13 +65558,13 @@ cont {
     scale: 16
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68168,13 +65576,13 @@ cont {
     scale: 17
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68186,13 +65594,13 @@ cont {
     scale: 18
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68204,13 +65612,13 @@ cont {
     scale: 19
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68222,13 +65630,13 @@ cont {
     scale: 20
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68387,31 +65795,31 @@ cont {
     scale: 12
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 13
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 11
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
       priority: 7400
     }
-    apply_if: "population<40000"
+    apply_if: "population>=0"
   }
   element {
     scale: 13
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68423,13 +65831,13 @@ cont {
     scale: 14
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68441,13 +65849,13 @@ cont {
     scale: 15
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68459,13 +65867,13 @@ cont {
     scale: 16
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68477,13 +65885,13 @@ cont {
     scale: 17
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68495,13 +65903,13 @@ cont {
     scale: 18
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68513,13 +65921,13 @@ cont {
     scale: 19
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68531,13 +65939,13 @@ cont {
     scale: 20
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68696,31 +66104,31 @@ cont {
     scale: 12
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 13
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 11
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
       priority: 7400
     }
-    apply_if: "population<40000"
+    apply_if: "population>=0"
   }
   element {
     scale: 13
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68732,13 +66140,13 @@ cont {
     scale: 14
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68750,13 +66158,13 @@ cont {
     scale: 15
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68768,13 +66176,13 @@ cont {
     scale: 16
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68786,13 +66194,13 @@ cont {
     scale: 17
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68804,13 +66212,13 @@ cont {
     scale: 18
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68822,13 +66230,13 @@ cont {
     scale: 19
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -68840,13 +66248,13 @@ cont {
     scale: 20
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69005,31 +66413,31 @@ cont {
     scale: 12
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 13
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 11
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
       priority: 7400
     }
-    apply_if: "population<40000"
+    apply_if: "population>=0"
   }
   element {
     scale: 13
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69041,13 +66449,13 @@ cont {
     scale: 14
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69059,13 +66467,13 @@ cont {
     scale: 15
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69077,13 +66485,13 @@ cont {
     scale: 16
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69095,13 +66503,13 @@ cont {
     scale: 17
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69113,13 +66521,13 @@ cont {
     scale: 18
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69131,13 +66539,13 @@ cont {
     scale: 19
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69149,13 +66557,13 @@ cont {
     scale: 20
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69725,31 +67133,31 @@ cont {
     scale: 12
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 13
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 11
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
       priority: 7500
     }
-    apply_if: "population<40000"
+    apply_if: "population>=0"
   }
   element {
     scale: 13
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69761,13 +67169,13 @@ cont {
     scale: 14
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69779,13 +67187,13 @@ cont {
     scale: 15
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69797,13 +67205,13 @@ cont {
     scale: 16
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69815,13 +67223,13 @@ cont {
     scale: 17
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69833,13 +67241,13 @@ cont {
     scale: 18
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69851,13 +67259,13 @@ cont {
     scale: 19
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -69869,13 +67277,13 @@ cont {
     scale: 20
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70034,31 +67442,31 @@ cont {
     scale: 12
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 13
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 11
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
       priority: 7500
     }
-    apply_if: "population<40000"
+    apply_if: "population>=0"
   }
   element {
     scale: 13
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70070,13 +67478,13 @@ cont {
     scale: 14
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70088,13 +67496,13 @@ cont {
     scale: 15
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70106,13 +67514,13 @@ cont {
     scale: 16
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70124,13 +67532,13 @@ cont {
     scale: 17
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70142,13 +67550,13 @@ cont {
     scale: 18
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70160,13 +67568,13 @@ cont {
     scale: 19
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70178,13 +67586,13 @@ cont {
     scale: 20
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70343,31 +67751,31 @@ cont {
     scale: 12
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 13
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 11
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
       priority: 7400
     }
-    apply_if: "population<40000"
+    apply_if: "population>=0"
   }
   element {
     scale: 13
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70379,13 +67787,13 @@ cont {
     scale: 14
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70397,13 +67805,13 @@ cont {
     scale: 15
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70415,13 +67823,13 @@ cont {
     scale: 16
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70433,13 +67841,13 @@ cont {
     scale: 17
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70451,13 +67859,13 @@ cont {
     scale: 18
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70469,13 +67877,13 @@ cont {
     scale: 19
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70487,13 +67895,13 @@ cont {
     scale: 20
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70652,31 +68060,31 @@ cont {
     scale: 12
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 13
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 11
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
       priority: 7400
     }
-    apply_if: "population<40000"
+    apply_if: "population>=0"
   }
   element {
     scale: 13
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70688,13 +68096,13 @@ cont {
     scale: 14
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70706,13 +68114,13 @@ cont {
     scale: 15
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70724,13 +68132,13 @@ cont {
     scale: 16
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70742,13 +68150,13 @@ cont {
     scale: 17
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70760,13 +68168,13 @@ cont {
     scale: 18
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70778,13 +68186,13 @@ cont {
     scale: 19
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70796,13 +68204,13 @@ cont {
     scale: 20
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70961,31 +68369,31 @@ cont {
     scale: 12
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 13
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 11
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
       priority: 7400
     }
-    apply_if: "population<40000"
+    apply_if: "population>=0"
   }
   element {
     scale: 13
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -70997,13 +68405,13 @@ cont {
     scale: 14
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71015,13 +68423,13 @@ cont {
     scale: 15
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71033,13 +68441,13 @@ cont {
     scale: 16
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71051,13 +68459,13 @@ cont {
     scale: 17
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71069,13 +68477,13 @@ cont {
     scale: 18
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71087,13 +68495,13 @@ cont {
     scale: 19
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71105,13 +68513,13 @@ cont {
     scale: 20
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71270,31 +68678,31 @@ cont {
     scale: 12
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 13
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 11
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
       priority: 7400
     }
-    apply_if: "population<40000"
+    apply_if: "population>=0"
   }
   element {
     scale: 13
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71306,13 +68714,13 @@ cont {
     scale: 14
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71324,13 +68732,13 @@ cont {
     scale: 15
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71342,13 +68750,13 @@ cont {
     scale: 16
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71360,13 +68768,13 @@ cont {
     scale: 17
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71378,13 +68786,13 @@ cont {
     scale: 18
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71396,13 +68804,13 @@ cont {
     scale: 19
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71414,13 +68822,13 @@ cont {
     scale: 20
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71579,31 +68987,31 @@ cont {
     scale: 12
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 13
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 11
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
       priority: 7400
     }
-    apply_if: "population<40000"
+    apply_if: "population>=0"
   }
   element {
     scale: 13
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71615,13 +69023,13 @@ cont {
     scale: 14
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71633,13 +69041,13 @@ cont {
     scale: 15
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71651,13 +69059,13 @@ cont {
     scale: 16
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71669,13 +69077,13 @@ cont {
     scale: 17
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71687,13 +69095,13 @@ cont {
     scale: 18
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71705,13 +69113,13 @@ cont {
     scale: 19
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -71723,13 +69131,13 @@ cont {
     scale: 20
     caption {
       primary {
-        height: 10
-        color: 8947848
+        height: 14
+        color: 7829367
         stroke_color: 394752
       }
       secondary {
-        height: 10
-        color: 8947848
+        height: 12
+        color: 7829367
         stroke_color: 394752
         offset_y: 1
       }
@@ -118943,7 +116351,7 @@ cont {
   element {
     scale: 16
     symbol {
-      name: "laundry-m"
+      name: "dry_cleaning-m"
       priority: 1600
       min_distance: 10
     }
@@ -118960,7 +116368,7 @@ cont {
   element {
     scale: 17
     symbol {
-      name: "laundry-m"
+      name: "dry_cleaning-m"
       priority: 1600
       min_distance: 24
     }
@@ -118977,7 +116385,7 @@ cont {
   element {
     scale: 18
     symbol {
-      name: "laundry-m"
+      name: "dry_cleaning-m"
       priority: 1600
       min_distance: 24
     }
@@ -118994,7 +116402,7 @@ cont {
   element {
     scale: 19
     symbol {
-      name: "laundry-m"
+      name: "dry_cleaning-m"
       priority: 1600
       min_distance: 24
     }
@@ -119011,7 +116419,7 @@ cont {
   element {
     scale: 20
     symbol {
-      name: "laundry-m"
+      name: "dry_cleaning-m"
       priority: 1600
       min_distance: 24
     }
@@ -131620,293 +129028,6 @@ cont {
       width: 4.6
       color: 401446
       priority: -990
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 19033
-        stroke_color: 2147878400
-      }
-      priority: 3150
-    }
-  }
-}
-cont {
-  name: "waterway-riverbank"
-  element {
-    scale: 1
-    area {
-      color: 8738
-      priority: -980
-    }
-  }
-  element {
-    scale: 2
-    area {
-      color: 8738
-      priority: -980
-    }
-  }
-  element {
-    scale: 3
-    area {
-      color: 8738
-      priority: -980
-    }
-  }
-  element {
-    scale: 4
-    area {
-      color: 8738
-      priority: -980
-    }
-  }
-  element {
-    scale: 5
-    area {
-      color: 8738
-      priority: -980
-    }
-  }
-  element {
-    scale: 6
-    area {
-      color: 8738
-      priority: -980
-    }
-  }
-  element {
-    scale: 7
-    area {
-      color: 8738
-      priority: -980
-    }
-  }
-  element {
-    scale: 8
-    area {
-      color: 8738
-      priority: -980
-    }
-  }
-  element {
-    scale: 9
-    area {
-      color: 8738
-      priority: -980
-    }
-  }
-  element {
-    scale: 10
-    lines {
-      width: 1.4
-      color: 1292247078
-      priority: -980
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-    area {
-      color: 8738
-      priority: -980
-    }
-  }
-  element {
-    scale: 11
-    lines {
-      width: 2.0
-      color: 1292247078
-      priority: -980
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-    area {
-      color: 8738
-      priority: -980
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 19033
-        stroke_color: 2147878400
-      }
-      priority: 3150
-    }
-  }
-  element {
-    scale: 12
-    lines {
-      width: 2.0
-      color: 1292247078
-      priority: -980
-      join: BEVELJOIN
-      cap: BUTTCAP
-    }
-    area {
-      color: 8738
-      priority: -980
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 19033
-        stroke_color: 2147878400
-      }
-      priority: 3150
-    }
-  }
-  element {
-    scale: 13
-    lines {
-      width: 2.7
-      color: 401446
-      priority: -980
-      cap: BUTTCAP
-    }
-    area {
-      color: 8738
-      priority: -980
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 19033
-        stroke_color: 2147878400
-      }
-      priority: 3150
-    }
-  }
-  element {
-    scale: 14
-    lines {
-      width: 3.5
-      color: 401446
-      priority: -980
-      cap: BUTTCAP
-    }
-    area {
-      color: 8738
-      priority: -980
-    }
-    path_text {
-      primary {
-        height: 10
-        color: 19033
-        stroke_color: 2147878400
-      }
-      priority: 3150
-    }
-  }
-  element {
-    scale: 15
-    lines {
-      width: 4.6
-      color: 401446
-      priority: -980
-      cap: BUTTCAP
-    }
-    area {
-      color: 8738
-      priority: -980
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 19033
-        stroke_color: 2147878400
-      }
-      priority: 3150
-    }
-  }
-  element {
-    scale: 16
-    lines {
-      width: 4.6
-      color: 401446
-      priority: -980
-    }
-    area {
-      color: 8738
-      priority: -980
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 19033
-        stroke_color: 2147878400
-      }
-      priority: 3150
-    }
-  }
-  element {
-    scale: 17
-    lines {
-      width: 4.6
-      color: 401446
-      priority: -980
-    }
-    area {
-      color: 8738
-      priority: -980
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 19033
-        stroke_color: 2147878400
-      }
-      priority: 3150
-    }
-  }
-  element {
-    scale: 18
-    lines {
-      width: 4.6
-      color: 401446
-      priority: -980
-    }
-    area {
-      color: 8738
-      priority: -980
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 19033
-        stroke_color: 2147878400
-      }
-      priority: 3150
-    }
-  }
-  element {
-    scale: 19
-    lines {
-      width: 4.6
-      color: 401446
-      priority: -980
-    }
-    area {
-      color: 8738
-      priority: -980
-    }
-    path_text {
-      primary {
-        height: 12
-        color: 19033
-        stroke_color: 2147878400
-      }
-      priority: 3150
-    }
-  }
-  element {
-    scale: 20
-    lines {
-      width: 4.6
-      color: 401446
-      priority: -980
-    }
-    area {
-      color: 8738
-      priority: -980
     }
     path_text {
       primary {

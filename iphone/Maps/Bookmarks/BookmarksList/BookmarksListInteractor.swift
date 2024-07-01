@@ -15,40 +15,21 @@ extension BookmarksListSortingType {
   }
 }
 
-enum ExportFileStatus {
-  case success
-  case empty
-  case error
-}
+final class BookmarksListInteractor: NSObject {
+  private var markGroupId: MWMMarkGroupID
+  private var bookmarksManager: BookmarksManager
 
-fileprivate final class BookmarksManagerListener: NSObject {
-  private var callback: (ExportFileStatus) -> Void
-
-  init(_ callback: @escaping (ExportFileStatus) -> Void) {
-    self.callback = callback
-  }
-}
-
-extension BookmarksManagerListener: BookmarksObserver {
-  func onBookmarksCategoryFilePrepared(_ status: BookmarksShareStatus) {
-    switch status {
-    case .success:
-      callback(.success)
-    case .emptyCategory:
-      callback(.empty)
-    case .archiveError, .fileError:
-      callback(.error)
-    }
-  }
-}
-
-final class BookmarksListInteractor {
-  private let markGroupId: MWMMarkGroupID
-  private var bookmarksManager: BookmarksManager { BookmarksManager.shared() }
-  private var bookmarksManagerListener: BookmarksManagerListener?
+  var onCategoryReload: ((GroupReloadingResult) -> Void)?
 
   init(markGroupId: MWMMarkGroupID) {
     self.markGroupId = markGroupId
+    self.bookmarksManager = BookmarksManager.shared()
+    super.init()
+    self.addToBookmarksManagerObserverList()
+  }
+
+  deinit {
+    removeFromBookmarksManagerObserverList()
   }
 }
 
@@ -172,21 +153,34 @@ extension BookmarksListInteractor: IBookmarksListInteractor {
     bookmarksManager.userCategoriesCount() > 1
   }
 
-  func exportFile(_ completion: @escaping (URL?, ExportFileStatus) -> Void) {
-    bookmarksManagerListener = BookmarksManagerListener({ [weak self] status in
-      guard let self = self else { return }
-      self.bookmarksManager.remove(self.bookmarksManagerListener!)
-      var url: URL? = nil
-      if status == .success {
-        url = self.bookmarksManager.shareCategoryURL()
-      }
-      completion(url, status)
-    })
-    bookmarksManager.add(bookmarksManagerListener!)
-    bookmarksManager.shareCategory(markGroupId)
+  func exportFile(fileType: KmlFileType, completion: @escaping SharingResultCompletionHandler) {
+    bookmarksManager.shareCategory(markGroupId, fileType: fileType, completion: completion)
   }
 
   func finishExportFile() {
     bookmarksManager.finishShareCategory()
+  }
+
+  func addToBookmarksManagerObserverList() {
+    bookmarksManager.add(self)
+  }
+
+  func removeFromBookmarksManagerObserverList() {
+    bookmarksManager.remove(self)
+  }
+
+  func reloadCategory() {
+    onCategoryReload?(bookmarksManager.hasCategory(markGroupId) ? .success : .notFound)
+  }
+}
+
+// MARK: - BookmarksObserver
+extension BookmarksListInteractor: BookmarksObserver {
+  func onBookmarksLoadFinished() {
+    reloadCategory()
+  }
+
+  func onBookmarksCategoryDeleted(_ groupId: MWMMarkGroupID) {
+    reloadCategory()
   }
 }

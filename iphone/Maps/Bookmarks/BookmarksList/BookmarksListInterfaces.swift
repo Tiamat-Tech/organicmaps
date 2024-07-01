@@ -6,6 +6,16 @@ enum BookmarksListVisibilityButtonState {
   case showAll
 }
 
+enum BookmarkToolbarButtonSource {
+  case sort
+  case more
+}
+
+enum GroupReloadingResult {
+  case success
+  case notFound
+}
+
 protocol IBookmarksListSectionViewModel {
   var numberOfItems: Int { get }
   var sectionTitle: String { get }
@@ -51,7 +61,7 @@ protocol IBookmarksListView: AnyObject {
   func setInfo(_ info: IBookmarksListInfoViewModel)
   func setSections(_ sections: [IBookmarksListSectionViewModel])
   func setMoreItemTitle(_ itemTitle: String)
-  func showMenu(_ items: [IBookmarksListMenuItem])
+  func showMenu(_ items: [IBookmarksListMenuItem], from source: BookmarkToolbarButtonSource)
   func showColorPicker(with pickerType: ColorPickerType, _ completion: ((UIColor) -> Void)?)
   func enableEditing(_ enable: Bool)
   func share(_ url: URL, completion: @escaping () -> Void)
@@ -84,6 +94,8 @@ enum BookmarksListSortingType {
 }
 
 protocol IBookmarksListInteractor {
+  var onCategoryReload: ((GroupReloadingResult) -> Void)? { get set }
+
   func getBookmarkGroup() -> BookmarkGroup
   func hasDescription() -> Bool
   func prepareForSearch()
@@ -106,7 +118,7 @@ protocol IBookmarksListInteractor {
   func updateTrack(_ trackId: MWMTrackID, setGroupId groupId: MWMMarkGroupID)
   func deleteBookmarksGroup()
   func canDeleteGroup() -> Bool
-  func exportFile(_ completion: @escaping (URL?, ExportFileStatus) -> Void)
+  func exportFile(fileType: KmlFileType, completion: @escaping SharingResultCompletionHandler)
   func finishExportFile()
 }
 
@@ -120,6 +132,7 @@ protocol IBookmarksListRouter {
                    delegate: SelectBookmarkGroupViewControllerDelegate?)
   func editBookmark(bookmarkId: MWMMarkID, completion: @escaping (Bool) -> Void)
   func editTrack(trackId: MWMTrackID, completion: @escaping (Bool) -> Void)
+  func goBack()
 }
 
 protocol IBookmarksListInfoViewModel {

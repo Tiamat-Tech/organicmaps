@@ -781,7 +781,7 @@ UNIT_TEST(England_London_ExitToLeft_TurnTest)
 
   Route const & route = *routeResult.first;
   RouterResultCode const result = routeResult.second;
-  /// @note Important test since different mwms for one segment are used and this can cause extra GoStraight.
+  /// @todo Important test since different mwms for one segment are used and this can cause extra GoStraight.
   TEST_EQUAL(result, RouterResultCode::NoError, ());
   integration::TestTurnCount(route, 1 /* expectedTurnCount */);
   integration::GetNthTurn(route, 0).TestValid().TestDirection(CarDirection::ExitHighwayToLeft);
@@ -1269,10 +1269,12 @@ UNIT_TEST(Cyprus_Governors_Beach_TurnTestNextRoad)
   TurnItem turn;
   route.GetNearestTurn(d, turn);
   TEST_EQUAL(turn.m_turn, CarDirection::ExitHighwayToLeft, ());
+
   RouteSegment::RoadNameInfo ri;
   route.GetNextTurnStreetName(ri);
   TEST_EQUAL(ri.m_destination, "Governer's Beach; Pentakomo", ());
-  TEST_EQUAL(ri.m_destination_ref, "B1", ());
+  // Aggregated network/ref tags.
+  TEST_EQUAL(ri.m_destination_ref, "CY:B/B1", ());
 }
 
 // Exit which is marked as non-link, but has link tags m_destination_ref and m_destination.

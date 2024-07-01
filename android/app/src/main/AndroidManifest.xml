@@ -41,7 +41,7 @@
     Android 13 (API level 33) and higher supports a runtime permission for sending non-exempt (including Foreground
     Services (FGS)) notifications from an app.
   //-->
-  <uses-permission-sdk-23 android:name="android.permission.POST_NOTIFICATIONS"/>
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
   <uses-permission android:name="androidx.car.app.NAVIGATION_TEMPLATES"/>
   <uses-permission android:name="androidx.car.app.ACCESS_SURFACE"/>
@@ -318,6 +318,18 @@
         <data android:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.kmb" />
         <data android:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.KMB" />
       </intent-filter>
+
+      <!-- Catches .gpx and .gpx.xml files opened from Google Files app -->
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:scheme="content" />
+        <data android:host="*" />
+        <data android:mimeType="application/octet-stream" />
+        <data android:mimeType="application/xml" />
+        <data android:mimeType="text/xml" />
+      </intent-filter>
+
     </activity>
 
     <activity

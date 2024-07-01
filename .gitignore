@@ -16,7 +16,7 @@ screenlog.0
 
 data/styles/*/*/out/*
 data/resources-*_design/*
-data/drules_proto_design.bin
+data/drules_proto_default_design.bin
 data/colors_design.txt
 data/patterns_design.txt
 data/bookmarks
@@ -123,6 +123,7 @@ tizen/*/.*
 tizen/*/crash-info/*
 .idea/*
 .idea
+!android/.idea/icon.svg
 
 # Private repository files.
 .private_repository_url

@@ -5,29 +5,21 @@
 #include "base/linked_map.hpp"
 #include "base/task_loop.hpp"
 #include "base/thread.hpp"
-#include "base/thread_checker.hpp"
 
 #include <chrono>
 #include <condition_variable>
-#include <cstdint>
 #include <map>
 #include <memory>
-#include <mutex>
 #include <unordered_map>
-#include <utility>
 #include <vector>
 
 namespace base
-{
-namespace thread_pool
-{
-namespace delayed
 {
 // This class represents a simple thread pool with a queue of tasks.
 //
 // *NOTE* This class IS NOT thread-safe, it must be destroyed on the
 // same thread it was created, but Push* methods are thread-safe.
-class ThreadPool : public TaskLoop
+class DelayedThreadPool : public TaskLoop
 {
 public:
   using Clock = std::chrono::steady_clock;
@@ -46,8 +38,8 @@ public:
     SkipPending
   };
 
-  explicit ThreadPool(size_t threadsCount = 1, Exit e = Exit::SkipPending);
-  ~ThreadPool() override;
+  explicit DelayedThreadPool(size_t threadsCount = 1, Exit e = Exit::SkipPending);
+  ~DelayedThreadPool() override;
 
   // Pushes task to the end of the thread's queue of immediate tasks.
   //
@@ -125,7 +117,7 @@ private:
     bool operator()(T const & lhs, T const & rhs) const { return *lhs < *rhs; }
   };
 
-  using ImmediateQueue = base::LinkedMap<TaskId, Task>;
+  using ImmediateQueue = LinkedMap<TaskId, Task>;
 
   using DelayedValue = std::shared_ptr<DelayedTask>;
   class DelayedQueue : public BidirectionalMap<TaskId, DelayedValue,
@@ -162,9 +154,6 @@ private:
 
   TaskId m_immediateLastId;
   TaskId m_delayedLastId;
-
-  ThreadChecker m_checker;
 };
-}  // namespace delayed
-}  // namespace thread_pool
+
 }  // namespace base

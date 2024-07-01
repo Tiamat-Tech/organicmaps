@@ -254,6 +254,12 @@
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "Hlasové povely";
 
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "Oznámte názvy ulíc";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "Keď je táto možnosť povolená, nahlas sa vysloví názov ulice alebo výjazdu, na ktorý sa má odbočiť.";
+
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "Nastavenia jazyka povelov";
 
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "Kalibrácia kompasu";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "Opätovným dlhým ťuknutím na mapu zobrazíte rozhranie";
 
 /* Update all button text */
 "downloader_update_all_button" = "Aktualizovať všetko";
@@ -499,8 +508,6 @@
 "dialog_routing_application_error" = "Nedá sa vytvoriť trasa z dôvodu aplikačnej chyby.";
 
 "dialog_routing_try_again" = "Skúste znova, prosím";
-
-"not_now" = "Nie teraz";
 
 "dialog_routing_download_and_build_cross_route" = "Chcete si prevziať mapu a vytvoriť optimálnejšiu trasu, ktorá si vyžaduje viac ako jednu mapu?";
 
@@ -705,6 +712,9 @@
 
 "editor_edit_place_name_hint" = "Názov miesta";
 
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "Tak, ako sa píše v miestnom jazyku";
+
 "editor_edit_place_category_title" = "Kategória";
 
 "whatsnew_editor_message_1" = "Na mapu môžete pridávať nové miesta a upravovať tie, ktoré sú už pridané.";
@@ -860,7 +870,7 @@
 
 "editor_share_to_all_dialog_message_2" = "Redaktori OpenStreetMap skontrolujú zmeny a budú vás kontaktovať, ak budú mať nejaké otázky.";
 
-"navigation_stop_button" = "stop";
+"navigation_stop_button" = "Stop";
 
 /* iOS dialog for the case when recent track recording is on and the app comes back from background */
 "recent_track_background_dialog_title" = "Znemožniť nahrávanie vami nedávno precestovanej trasy?";
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "Dopravné informácie nie sú k dispozícii";
 
+"enable_logging" = "Zapnúť zaznamenávanie";
+
+"log_file_size" = "Veľkosť súboru protokolu: %@";
+
 "transliteration_title" = "Prepis do latinky";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "Ukončiť";
 
-"routing_add_start_point" = "Pridaním počiatočného bodu začnite plánovať trasu";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "Pomocou vyhľadávania alebo ťuknutím na mapu môžete pridať východiskový bod trasy";
 
-"routing_add_finish_point" = "Pridaním cieľového bodu naplánujete trasu";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "Pomocou vyhľadávania alebo ťuknutím na mapu môžete pridať cieľový bod";
 
 "planning_route_manage_route" = "Spravovať trasu";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "Pridať zastávku";
 
 "start_from_my_position" = "Začať od";
-
-"profile_authorization_error" = "Ups, vyskytla sa chyba. Skúste sa prihlásiť znova.";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "Prihláste sa do OpenStreetMap, aby ste mohli automaticky nahrať všetky svoje úpravy mapy. Viac informácií sa dozviete";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "Zobraziť všetko";
 
 "bookmarks_create_new_group" = "Vytvoriť nový zoznam";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "Importovanie záložiek a stôp";
 
 "downloader_hide_screen" = "Skryť obrazovku";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "Niektoré súbory neboli konvertované.";
 
-"bookmarks_restore_title" = "Obnoviť túto verziu?";
-
-"error_system_message" = "Vyskytla sa neznáma chyba";
-
 "restore" = "Obnoviť";
 
 "privacy_policy" = "Zásady ochrany osobných údajov";
 
 "terms_of_use" = "Podmienky používania";
-
-"button_layer_traffic" = "Dopravné informácie";
 
 "button_layer_subway" = "Metro";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "Obľúbené";
 
-"export_file" = "Exportovať súbor";
+"export_file" = "Exportovať KMZ";
+
+"export_file_gpx" = "Export GPX";
 
 "delete_list" = "Vymazať zoznam";
 
@@ -1038,6 +1051,8 @@
 "power_managment_setting_auto" = "Automaticky";
 
 "power_managment_setting_manual_max" = "Maximálna úspora batérie";
+
+"enable_logging_warning_message" = "Týmto zapnete záznamenávanie diagnostických informácií, ktoré môžete poslať našej technickej podpore v prípade problémov s aplikáciou. Záznam môže obsahovať údaje o vašej polohe.";
 
 "driving_options_title" = "Možnosti trasy";
 
@@ -1258,6 +1273,18 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/About_OpenStreetMap";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "Na obrazovke telefónu teraz používate službu Organic Maps";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "Na obrazovke auta teraz používate službu Organic Maps";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "Pokračujte v telefóne";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "Na obrazovku auta";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
 "button_layer_outdoor" = "Turistika";
 
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "Mapa";
+
+"drive_through" = "Drive-thru";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "Odkaz na menu";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "Povolenie synchronizácie iCloud";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "Synchronizácia s iCloudom je experimentálna funkcia, ktorá je vo vývoji. Uistite sa, že ste si vytvorili zálohu všetkých svojich záložiek a skladieb.";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "Služba iCloud je vypnutá";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "Ak chcete túto funkciu používať, povoľte iCloud v nastaveniach zariadenia.";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "Povolenie stránky";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "Zálohovanie";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "Chyba: Nepodarilo sa synchronizovať z dôvodu chyby pripojenia";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "Chyba: Nepodarilo sa synchronizovať z dôvodu prekročenia kvóty iCloudu";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "Chyba: iCloud nie je k dispozícii";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "Bar";
 
-"type.amenity.bbq" = "Piknik";
+"type.amenity.bbq" = "Gril na grilovanie";
 
 "type.amenity.bench" = "Lavička";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "Prístrešok";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "Prístrešok";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "Bivaková Chata";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
 
 "type.amenity.public_bath" = "Verejné kúpele";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "Východ";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "Zadarmo";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "Priechod pre chodcov";
 
-"type.highway.footway.alpine_hiking" = "Turistický chodník";
-
 "type.highway.footway.area" = "Pešia zóna";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "Most pre chodcov";
-
-"type.highway.footway.demanding_alpine_hiking" = "Cesta";
-
-"type.highway.footway.demanding_mountain_hiking" = "Náročný horský chodník";
-
-"type.highway.footway.difficult_alpine_hiking" = "Náročný turistický chodník";
-
-"type.highway.footway.hiking" = "Turistický chodník";
-
-"type.highway.footway.mountain_hiking" = "Horský turistický chodník";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "Tunel pre chodcov";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "Cesta";
 
-"type.highway.path.alpine_hiking" = "Turistický chodník";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "Cesta";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "Cesta";
 
 "type.highway.path.bicycle" = "Cesta pre cyklistov a chodcov";
+
+"type.highway.footway.bicycle" = "Cesta pre cyklistov a chodcov";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "Most";
 
-"type.highway.path.demanding_alpine_hiking" = "Náročný turistický chodník";
-
-"type.highway.path.demanding_mountain_hiking" = "Náročný horský chodník";
-
-"type.highway.path.difficult_alpine_hiking" = "Obtiažny turistický chodník";
-
-"type.highway.path.hiking" = "Turistický chodník";
-
 "type.highway.path.horse" = "Cesta pre jazdca na zvierati";
-
-"type.highway.path.mountain_hiking" = "Horský turistický chodník";
-
-"type.highway.path.permissive" = "Cesta";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "Tunel";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "Poľná cesta";
 
-"type.highway.track.grade2" = "Poľná cesta";
-
-"type.highway.track.grade3" = "Poľná cesta";
-
-"type.highway.track.grade4" = "Poľná cesta";
-
-"type.highway.track.grade5" = "Poľná cesta";
-
 "type.highway.track.no.access" = "Poľná cesta";
-
-"type.highway.track.permissive" = "Poľná cesta";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "Tunel";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Vzdelávacia inštitúcia";
 
-"type.landuse.farm" = "Statok";
-
 "type.landuse.farmland" = "Poľnohospodárska pôda";
 
 "type.landuse.farmyard" = "Poľnohospodárske budovy";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "Záhrada";
 
 "type.leisure.golf_course" = "Golfové ihrisko";
+
+"type.leisure.miniature_golf" = "Minigolf";
 
 "type.leisure.hackerspace" = "Hackerspace";
 
@@ -3726,7 +3766,7 @@
 /* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
 "type.tourism.alpine_hut" = "Horská chata";
 
-"type.tourism.apartment" = "Apartmány";
+"type.tourism.apartment" = "Prázdninový apartmán";
 
 "type.tourism.artwork" = "Umelecké dielo";
 
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "Rieka";
 
 "type.waterway.river.tunnel" = "Rieka";
-
-"type.waterway.riverbank" = "Rieka";
 
 "type.waterway.stream" = "Potok";
 

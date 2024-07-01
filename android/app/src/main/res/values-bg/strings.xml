@@ -223,6 +223,10 @@
 	<string name="pref_map_3d_buildings_disabled_summary">3D сградите са изключени в режим на пестене на енергия</string>
 	<!-- Settings «Route» category: «Tts enabled» title -->
 	<string name="pref_tts_enable_title">Гласови инструкции</string>
+	<!-- Settings «Route» category: «Tts announce street names» title -->
+	<string name="pref_tts_street_names_title">Обявете имена на улици</string>
+	<!-- Settings «Route» category: «Tts announce street names» description -->
+	<string name="pref_tts_street_names_description">Когато е активирано, името на улицата или изхода, по който да завиете, ще бъде произнесено на глас.</string>
 	<!-- Settings «Route» category: «Tts language» title -->
 	<string name="pref_tts_language_title">Език на инструкциите</string>
 	<!-- Settings «Route» category: «Test Voice Directions» title -->
@@ -263,6 +267,8 @@
 	<string name="compass_calibration_recommended">Подобрете посоката на стрелката, като движите телефона с движение тип \"осмица\", за да калибрирате компаса.</string>
 	<!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
 	<string name="compass_calibration_required">Преместете телефона с движение тип \"осмица\", за да калибрирате компаса и да фиксирате посоката на стрелката върху картата.</string>
+	<!-- Toast text when user hides UI with a long tap anywhere on the map -->
+	<string name="long_tap_toast">Докоснете отново картата, за да видите интерфейса</string>
 	<!-- Update all button text -->
 	<string name="downloader_update_all_button">Обновяване на всичко</string>
 	<!-- Cancel all button text -->
@@ -443,6 +449,8 @@
 	<string name="editor_edit_place_title">Редактиране</string>
 	<string name="editor_add_place_title">Добавяне</string>
 	<string name="editor_edit_place_name_hint">Име на мястото</string>
+	<!-- The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name -->
+	<string name="editor_default_language_hint">Както е написано на местния език</string>
 	<string name="editor_edit_place_category_title">Категория</string>
 	<string name="detailed_problem_description">Подробно описание на проблема</string>
 	<string name="editor_report_problem_other_title">Друг проблем</string>
@@ -468,6 +476,8 @@
 	<string name="editor_detailed_description">Предложените от вас промени по картата ще бъдат изпратени до общността на OpenStreetMap. Опишете всички допълнителни подробности, които не могат да бъдат въведени в Organic Maps.</string>
 	<string name="editor_more_about_osm">Повече за OpenStreetMap</string>
 	<string name="editor_operator">Собственик</string>
+	<string name="editor_category_unsuitable_title">Не можете да намерите подходяща категория?</string>
+	<string name="editor_category_unsuitable_text">Organic Maps позволява да се добавят само прости категории точки, т.е. без градове, пътища, езера, очертания на сгради и т.н. Моля, добавяйте такива категории директно в <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Вижте нашето <a href="https://organicmaps.app/faq/editing/advanced-map-editing">ръководство</a> за подробни инструкции стъпка по стъпка.</string>
 	<string name="downloader_no_downloaded_maps_title">Не сте изтеглили никакви карти</string>
 	<string name="downloader_no_downloaded_maps_message">Изтеглете картите, от които се нуждаете, за да намирате места и да навигирате без интернет.</string>
 	<!-- abbreviation for meters -->
@@ -532,8 +542,10 @@
 	<string name="learn_more">Научете повече</string>
 	<!-- Subway exits for public transport marks on the map -->
 	<string name="core_exit">Изход</string>
-	<string name="routing_add_start_point">Добавяне на начална точка за планиране на маршрут</string>
-	<string name="routing_add_finish_point">Добавяне на крайна точка за планиране на маршрут</string>
+	<!-- User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". -->
+	<string name="routing_add_start_point">Използвайте търсене или докоснете картата, за да добавите начална точка на маршрута</string>
+	<!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
+	<string name="routing_add_finish_point">Използвайте търсене или докоснете картата, за да добавите точка на дестинация</string>
 	<string name="placepage_remove_stop">Премахване</string>
 	<string name="placepage_add_stop">Добавяне на спирка</string>
 	<!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
@@ -549,7 +561,7 @@
 	<string name="bookmark_lists_show_all">Показване на всичко</string>
 	<string name="bookmarks_create_new_group">Създаване на нов списък</string>
 	<!-- Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files -->
-	<string name="bookmarks_import">Импортиране на отметки и песни</string>
+	<string name="bookmarks_import">Импортиране на отметки и маршрути</string>
 	<string name="bookmarks_error_message_share_general">Не е възможно споделяне поради грешка в приложението</string>
 	<string name="bookmarks_error_title_share_empty">Грешка при споделяне</string>
 	<string name="bookmarks_error_message_share_empty">Не може да се споделя празен списък</string>
@@ -564,14 +576,7 @@
 	  <item quantity="one">Открит е %d файл. Можете да го видите след конвертирането.</item>
 	  <item quantity="other">Открити са %d файла. Можете да ги видите след конвертирането.</item>
 	</plurals>
-	<plurals name="objects">
-	  <item quantity="one">%d обект</item>
-	  <item quantity="other">%d обекта</item>
-	</plurals>
-	<plurals name="places">
-	  <item quantity="one">%d място</item>
-	  <item quantity="other">%d места</item>
-	</plurals>
+	<string name="restore">Възстановяване</string>
 	<plurals name="tracks">
 	  <item quantity="one">%d пътека</item>
 	  <item quantity="other">%d пътеки</item>
@@ -587,7 +592,8 @@
 	<string name="bookmarks_empty_list_title">Този списък е празен</string>
 	<string name="bookmarks_empty_list_message">За да добавите отметка, докоснете място на картата, след което докоснете звездообразната икона.</string>
 	<string name="category_desc_more">…още</string>
-	<string name="export_file">Експортиране на файл</string>
+	<string name="export_file">Експорт на KMZ</string>
+	<string name="export_file_gpx">Експортиране на GPX</string>
 	<string name="delete_list">Изтриване на списък</string>
 	<string name="public_access">Публичен достъп</string>
 	<string name="limited_access">Ограничен достъп</string>
@@ -695,16 +701,16 @@
 	<string name="app_tip_08">Можете лесно да коригирате и подобрите картографските данни.</string>
 	<!-- App tip #09 -->
 	<string name="app_tip_09">Нашата основна цел е да създаваме бързи, фокусирани върху поверителността, лесни за използване карти, които ще харесате.</string>
-	<!-- Text on the Android Auto placeholder screen that maps are displayed on the phone screen -->
-	<string name="aa_used_on_the_phone_screen">Вече използвате Organic Maps на екрана на телефона</string>
+	<!-- Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen -->
+	<string name="car_used_on_the_phone_screen">Вече използвате Organic Maps на екрана на телефона</string>
 	<!-- Text on the phone placeholder screen that maps are displayed on the car screen -->
-	<string name="aa_used_on_the_car_screen">Вече използвате Organic Maps на екрана на автомобила</string>
+	<string name="car_used_on_the_car_screen">Вече използвате Organic Maps на екрана на автомобила</string>
 	<!-- Displayed on the phone screen. Android Auto connected -->
 	<string name="aa_connected_title">Свързани сте с Android Auto</string>
 	<!-- Displayed on the phone screen. Button to display maps on the phone screen instead of a car -->
-	<string name="aa_continue_on_the_phone">Продължете в телефона</string>
-	<!-- Displayed on the Android Auto screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
-	<string name="aa_continue_in_the_car">Към екрана на автомобила</string>
+	<string name="car_continue_on_the_phone">Продължете в телефона</string>
+	<!-- Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
+	<string name="car_continue_in_the_car">Към екрана на автомобила</string>
 	<!-- Ask user to grant location permissions -->
 	<string name="aa_location_permissions_request">Това приложение изисква достъп до местоположението ви за целите на навигацията.</string>
 	<!-- Displayed on the Android Auto screen. Grant Permissions button. Must be no more than 18 symbols! -->
@@ -722,11 +728,21 @@
 	<string name="pref_tts_open_system_settings">Настройки на системата за синтез на реч</string>
 	<!-- toast displayed when pressing the "Speech synthesis system settings" button, and the system settings aren't found. -->
 	<string name="pref_tts_no_system_tts">Настройките за синтез на речта не бяха открити, сигурни ли сте, че устройството ви ги поддържа?</string>
+	<string name="drive_through">С прозорец за шофьори</string>
+	<string name="clear_the_search">Изчистване на търсенето</string>
+	<string name="zoom_in">Увеличаване на мащаба</string>
+	<!-- Accessibility text for the zoom-out button on the map -->
+	<string name="zoom_out">Увеличаване на мащаба</string>
+	<!-- Restaurant or other food place's menu URL field in the Editor -->
+	<string name="website_menu">Връзка към менюто</string>
+	<!-- Button in the Place Page which opens a restaurant or other food place's menu in a browser -->
+	<string name="view_menu">Преглед на менюто</string>
 
 	<!-- SECTION: Types -->
 	<string name="type.addr_interpolation">Адрес/Блок</string>
 	<string name="type.addr_interpolation.even">Адрес/Блок</string>
 	<string name="type.addr_interpolation.odd">Адрес/Блок</string>
+	<string name="type.amenity.bbq">Грил барбекю</string>
 	<string name="type.amenity.gambling">Хазарт</string>
 	<string name="type.leisure.adult_gaming_centre">Център за игри за възрастни</string>
 	<string name="type.leisure.amusement_arcade">Аркада</string>
@@ -768,6 +784,12 @@
 	<string name="type.recycling.batteries">Батерии</string>
 	<!-- Weather shelter (including sun shelters and natural rock shelters). -->
 	<string name="type.amenity.shelter">Подслон</string>
+	<!-- A weather shelter by the public transport stop. -->
+	<string name="type.amenity.shelter.public_transport">Подслон</string>
+	<!-- Compared to wilderness_hut its smaller and simpler, without a fireplace. -->
+	<string name="type.amenity.shelter.basic_hut">Колибка за бивак</string>
+	<!-- A traditional 3-walled shelter (one side open), suitable for overnight camping. -->
+	<string name="type.amenity.shelter.lean_to">Подслон за бивак</string>
 	<string name="type.amenity.public_bath">Обществена баня</string>
 	<string name="type.amenity.stripclub">Стриптийз клуб</string>
 	<string name="type.amenity.vehicle_inspection">Проверка на автомобила</string>
@@ -976,6 +998,7 @@
 	<string name="type.landuse.basin">Резервоар</string>
 	<string name="type.landuse.flowerbed">Цветна леха</string>
 	<string name="type.leisure.dance">Зала за танци</string>
+	<string name="type.leisure.miniature_golf">Миниголф</string>
 	<string name="type.leisure.outdoor_seating">Места за сядане на открито</string>
 	<string name="type.leisure.picnic_table">Маса за пикник</string>
 	<string name="type.sport.climbing">Катерене</string>
@@ -1172,6 +1195,7 @@
 	<string name="type.tourism.aquarium">Аквариум</string>
 	<!-- Typically serviced, staff is present and food is available (compared to wilderness_hut). -->
 	<string name="type.tourism.alpine_hut">Планинска хижа</string>
+	<string name="type.tourism.apartment">Ваканционен апартамент</string>
 	<string name="type.attraction.animal">Заграждение за животни</string>
 	<!-- A rentable countryside vacation house. -->
 	<string name="type.tourism.chalet">Ваканционна вила</string>

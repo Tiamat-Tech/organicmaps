@@ -12,7 +12,6 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Html;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.view.KeyEvent;
@@ -318,9 +317,7 @@ public class MwmActivity extends BaseMwmFragmentActivity
 
       // Notify user to re-login
       dismissAlertDialog();
-      final DialogInterface.OnClickListener navigateToLoginHandler = (DialogInterface dialog, int which) -> {
-        startActivity(new Intent(MwmActivity.this, OsmLoginActivity.class));
-      };
+      final DialogInterface.OnClickListener navigateToLoginHandler = (dialog, which) -> startActivity(new Intent(MwmActivity.this, OsmLoginActivity.class));
 
       final int marginBase = getResources().getDimensionPixelSize(R.dimen.margin_base);
       final float textSize = getResources().getDimension(R.dimen.line_spacing_extra_1);
@@ -1119,9 +1116,11 @@ public class MwmActivity extends BaseMwmFragmentActivity
     Framework.nativeRemovePlacePageActivationListener(this);
     BookmarkManager.INSTANCE.removeLoadingListener(this);
     LocationHelper.from(this).removeListener(this);
-    LocationState.nativeRemoveListener();
-    if (mDisplayManager.isDeviceDisplayUsed())
+    if (mDisplayManager.isDeviceDisplayUsed() && !RoutingController.get().isNavigating())
+    {
+      LocationState.nativeRemoveListener();
       RoutingController.get().detach();
+    }
     IsolinesManager.from(getApplicationContext()).detach();
     mSearchController.detach();
     Utils.keepScreenOn(false, getWindow());
@@ -1230,20 +1229,22 @@ public class MwmActivity extends BaseMwmFragmentActivity
   // Called from JNI.
   @Override
   @SuppressWarnings("unused")
-  public void onPlacePageDeactivated(boolean switchFullScreenMode)
+  public void onPlacePageDeactivated()
   {
-    if (switchFullScreenMode)
-    {
-      if ((mPanelAnimator != null && mPanelAnimator.isVisible()) ||
-          UiUtils.isVisible(mSearchController.getToolbar()))
-        return;
+    closePlacePage();
+  }
 
-      setFullscreen(!isFullscreen());
-    }
-    else
-    {
-      closePlacePage();
-    }
+  // Called from JNI.
+  @Override
+  @SuppressWarnings("unused")
+  public void onSwitchFullScreenMode()
+  {
+    if ((mPanelAnimator != null && mPanelAnimator.isVisible()) || UiUtils.isVisible(mSearchController.getToolbar()))
+      return;
+
+    setFullscreen(!isFullscreen());
+    if (isFullscreen())
+      showFullscreenToastIfNeeded();
   }
 
   private void setFullscreen(boolean isFullscreen)
@@ -1262,6 +1263,16 @@ public class MwmActivity extends BaseMwmFragmentActivity
     // Buttons are hidden in position chooser mode but we are not in fullscreen
     return Boolean.TRUE.equals(mMapButtonsViewModel.getButtonsHidden().getValue()) &&
         Framework.nativeGetChoosePositionMode() == Framework.ChoosePositionMode.NONE;
+  }
+
+  private void showFullscreenToastIfNeeded()
+  {
+    // Show the toast only once so new behaviour doesn't confuse users
+    if (!Config.wasLongTapToastShown(this))
+    {
+      Toast.makeText(this, R.string.long_tap_toast, Toast.LENGTH_LONG).show();
+      Config.setLongTapToastShown(this, true);
+    }
   }
 
   @Override

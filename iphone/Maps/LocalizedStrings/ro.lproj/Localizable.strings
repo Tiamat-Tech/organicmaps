@@ -254,6 +254,12 @@
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "Instrucțiuni vocale";
 
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "Anunțați numele străzilor";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "Când este activată, numele străzii sau al ieșirii pe care să o pornim va fi rostit cu voce tare.";
+
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "Limba ghidului vocal";
 
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "Calibrare busolă";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "Atingeți lung pe hartă din nou pentru a vedea interfața";
 
 /* Update all button text */
 "downloader_update_all_button" = "Actualizează tot";
@@ -499,8 +508,6 @@
 "dialog_routing_application_error" = "Crearea traseului a eșuat din cauza unei erori a aplicației.";
 
 "dialog_routing_try_again" = "Încearcă din nou";
-
-"not_now" = "Nu acum";
 
 "dialog_routing_download_and_build_cross_route" = "Vrei să descarci harta și să creezi un traseu mai bun care include mai multe hărți?";
 
@@ -705,6 +712,9 @@
 
 "editor_edit_place_name_hint" = "Numele locului";
 
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "Așa cum este scris în limba locală";
+
 "editor_edit_place_category_title" = "Categorie";
 
 "whatsnew_editor_message_1" = "Adaugă locuri noi pe hartă și modifică-le pe cele existente direct din aplicație.";
@@ -860,7 +870,7 @@
 
 "editor_share_to_all_dialog_message_2" = "Editorii OpenStreetMap vor verifica modificările și vor lua legătura cu dvs. dacă au întrebări.";
 
-"navigation_stop_button" = "oprește";
+"navigation_stop_button" = "Oprește";
 
 /* iOS dialog for the case when recent track recording is on and the app comes back from background */
 "recent_track_background_dialog_title" = "Dezactivezi înregistrarea celui mai recent traseu efectuat?";
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "Datele privind traficul nu sunt disponibile";
 
+"enable_logging" = "Activează jurnalizarea";
+
+"log_file_size" = "Dimensiunea fișierului jurnal: %@";
+
 "transliteration_title" = "Transcrie în alfabet latin";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "Ieșire";
 
-"routing_add_start_point" = "Adaugă un punct de plecare pentru a planifica un traseu";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "Utilizați funcția de căutare sau atingeți ușor pe hartă pentru a adăuga un punct de plecare";
 
-"routing_add_finish_point" = "Adaugă un punct de sosire pentru a planifica un traseu";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "Utilizați funcția de căutare sau atingeți ușor pe hartă pentru a adăuga un punct de destinație";
 
 "planning_route_manage_route" = "Gestionare traseu";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "Adaugă oprire";
 
 "start_from_my_position" = "Pornește de la";
-
-"profile_authorization_error" = "A apărut o eroare. Încearcă să te conectezi din nou.";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "Vă rugăm să vă conectați la OpenStreetMap pentru a încărca automat toate modificările aduse hărții. Aflați mai multe";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "Arată tot";
 
 "bookmarks_create_new_group" = "Creează o listă nouă";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "Importați marcaje și piese";
 
 "downloader_hide_screen" = "Ascunde pagina";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "Unele fișiere nu au fost convertite.";
 
-"bookmarks_restore_title" = "Restabilești această versiune?";
-
-"error_system_message" = "A apărut o eroare necunoscută";
-
 "restore" = "Restabilește";
 
 "privacy_policy" = "Confidențialitate";
 
 "terms_of_use" = "Termeni de utilizare";
-
-"button_layer_traffic" = "Trafic";
 
 "button_layer_subway" = "Metrou";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "Populare";
 
-"export_file" = "Exportă fișierul";
+"export_file" = "Export KMZ";
+
+"export_file_gpx" = "Exportați GPX";
 
 "delete_list" = "Șterge lista";
 
@@ -1038,6 +1051,8 @@
 "power_managment_setting_auto" = "Automat";
 
 "power_managment_setting_manual_max" = "Economisire maximă a energiei";
+
+"enable_logging_warning_message" = "Opțiunea activează jurnalizarea în scopuri de diagnosticare. Aceasta poate fi utilă echipei noastre pentru a rezolva problemele cu aplicația. Activează temporar această opțiune pentru a înregistra și a ne trimite jurnale detaliate despre problema ta.";
 
 "driving_options_title" = "Opțiuni de ocolire";
 
@@ -1258,6 +1273,18 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/About_OpenStreetMap";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "Acum utilizați Organic Maps pe ecranul telefonului";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "Acum utilizați Organic Maps pe ecranul mașinii";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "Continuați în telefon";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "La ecranul mașinii";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
 "button_layer_outdoor" = "Drumeție";
 
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "Hartă";
+
+"drive_through" = "Servire în mașină";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "Legătura de meniu";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "Activați Sincronizarea iCloud";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "Sincronizarea iCloud este o funcție experimentală aflată în curs de dezvoltare. Asigurați-vă că ați făcut o copie de rezervă a tuturor marcajelor și pieselor dvs.";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "iCloud este dezactivat";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "Vă rugăm să activați iCloud în setările dispozitivului dvs. pentru a utiliza această funcție.";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "Activați";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "Backup";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "Eroare: Nu s-a reușit sincronizarea din cauza unei erori de conexiune";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "Eroare: Nu s-a reușit sincronizarea din cauza depășirii cotei iCloud";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "Eroare: iCloud nu este disponibil";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "Bar";
 
-"type.amenity.bbq" = "Locații picnic";
+"type.amenity.bbq" = "Grătar";
 
 "type.amenity.bench" = "Banchetă";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "Adăpost";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "Adăpost";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "Baracă de Bivuac";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
 
 "type.amenity.public_bath" = "Baie publică";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "Ieșire";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "Gratuit";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "Trecere de pietoni";
 
-"type.highway.footway.alpine_hiking" = "Cale";
-
 "type.highway.footway.area" = "Cale";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "Pod";
-
-"type.highway.footway.demanding_alpine_hiking" = "Cale";
-
-"type.highway.footway.demanding_mountain_hiking" = "Cale";
-
-"type.highway.footway.difficult_alpine_hiking" = "Cale";
-
-"type.highway.footway.hiking" = "Cale";
-
-"type.highway.footway.mountain_hiking" = "Cale";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "Tunel";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "Cale";
 
-"type.highway.path.alpine_hiking" = "Cale";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "Cale";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "Cale";
 
 "type.highway.path.bicycle" = "Cale";
+
+"type.highway.footway.bicycle" = "Cale";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "Pod";
 
-"type.highway.path.demanding_alpine_hiking" = "Cale";
-
-"type.highway.path.demanding_mountain_hiking" = "Cale";
-
-"type.highway.path.difficult_alpine_hiking" = "Cale";
-
-"type.highway.path.hiking" = "Cale";
-
 "type.highway.path.horse" = "Cale";
-
-"type.highway.path.mountain_hiking" = "Cale";
-
-"type.highway.path.permissive" = "Cale";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "Tunel";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "Stradă";
 
-"type.highway.track.grade2" = "Stradă";
-
-"type.highway.track.grade3" = "Stradă";
-
-"type.highway.track.grade4" = "Stradă";
-
-"type.highway.track.grade5" = "Stradă";
-
 "type.highway.track.no.access" = "Stradă";
-
-"type.highway.track.permissive" = "Stradă";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "Tunel";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Educational Facility";
 
-"type.landuse.farm" = "Farm";
-
 "type.landuse.farmland" = "Teren arabil";
 
 "type.landuse.farmyard" = "Farmyard";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "Sit arheologic";
 
 "type.leisure.golf_course" = "Teren de golf";
+
+"type.leisure.miniature_golf" = "Minigolf";
 
 "type.leisure.hackerspace" = "Hackerspace";
 
@@ -3726,7 +3766,7 @@
 /* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
 "type.tourism.alpine_hut" = "Cabana de munte";
 
-"type.tourism.apartment" = "Apartamente";
+"type.tourism.apartment" = "Apartament de vacanță";
 
 "type.tourism.artwork" = "Turism";
 
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "Râu";
 
 "type.waterway.river.tunnel" = "Râu";
-
-"type.waterway.riverbank" = "Râu";
 
 "type.waterway.stream" = "Râu";
 

@@ -9,8 +9,6 @@ set(SRC
   batcher.hpp
   batcher_helpers.cpp
   batcher_helpers.hpp
-  bidi.cpp
-  bidi.hpp
   binding_info.cpp
   binding_info.hpp
   buffer_base.cpp
@@ -27,6 +25,7 @@ set(SRC
   drape_global.hpp
   drape_routine.hpp
   dynamic_texture.hpp
+  font_constants.hpp
   font_texture.cpp
   font_texture.hpp
   framebuffer.cpp
@@ -42,8 +41,7 @@ set(SRC
   gl_includes.hpp
   glsl_func.hpp
   glsl_types.hpp
-  glyph_generator.cpp
-  glyph_generator.hpp
+  glyph.hpp
   glyph_manager.cpp
   glyph_manager.hpp
   gpu_buffer.cpp
@@ -85,6 +83,8 @@ set(SRC
   support_manager.hpp
   symbols_texture.cpp
   symbols_texture.hpp
+  harfbuzz_shaping.cpp
+  harfbuzz_shaping.hpp
   texture.cpp
   texture.hpp
   texture_manager.cpp
@@ -172,8 +172,7 @@ target_link_libraries(${PROJECT_NAME}
   Freetype::Freetype
   vulkan_wrapper
   stb_image
-  sdf_image
-  harfbuzz
+  harfbuzz::harfbuzz
   ICU::i18n
   expat::expat
   $<$<BOOL:${PLATFORM_MAC}>:-framework\ OpenGL>
@@ -181,3 +180,5 @@ target_link_libraries(${PROJECT_NAME}
 )
 
 omim_add_test_subdirectory(drape_tests)
+
+omim_add_tool_subdirectory(fonts_tool)

@@ -1,14 +1,12 @@
 #pragma once
 
 #include "drape/dynamic_texture.hpp"
-#include "drape/glyph_generator.hpp"
 #include "drape/glyph_manager.hpp"
 #include "drape/pointers.hpp"
 
-#include <atomic>
 #include <map>
-#include <memory>
 #include <mutex>
+#include <utility>  // std::tie
 #include <vector>
 
 namespace dp
@@ -31,79 +29,45 @@ private:
   bool m_isFull = false;
 };
 
-class GlyphKey : public Texture::Key
+class GlyphKey : public GlyphFontAndId, public Texture::Key
 {
 public:
-  GlyphKey(strings::UniChar unicodePoint, int fixedSize)
-    : m_unicodePoint(unicodePoint)
-    , m_fixedSize(fixedSize)
-  {}
-
-  Texture::ResourceType GetType() const { return Texture::ResourceType::Glyph; }
-  strings::UniChar GetUnicodePoint() const { return m_unicodePoint; }
-  int GetFixedSize() const { return m_fixedSize; }
-
-  bool operator<(GlyphKey const & g) const
-  {
-    if (m_unicodePoint == g.m_unicodePoint)
-      return m_fixedSize < g.m_fixedSize;
-    return m_unicodePoint < g.m_unicodePoint;
-  }
-
-private:
-  strings::UniChar m_unicodePoint;
-  int m_fixedSize;
+  Texture::ResourceType GetType() const override { return Texture::ResourceType::Glyph; }
 };
 
+// TODO(AB): Make Texture::ResourceInfo non-abstract and use it here directly.
 class GlyphInfo : public Texture::ResourceInfo
 {
-  using Base = Texture::ResourceInfo;
-
 public:
-  GlyphInfo(m2::RectF const & texRect, GlyphManager::GlyphMetrics const & metrics)
-    : Base(texRect)
-    , m_metrics(metrics)
+  explicit GlyphInfo(m2::RectF const & texRect)
+    : ResourceInfo(texRect)
   {}
-  ~GlyphInfo() override = default;
 
   Texture::ResourceType GetType() const override { return Texture::ResourceType::Glyph; }
-  GlyphManager::GlyphMetrics const & GetMetrics() const { return m_metrics; }
-
-private:
-  GlyphManager::GlyphMetrics m_metrics;
 };
 
-class GlyphIndex : public GlyphGenerator::Listener
+class GlyphIndex
 {
 public:
-  GlyphIndex(m2::PointU const & size, ref_ptr<GlyphManager> mng,
-             ref_ptr<GlyphGenerator> generator);
-  ~GlyphIndex() override;
+  GlyphIndex(m2::PointU const & size, ref_ptr<GlyphManager> mng);
+  ~GlyphIndex();
 
   // This function can return nullptr.
-  ref_ptr<Texture::ResourceInfo> MapResource(GlyphKey const & key, bool & newResource);
-  std::vector<ref_ptr<Texture::ResourceInfo>> MapResources(std::vector<GlyphKey> const & keys,
-                                                           bool & hasNewResources);
+  ref_ptr<Texture::ResourceInfo> MapResource(GlyphFontAndId const & key, bool & newResource);
+  std::vector<ref_ptr<Texture::ResourceInfo>> MapResources(TGlyphs const & keys, bool & hasNewResources);
   void UploadResources(ref_ptr<dp::GraphicsContext> context, ref_ptr<Texture> texture);
 
   bool CanBeGlyphPacked(uint32_t glyphsCount) const;
-
-  //uint32_t GetAbsentGlyphsCount(strings::UniString const & text, int fixedHeight) const;
 
   // ONLY for unit-tests. DO NOT use this function anywhere else.
   size_t GetPendingNodesCount();
 
 private:
-  ref_ptr<Texture::ResourceInfo> MapResource(GlyphKey const & key, bool & newResource,
-                                             GlyphGenerator::GlyphGenerationData & generationData);
-  void OnCompleteGlyphGeneration(GlyphGenerator::GlyphGenerationDataArray && glyphs) override;
-
   GlyphPacker m_packer;
   ref_ptr<GlyphManager> m_mng;
-  ref_ptr<GlyphGenerator> m_generator;
 
-  using ResourceMapping = std::map<GlyphKey, GlyphInfo>;
-  using PendingNode = std::pair<m2::RectU, GlyphManager::Glyph>;
+  using ResourceMapping = std::map<GlyphFontAndId, GlyphInfo>;
+  using PendingNode = std::pair<m2::RectU, Glyph>;
   using PendingNodes = std::vector<PendingNode>;
 
   ResourceMapping m_index;
@@ -113,35 +77,26 @@ private:
 
 class FontTexture : public DynamicTexture<GlyphIndex, GlyphKey, Texture::ResourceType::Glyph>
 {
-  using TBase = DynamicTexture<GlyphIndex, GlyphKey, Texture::ResourceType::Glyph>;
 public:
-  FontTexture(m2::PointU const & size, ref_ptr<GlyphManager> glyphMng,
-              ref_ptr<GlyphGenerator> glyphGenerator, ref_ptr<HWTextureAllocator> allocator)
-    : m_index(size, glyphMng, glyphGenerator)
+  FontTexture(m2::PointU const & size, ref_ptr<GlyphManager> glyphMng, ref_ptr<HWTextureAllocator> allocator)
+    : m_index(size, glyphMng)
   {
-    TBase::DynamicTextureParams params{size, TextureFormat::Alpha,
-                                       TextureFilter::Linear, true /* m_usePixelBuffer */};
-    TBase::Init(allocator, make_ref(&m_index), params);
+    DynamicTextureParams const params{size, TextureFormat::Alpha, TextureFilter::Linear, true /* m_usePixelBuffer */};
+    Init(allocator, make_ref(&m_index), params);
   }
 
-  ~FontTexture() override { TBase::Reset(); }
+  ~FontTexture() override { Reset(); }
 
-  std::vector<ref_ptr<ResourceInfo>> FindResources(std::vector<GlyphKey> const & keys,
-                                                   bool & hasNewResources)
+  ref_ptr<ResourceInfo> MapResource(GlyphFontAndId const & key, bool & hasNewResources) const
   {
     ASSERT(m_indexer != nullptr, ());
-    return m_indexer->MapResources(keys, hasNewResources);
+    return m_indexer->MapResource(key, hasNewResources);
   }
 
   bool HasEnoughSpace(uint32_t newKeysCount) const override
   {
     return m_index.CanBeGlyphPacked(newKeysCount);
   }
-
-//  uint32_t GetAbsentGlyphsCount(strings::UniString const & text, int fixedHeight) const
-//  {
-//    return m_index.GetAbsentGlyphsCount(text, fixedHeight);
-//  }
 
 private:
   GlyphIndex m_index;

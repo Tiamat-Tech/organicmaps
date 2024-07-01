@@ -234,6 +234,10 @@
 	<string name="pref_map_3d_buildings_disabled_summary">У рэжыме энергазберажэння 3D-будынкі адключаны</string>
 	<!-- Settings «Route» category: «Tts enabled» title -->
 	<string name="pref_tts_enable_title">Галасавыя інструкцыі</string>
+	<!-- Settings «Route» category: «Tts announce street names» title -->
+	<string name="pref_tts_street_names_title">Абвяшчаць назвы вуліц</string>
+	<!-- Settings «Route» category: «Tts announce street names» description -->
+	<string name="pref_tts_street_names_description">Калі ўключана, назва вуліцы або выезду, на які трэба павярнуць, будзе прамаўляцца ўслых.</string>
 	<!-- Settings «Route» category: «Tts language» title -->
 	<string name="pref_tts_language_title">Мова агучвання</string>
 	<!-- Settings «Route» category: «Test Voice Directions» title -->
@@ -275,6 +279,8 @@
 	<string name="compass_calibration_recommended">Палепшыце кірунак стрэлкі, перамяшчаючы тэлефон у выглядзе васьмёркі, каб адкалібраваць компас.</string>
 	<!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
 	<string name="compass_calibration_required">Перамяшчайце тэлефон у выглядзе васьмёркі, каб адкалібраваць компас і зафіксаваць кірунак стрэлкі на карце.</string>
+	<!-- Toast text when user hides UI with a long tap anywhere on the map -->
+	<string name="long_tap_toast">Яшчэ раз доўга націсніце на карту, каб убачыць інтэрфейс</string>
 	<!-- Update all button text -->
 	<string name="downloader_update_all_button">Абнавіць усё</string>
 	<!-- Cancel all button text -->
@@ -433,8 +439,8 @@
 	<string name="day_off_today">Сёння закрыта</string>
 	<string name="day_off">Закрыта</string>
 	<string name="today">Сёння</string>
-	<string name="opens_in">Адкрываецца праз %s</string>
-	<string name="closes_in">Закрываецца праз %s</string>
+	<string name="opens_in">Адчыняецца праз %s</string>
+	<string name="closes_in">Зачыняецца праз %s</string>
 	<string name="closed">Закрыта</string>
 	<string name="edit_opening_hours">Правіць часы працы</string>
 	<string name="no_osm_account">Не зарэгістраваныя на OpenStreetMap?</string>
@@ -475,6 +481,8 @@
 	<string name="editor_edit_place_title">Рэдагаванне</string>
 	<string name="editor_add_place_title">Даданне</string>
 	<string name="editor_edit_place_name_hint">Назва месца</string>
+	<!-- The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name -->
+	<string name="editor_default_language_hint">На мясцовай мове</string>
 	<string name="editor_edit_place_category_title">Катэгорыя</string>
 	<string name="detailed_problem_description">Падрабязнае апісанне праблемы</string>
 	<string name="editor_report_problem_other_title">Іншая праблема</string>
@@ -500,6 +508,8 @@
 	<string name="editor_detailed_description">Прапанаваныя вамі змены будуць дасланы суполцы OpenStreetMap. Апішыце любыя дадатковыя дэталі, якія нельга рэдагаваць у Organic Maps.</string>
 	<string name="editor_more_about_osm">Падрабязней пра OpenStreetMap</string>
 	<string name="editor_operator">Уладальнік</string>
+	<string name="editor_category_unsuitable_title">Няма прыдатнай катэгорыі?</string>
+	<string name="editor_category_unsuitable_text">Organic Maps дазваляе дадаваць на мапу толькі простыя тыпы аб\'ектаў, гэта значыць без гарадаў, дарог, азёр і будынкаў. Калі ласка, дадайце такія катэгорыі на сайце <a href="https://www.openstreetmap.org/">OpenStreetMap.org </a>. Мы таксама рэкамендуем азнаёміцца ​​з <a href="https://organicmaps.app/faq/editing/advanced-map-editing/">падрабязнымі інструкцыямі і іншымі прыкладаннямі для рэдагавання мапы</a>.</string>
 	<string name="downloader_no_downloaded_maps_title">Вы не спампавалі ніводнай мапы</string>
 	<string name="downloader_no_downloaded_maps_message">Спампуйце мапы, каб шукаць месцы і карыстацца навігацыяй без інтэрнэту.</string>
 	<!-- abbreviation for meters -->
@@ -542,7 +552,7 @@
 	<!-- Dialog before publishing the modifications to the public map. -->
 	<string name="editor_share_to_all_dialog_message_1">Упэўніцеся, што вы не ўвялі ніякіх асабістых даных.</string>
 	<string name="editor_share_to_all_dialog_message_2">Рэдактары OpenStreetMap правераць змены і звяжуцца з вамі, калі ў іх узнікнуць пытанні.</string>
-	<string name="navigation_stop_button">спыніць</string>
+	<string name="navigation_stop_button">Cпыніць</string>
 	<!-- For the first routing -->
 	<string name="accept">Прыняць</string>
 	<!-- For the first routing -->
@@ -571,8 +581,10 @@
 	<string name="learn_more">Даведацца больш</string>
 	<!-- Subway exits for public transport marks on the map -->
 	<string name="core_exit">Выхад</string>
-	<string name="routing_add_start_point">Дадайце пункт адпраўлення, каб пракласці маршрут</string>
-	<string name="routing_add_finish_point">Дадайце пункт прызначэння, каб пракласці маршрут</string>
+	<!-- User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". -->
+	<string name="routing_add_start_point">Скарыстайцеся пошукам або націсніце на мапе, каб дадаць пачатак маршруту</string>
+	<!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
+	<string name="routing_add_finish_point">Скарыстайцеся пошукам або націсніце на мапе, каб дадаць пункт прызначэння</string>
 	<string name="placepage_remove_stop">Выдаліць</string>
 	<string name="placepage_add_stop">Дадаць прыпынак</string>
 	<!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
@@ -586,6 +598,11 @@
 	<!-- Do not display all bookmark lists on the map -->
 	<string name="bookmark_lists_hide_all">Схаваць усе</string>
 	<string name="bookmark_lists_show_all">Паказаць усе</string>
+	<plurals name="bookmarks_places">
+	  <item quantity="few">%d закладкі</item>
+	  <item quantity="one">%d закладка</item>
+	  <item quantity="other">%d закладак</item>
+	</plurals>
 	<string name="bookmarks_create_new_group">Стварыць новы спіс</string>
 	<!-- Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files -->
 	<string name="bookmarks_import">Імпартаваць закладкі і cцежкі</string>
@@ -600,16 +617,7 @@
 	<string name="please_wait">Пачакайце…</string>
 	<string name="phone_number">Нумар тэлефона</string>
 	<string name="profile">Профіль OpenStreetMap</string>
-	<plurals name="objects">
-	  <item quantity="few">%d аб\'екты</item>
-	  <item quantity="one">%d аб\'ект</item>
-	  <item quantity="other">%d аб\'ектаў</item>
-	</plurals>
-	<plurals name="places">
-	  <item quantity="few">%d месцы</item>
-	  <item quantity="one">%d месца</item>
-	  <item quantity="other">%d месцаў</item>
-	</plurals>
+	<string name="restore">Аднавіць</string>
 	<plurals name="tracks">
 	  <item quantity="few">%d сцежкі</item>
 	  <item quantity="one">%d сцежка</item>
@@ -626,7 +634,8 @@
 	<string name="bookmarks_empty_list_title">Гэты спіс пусты</string>
 	<string name="bookmarks_empty_list_message">Каб дадаць закладку, націсніце на месца на мапе і потым на іконку з зорачкай</string>
 	<string name="category_desc_more">…яшчэ</string>
-	<string name="export_file">Экспартаваць файл</string>
+	<string name="export_file">Экспарт KMZ</string>
+	<string name="export_file_gpx">Экспарт GPX</string>
 	<string name="delete_list">Выдаліць спіс</string>
 	<string name="public_access">Публічны доступ</string>
 	<string name="limited_access">Абмежаваны доступ</string>
@@ -768,16 +777,16 @@
 	<string name="app_tip_08">Вы можаце лёгка выправіць і палепшыць дадзеныя карты.</string>
 	<!-- App tip #09 -->
 	<string name="app_tip_09">Наша галоўная мэта - ствараць хуткія, арыентаваныя на прыватнасць і простыя ў выкарыстанні карты, якія вам спадабаюцца.</string>
-	<!-- Text on the Android Auto placeholder screen that maps are displayed on the phone screen -->
-	<string name="aa_used_on_the_phone_screen">Вы выкарыстоўваеце Organic Maps на экране тэлефона</string>
+	<!-- Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen -->
+	<string name="car_used_on_the_phone_screen">Вы выкарыстоўваеце Organic Maps на экране тэлефона</string>
 	<!-- Text on the phone placeholder screen that maps are displayed on the car screen -->
-	<string name="aa_used_on_the_car_screen">Вы выкарыстоўваеце Organic Maps на экране аўтамабіля</string>
+	<string name="car_used_on_the_car_screen">Вы выкарыстоўваеце Organic Maps на экране аўтамабіля</string>
 	<!-- Displayed on the phone screen. Android Auto connected -->
 	<string name="aa_connected_title">Вы падключаны да Android Auto</string>
 	<!-- Displayed on the phone screen. Button to display maps on the phone screen instead of a car -->
-	<string name="aa_continue_on_the_phone">Працягнуць на тэлефоне</string>
-	<!-- Displayed on the Android Auto screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
-	<string name="aa_continue_in_the_car">На экран аўто</string>
+	<string name="car_continue_on_the_phone">Працягнуць на тэлефоне</string>
+	<!-- Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
+	<string name="car_continue_in_the_car">На экран аўто</string>
 	<!-- Ask user to grant location permissions -->
 	<string name="aa_location_permissions_request">Гэтаму прылажэнню патрабуецца доступ да вашага месцазнаходжання для навігацыі.</string>
 	<!-- Displayed on the Android Auto screen. Grant Permissions button. Must be no more than 18 symbols! -->
@@ -795,11 +804,21 @@
 	<string name="pref_tts_open_system_settings">Сістэмныя наладкі сінтэзу маўлення</string>
 	<!-- toast displayed when pressing the "Speech synthesis system settings" button, and the system settings aren't found. -->
 	<string name="pref_tts_no_system_tts">Налады сінтэзу маўлення не знойдзены. Вы ўпэўнены, што ваша прылада падтрымлівае гэта?</string>
+	<string name="drive_through">З акенцам для кіроўцаў</string>
+	<string name="clear_the_search">Ачысціць пошук</string>
+	<string name="zoom_in">Наблізіць</string>
+	<!-- Accessibility text for the zoom-out button on the map -->
+	<string name="zoom_out">Аддаліць</string>
+	<!-- Restaurant or other food place's menu URL field in the Editor -->
+	<string name="website_menu">Спасылка на меню</string>
+	<!-- Button in the Place Page which opens a restaurant or other food place's menu in a browser -->
+	<string name="view_menu">Паглядзець меню</string>
 
 	<!-- SECTION: Types -->
 	<string name="type.addr_interpolation">Адрас/Блок</string>
 	<string name="type.addr_interpolation.even">Адрас/Блок</string>
 	<string name="type.addr_interpolation.odd">Адрас/Блок</string>
+	<string name="type.amenity.bbq">Барбекю-грыль</string>
 	<string name="type.amenity.bicycle_parking">Велапаркоўка</string>
 	<string name="type.amenity.gambling">Азартныя гульні</string>
 	<string name="type.leisure.adult_gaming_centre">Гульнявы цэнтр для дарослых</string>
@@ -865,6 +884,12 @@
 	<string name="type.amenity.sanitary_dump_station">Зліў для прыбіральняў транспартных сродкаў</string>
 	<!-- Weather shelter (including sun shelters and natural rock shelters). -->
 	<string name="type.amenity.shelter">Навес</string>
+	<!-- A weather shelter by the public transport stop. -->
+	<string name="type.amenity.shelter.public_transport">Навес</string>
+	<!-- Compared to wilderness_hut its smaller and simpler, without a fireplace. -->
+	<string name="type.amenity.shelter.basic_hut">Хаціна-бівак</string>
+	<!-- A traditional 3-walled shelter (one side open), suitable for overnight camping. -->
+	<string name="type.amenity.shelter.lean_to">Бівальны навес</string>
 	<string name="type.amenity.public_bath">Грамадская лазня</string>
 	<string name="type.amenity.stripclub">Стрыптыз-клуб</string>
 	<string name="type.amenity.townhall">Адміністрацыя</string>
@@ -1101,6 +1126,7 @@
 	<string name="type.landuse.flowerbed">клумба</string>
 	<string name="type.leisure.dance">Танцавальная зала</string>
 	<string name="type.leisure.garden.residential">Частный сад</string>
+	<string name="type.leisure.miniature_golf">Мінігольф</string>
 	<string name="type.leisure.hackerspace">Хакерская прастора</string>
 	<string name="type.leisure.marina">Прычал</string>
 	<string name="type.leisure.outdoor_seating">Месцы на адкрытым паветры</string>
@@ -1330,6 +1356,7 @@
 	<string name="type.tourism.aquarium">Акварыум</string>
 	<!-- Typically serviced, staff is present and food is available (compared to wilderness_hut). -->
 	<string name="type.tourism.alpine_hut">Горны прытулак з абслугоўваннем</string>
+	<string name="type.tourism.apartment">Кватэра для адпачынку</string>
 	<string name="type.attraction.animal">Вальера для жывёл</string>
 	<string name="type.tourism.caravan_site">Кемпінг для аўтадамоў</string>
 	<!-- A rentable countryside vacation house. -->
@@ -1340,6 +1367,7 @@
 	<string name="type.tourism.information.map">Карта</string>
 	<string name="type.tourism.information.office">Турыстычны офіс</string>
 	<string name="type.tourism.information.visitor_centre">Цэнтр для наведвальнікаў</string>
+	<string name="type.tourism.viewpoint">Аглядальная пляцоўка</string>
 	<!-- Typically more basic, not staffed and free (compared to alpine_hut). -->
 	<string name="type.tourism.wilderness_hut">Турыстычная хатка</string>
 	<string name="type.tourism.zoo.petting">Хатні заапарк</string>
@@ -1349,7 +1377,6 @@
 	<string name="type.waterway.drain.tunnel">Водопропускная труба</string>
 	<string name="type.waterway.river">Рака</string>
 	<string name="type.waterway.river.tunnel">Рака</string>
-	<string name="type.waterway.riverbank">Рака</string>
 	<string name="type.waterway.stream">Рака</string>
 	<string name="type.waterway.stream.ephemeral">Рака</string>
 	<string name="type.waterway.stream.intermittent">Рака</string>

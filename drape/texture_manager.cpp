@@ -1,7 +1,8 @@
 #include "drape/texture_manager.hpp"
 
-#include "drape/gl_functions.hpp"
+#include "drape/font_constants.hpp"
 #include "drape/font_texture.hpp"
+#include "drape/gl_functions.hpp"
 #include "drape/symbols_texture.hpp"
 #include "drape/static_texture.hpp"
 #include "drape/stipple_pen_resource.hpp"
@@ -11,7 +12,7 @@
 #include "drape/utils/glyph_usage_tracker.hpp"
 
 #include "base/file_name_utils.hpp"
-#include "base/stl_helpers.hpp"
+#include "base/math.hpp"
 
 #include <algorithm>
 #include <cstdint>
@@ -36,23 +37,12 @@ size_t constexpr kInvalidGlyphGroup = std::numeric_limits<size_t>::max();
 uint32_t constexpr kReservedPatterns = 10;
 size_t constexpr kReservedColors = 20;
 
+// TODO(AB): Investigate if it can be set to 1.0.
 float constexpr kGlyphAreaMultiplier = 1.2f;
 float constexpr kGlyphAreaCoverage = 0.9f;
 
 std::string const kSymbolTextures[] = { "symbols" };
 uint32_t constexpr kDefaultSymbolsIndex = 0;
-
-void MultilineTextToUniString(TextureManager::TMultilineText const & text, strings::UniString & outString)
-{
-  size_t cnt = 0;
-  for (strings::UniString const & str : text)
-    cnt += str.size();
-
-  outString.clear();
-  outString.reserve(cnt);
-  for (strings::UniString const & str : text)
-    outString.append(str.begin(), str.end());
-}
 
 template <typename ToDo>
 void ParseColorsList(std::string const & colorsFile, ToDo toDo)
@@ -108,10 +98,9 @@ drape_ptr<Texture> CreateArrowTexture(ref_ptr<dp::GraphicsContext> context,
 }
 }  // namespace
 
-TextureManager::TextureManager(ref_ptr<GlyphGenerator> glyphGenerator)
+TextureManager::TextureManager()
   : m_maxTextureSize(0)
   , m_maxGlypsCount(0)
-  , m_glyphGenerator(glyphGenerator)
 {
   m_nothingToUpload.test_and_set();
 }
@@ -128,12 +117,12 @@ bool TextureManager::BaseRegion::IsValid() const
 
 void TextureManager::BaseRegion::SetResourceInfo(ref_ptr<Texture::ResourceInfo> info)
 {
-  m_info = info;
+  m_info = std::move(info);
 }
 
 void TextureManager::BaseRegion::SetTexture(ref_ptr<Texture> texture)
 {
-  m_texture = texture;
+  m_texture = std::move(texture);
 }
 
 m2::PointF TextureManager::BaseRegion::GetPixelSize() const
@@ -165,45 +154,15 @@ m2::RectF const & TextureManager::BaseRegion::GetTexRect() const
   return m_info->GetTexRect();
 }
 
-float TextureManager::GlyphRegion::GetOffsetX() const
-{
-  ASSERT(m_info->GetType() == Texture::ResourceType::Glyph, ());
-  return ref_ptr<GlyphInfo>(m_info)->GetMetrics().m_xOffset;
-}
-
-float TextureManager::GlyphRegion::GetOffsetY() const
-{
-  ASSERT(m_info->GetType() == Texture::ResourceType::Glyph, ());
-  return ref_ptr<GlyphInfo>(m_info)->GetMetrics().m_yOffset;
-}
-
-float TextureManager::GlyphRegion::GetAdvanceX() const
-{
-  ASSERT(m_info->GetType() == Texture::ResourceType::Glyph, ());
-  return ref_ptr<GlyphInfo>(m_info)->GetMetrics().m_xAdvance;
-}
-
-float TextureManager::GlyphRegion::GetAdvanceY() const
-{
-  ASSERT(m_info->GetType() == Texture::ResourceType::Glyph, ());
-  return ref_ptr<GlyphInfo>(m_info)->GetMetrics().m_yAdvance;
-}
-
 m2::PointU TextureManager::StippleRegion::GetMaskPixelSize() const
 {
   ASSERT(m_info->GetType() == Texture::ResourceType::StipplePen, ());
   return ref_ptr<StipplePenResourceInfo>(m_info)->GetMaskPixelSize();
 }
 
-//uint32_t TextureManager::StippleRegion::GetPatternPixelLength() const
-//{
-//  ASSERT(m_info->GetType() == Texture::ResourceType::StipplePen, ());
-//  return ref_ptr<StipplePenResourceInfo>(m_info)->GetPatternPixelLength();
-//}
-
 void TextureManager::Release()
 {
-  m_hybridGlyphGroups.clear();
+  m_glyphGroups.clear();
 
   m_symbolTextures.clear();
   m_stipplePenTexture.reset();
@@ -219,22 +178,20 @@ void TextureManager::Release()
 
   m_glyphManager.reset();
 
-  m_glyphGenerator->FinishGeneration();
-
   m_isInitialized = false;
   m_nothingToUpload.test_and_set();
 }
 
 bool TextureManager::UpdateDynamicTextures(ref_ptr<dp::GraphicsContext> context)
 {
-  if (!HasAsyncRoutines() && m_nothingToUpload.test_and_set())
+  if (m_nothingToUpload.test_and_set())
   {
     auto const apiVersion = context->GetApiVersion();
     if (apiVersion == dp::ApiVersion::OpenGLES2 || apiVersion == dp::ApiVersion::OpenGLES3)
     {
       // For some reasons OpenGL can not update textures immediately.
       // Here we use some timeout to prevent rendering frozening.
-      double const kUploadTimeoutInSeconds = 2.0;
+      double constexpr kUploadTimeoutInSeconds = 2.0;
       return m_uploadTimer.ElapsedSeconds() < kUploadTimeoutInSeconds;
     }
 
@@ -264,29 +221,21 @@ bool TextureManager::UpdateDynamicTextures(ref_ptr<dp::GraphicsContext> context)
 
 void TextureManager::UpdateGlyphTextures(ref_ptr<dp::GraphicsContext> context)
 {
-  std::lock_guard<std::mutex> lock(m_glyphTexturesMutex);
+  std::lock_guard lock(m_glyphTexturesMutex);
   for (auto & texture : m_glyphTextures)
     texture->UpdateState(context);
-}
-
-bool TextureManager::HasAsyncRoutines() const
-{
-  CHECK(m_glyphGenerator != nullptr, ());
-  return !m_glyphGenerator->IsSuspended();
 }
 
 ref_ptr<Texture> TextureManager::AllocateGlyphTexture()
 {
   std::lock_guard const lock(m_glyphTexturesMutex);
+  // TODO(AB): Would a bigger texture be better?
   m2::PointU size(kGlyphsTextureSize, kGlyphsTextureSize);
-  m_glyphTextures.push_back(make_unique_dp<FontTexture>(size, make_ref(m_glyphManager),
-                                                        m_glyphGenerator,
-                                                        make_ref(m_textureAllocator)));
+  m_glyphTextures.push_back(make_unique_dp<FontTexture>(size, make_ref(m_glyphManager), make_ref(m_textureAllocator)));
   return make_ref(m_glyphTextures.back());
 }
 
-void TextureManager::GetRegionBase(ref_ptr<Texture> tex, TextureManager::BaseRegion & region,
-                                   Texture::Key const & key)
+void TextureManager::GetRegionBase(ref_ptr<Texture> tex, BaseRegion & region, Texture::Key const & key)
 {
   bool isNew = false;
   region.SetResourceInfo(tex != nullptr ? tex->FindResource(key, isNew) : nullptr);
@@ -296,99 +245,56 @@ void TextureManager::GetRegionBase(ref_ptr<Texture> tex, TextureManager::BaseReg
     m_nothingToUpload.clear();
 }
 
-void TextureManager::GetGlyphsRegions(ref_ptr<FontTexture> tex, strings::UniString const & text,
-                                      int fixedHeight, TGlyphsBuffer & regions)
+uint32_t TextureManager::GetNumberOfGlyphsNotInGroup(std::vector<text::GlyphMetrics> const & glyphs, GlyphGroup const & group)
 {
-  ASSERT(tex != nullptr, ());
-
-  std::vector<GlyphKey> keys;
-  keys.reserve(text.size());
-  for (auto const c : text)
-    keys.emplace_back(c, fixedHeight);
-
-  bool hasNew = false;
-  auto resourcesInfo = tex->FindResources(keys, hasNew);
-  ASSERT_EQUAL(text.size(), resourcesInfo.size(), ());
-
-  regions.reserve(resourcesInfo.size());
-  for (auto const & info : resourcesInfo)
+  uint32_t count = 0;
+  auto const end = group.m_glyphKeys.end();
+  for (auto const & glyph : glyphs)
   {
-    GlyphRegion reg;
-    reg.SetResourceInfo(info);
-    reg.SetTexture(tex);
-    ASSERT(reg.IsValid(), ());
-
-    regions.push_back(std::move(reg));
+    if (group.m_glyphKeys.find(glyph.m_key) == end)
+      ++count;
   }
 
-  if (hasNew)
-    m_nothingToUpload.clear();
+  return count;
 }
 
-uint32_t TextureManager::GetNumberOfUnfoundCharacters(strings::UniString const & text, int fixedHeight,
-                                                      HybridGlyphGroup const & group)
+size_t TextureManager::FindHybridGlyphsGroup(std::vector<text::GlyphMetrics> const & glyphs)
 {
-  uint32_t cnt = 0;
-  for (auto const & c : text)
+  if (m_glyphGroups.empty())
   {
-    if (group.m_glyphs.find(std::make_pair(c, fixedHeight)) == group.m_glyphs.end())
-      cnt++;
-  }
-
-  return cnt;
-}
-
-void TextureManager::MarkCharactersUsage(strings::UniString const & text, int fixedHeight,
-                                         HybridGlyphGroup & group)
-{
-  for (auto const & c : text)
-    group.m_glyphs.emplace(c, fixedHeight);
-}
-
-size_t TextureManager::FindHybridGlyphsGroup(strings::UniString const & text, int fixedHeight)
-{
-  if (m_hybridGlyphGroups.empty())
-  {
-    m_hybridGlyphGroups.push_back(HybridGlyphGroup());
+    m_glyphGroups.emplace_back();
     return 0;
   }
 
-  HybridGlyphGroup & group = m_hybridGlyphGroups.back();
+  GlyphGroup & group = m_glyphGroups.back();
   bool hasEnoughSpace = true;
-  if (group.m_texture != nullptr)
-    hasEnoughSpace = group.m_texture->HasEnoughSpace(static_cast<uint32_t>(text.size()));
 
-  // If we have got the only hybrid texture (in most cases it is)
-  // we can omit checking of glyphs usage.
+  // TODO(AB): exclude spaces and repeated glyphs if necessary to get a precise size.
+  if (group.m_texture)
+    hasEnoughSpace = group.m_texture->HasEnoughSpace(static_cast<uint32_t>(glyphs.size()));
+
+  // If we have got the only texture (in most cases it is), we can omit checking of glyphs usage.
   if (hasEnoughSpace)
   {
-    size_t const glyphsCount = group.m_glyphs.size() + text.size();
-    if (m_hybridGlyphGroups.size() == 1 && glyphsCount < m_maxGlypsCount)
+    size_t const glyphsCount = group.m_glyphKeys.size() + glyphs.size();
+    if (m_glyphGroups.size() == 1 && glyphsCount < m_maxGlypsCount)
       return 0;
   }
 
-  // Looking for a hybrid texture which contains text entirely.
-  for (size_t i = 0; i < m_hybridGlyphGroups.size() - 1; i++)
+  // Looking for a texture which can fit all glyphs.
+  for (size_t i = 0; i < m_glyphGroups.size() - 1; i++)
   {
-    if (GetNumberOfUnfoundCharacters(text, fixedHeight, m_hybridGlyphGroups[i]) == 0)
+    if (GetNumberOfGlyphsNotInGroup(glyphs, m_glyphGroups[i]) == 0)
       return i;
   }
 
-  // Check if we can contain text in the last hybrid texture.
-  uint32_t const unfoundChars = GetNumberOfUnfoundCharacters(text, fixedHeight, group);
-  uint32_t const newCharsCount = static_cast<uint32_t>(group.m_glyphs.size()) + unfoundChars;
+  // Check if we can fit all glyphs in the last hybrid texture.
+  uint32_t const unfoundChars = GetNumberOfGlyphsNotInGroup(glyphs, group);
+  uint32_t const newCharsCount = static_cast<uint32_t>(group.m_glyphKeys.size()) + unfoundChars;
   if (newCharsCount >= m_maxGlypsCount || !group.m_texture->HasEnoughSpace(unfoundChars))
-    m_hybridGlyphGroups.push_back(HybridGlyphGroup());
+    m_glyphGroups.emplace_back();
 
-  return m_hybridGlyphGroups.size() - 1;
-}
-
-size_t TextureManager::FindHybridGlyphsGroup(TMultilineText const & text, int fixedHeight)
-{
-  strings::UniString combinedString;
-  MultilineTextToUniString(text, combinedString);
-
-  return FindHybridGlyphsGroup(combinedString, fixedHeight);
+  return m_glyphGroups.size() - 1;
 }
 
 void TextureManager::Init(ref_ptr<dp::GraphicsContext> context, Params const & params)
@@ -486,10 +392,14 @@ void TextureManager::Init(ref_ptr<dp::GraphicsContext> context, Params const & p
   // Initialize glyphs.
   m_glyphManager = make_unique_dp<GlyphManager>(params.m_glyphMngParams);
   uint32_t constexpr textureSquare = kGlyphsTextureSize * kGlyphsTextureSize;
-  uint32_t const baseGlyphHeight =
-      static_cast<uint32_t>(params.m_glyphMngParams.m_baseGlyphHeight * kGlyphAreaMultiplier);
-  uint32_t const averageGlyphSquare = baseGlyphHeight * baseGlyphHeight;
+  uint32_t constexpr baseGlyphHeightPixels = static_cast<uint32_t>(dp::kBaseFontSizePixels * kGlyphAreaMultiplier);
+  uint32_t constexpr averageGlyphSquare = baseGlyphHeightPixels * baseGlyphHeightPixels;
   m_maxGlypsCount = static_cast<uint32_t>(ceil(kGlyphAreaCoverage * textureSquare / averageGlyphSquare));
+
+  std::string_view constexpr kSpace{" "};
+  m_spaceGlyph = m_glyphManager->ShapeText(kSpace, dp::kBaseFontSizePixels, "en").m_glyphs.front().m_key;
+
+  LOG(LDEBUG, ("Glyphs texture size =", kGlyphsTextureSize, "with max glyphs count =", m_maxGlypsCount));
 
   m_isInitialized = true;
   m_nothingToUpload.clear();
@@ -502,9 +412,9 @@ void TextureManager::OnSwitchMapStyle(ref_ptr<dp::GraphicsContext> context)
   // Here we need invalidate only textures which can be changed in map style switch.
   // Now we update only symbol textures, if we need update other textures they must be added here.
   // For Vulkan we use m_texturesToCleanup to defer textures destroying.
-  for (size_t i = 0; i < m_symbolTextures.size(); ++i)
+  for (const auto & m_symbolTexture : m_symbolTextures)
   {
-    ref_ptr<SymbolsTexture> symbolsTexture = make_ref(m_symbolTextures[i]);
+    ref_ptr<SymbolsTexture> symbolsTexture = make_ref(m_symbolTexture);
     ASSERT(symbolsTexture != nullptr, ());
 
     if (context->GetApiVersion() != dp::ApiVersion::Vulkan)
@@ -574,49 +484,91 @@ void TextureManager::GetColorRegion(Color const & color, ColorRegion & region)
   GetRegionBase(make_ref(m_colorTexture), region, ColorKey(color));
 }
 
-void TextureManager::GetGlyphRegions(TMultilineText const & text, int fixedHeight,
-                                     TMultilineGlyphsBuffer & buffers)
+text::TextMetrics TextureManager::ShapeSingleTextLine(float fontPixelHeight, std::string_view utf8,
+                                                      TGlyphsBuffer * glyphRegions)  // TODO(AB): Better name?
 {
-  std::lock_guard<std::mutex> lock(m_calcGlyphsMutex);
-  CalcGlyphRegions<TMultilineText, TMultilineGlyphsBuffer>(text, fixedHeight, buffers);
+  ASSERT(!utf8.empty(), ());
+  std::vector<ref_ptr<Texture::ResourceInfo>> resourcesInfo;
+  bool hasNewResources = false;
+
+  // TODO(AB): Is this mutex too slow?
+  std::lock_guard lock(m_calcGlyphsMutex);
+
+  // TODO(AB): Fix hard-coded lang.
+  auto textMetrics = m_glyphManager->ShapeText(utf8, fontPixelHeight, "en");
+
+  auto const & glyphs = textMetrics.m_glyphs;
+
+  size_t const hybridGroupIndex = FindHybridGlyphsGroup(glyphs);
+  ASSERT(hybridGroupIndex != GetInvalidGlyphGroup(), ());
+  GlyphGroup & group = m_glyphGroups[hybridGroupIndex];
+
+  // Mark used glyphs.
+  for (auto const & glyph : glyphs)
+    group.m_glyphKeys.insert(glyph.m_key);
+
+  if (!group.m_texture)
+    group.m_texture = AllocateGlyphTexture();
+
+  if (glyphRegions)
+    resourcesInfo.reserve(glyphs.size());
+
+  for (auto const & glyph : glyphs)
+  {
+    bool newResource = false;
+    auto fontTexture = static_cast<FontTexture *>(group.m_texture.get())->MapResource(glyph.m_key, newResource);
+    hasNewResources |= newResource;
+
+    if (glyphRegions)
+      resourcesInfo.emplace_back(fontTexture);
+  }
+
+  if (glyphRegions)
+  {
+    glyphRegions->reserve(resourcesInfo.size());
+    for (auto const & info : resourcesInfo)
+    {
+      GlyphRegion reg;
+      reg.SetResourceInfo(info);
+      reg.SetTexture(group.m_texture);
+      ASSERT(reg.IsValid(), ());
+
+      glyphRegions->push_back(std::move(reg));
+    }
+  }
+
+  if (hasNewResources)
+    m_nothingToUpload.clear();
+
+  return textMetrics;
 }
 
-void TextureManager::GetGlyphRegions(strings::UniString const & text, int fixedHeight,
-                                     TGlyphsBuffer & regions)
+TextureManager::TShapedTextLines TextureManager::ShapeMultilineText(float fontPixelHeight, std::string_view utf8,
+    char const * delimiters, TMultilineGlyphsBuffer & multilineGlyphRegions)
 {
-  std::lock_guard<std::mutex> lock(m_calcGlyphsMutex);
-  CalcGlyphRegions<strings::UniString, TGlyphsBuffer>(text, fixedHeight, regions);
+  TShapedTextLines textLines;
+  strings::Tokenize(utf8, delimiters, [&](std::string_view line)
+  {
+    if (line.empty())
+      return;
+
+    multilineGlyphRegions.emplace_back();
+
+    textLines.emplace_back(ShapeSingleTextLine(fontPixelHeight, line, &multilineGlyphRegions.back()));
+  });
+
+  return textLines;
 }
 
-/*
-uint32_t TextureManager::GetAbsentGlyphsCount(ref_ptr<Texture> texture,
-                                              strings::UniString const & text,
-                                              int fixedHeight) const
+GlyphFontAndId TextureManager::GetSpaceGlyph() const
 {
-  if (texture == nullptr)
-    return 0;
-
-  ASSERT(dynamic_cast<FontTexture *>(texture.get()) != nullptr, ());
-  return static_cast<FontTexture *>(texture.get())->GetAbsentGlyphsCount(text, fixedHeight);
+  return m_spaceGlyph;
 }
 
-uint32_t TextureManager::GetAbsentGlyphsCount(ref_ptr<Texture> texture, TMultilineText const & text,
-                                              int fixedHeight) const
-{
-  if (texture == nullptr)
-    return 0;
-
-  uint32_t count = 0;
-  for (size_t i = 0; i < text.size(); ++i)
-    count += GetAbsentGlyphsCount(texture, text[i], fixedHeight);
-  return count;
-}
-*/
-
-bool TextureManager::AreGlyphsReady(strings::UniString const & str, int fixedHeight) const
+bool TextureManager::AreGlyphsReady(TGlyphs const & glyphs) const
 {
   CHECK(m_isInitialized, ());
-  return m_glyphManager->AreGlyphsReady(str, fixedHeight);
+  return m_glyphManager->AreGlyphsReady(glyphs);
 }
 
 ref_ptr<Texture> TextureManager::GetSymbolsTexture() const

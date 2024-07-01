@@ -254,6 +254,12 @@
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "Hướng dẫn bằng Giọng nói";
 
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "Thông báo tên đường";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "Nếu bật, sẽ đọc to tên đường hoặc lối ra để rẽ vào.";
+
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "Ngôn ngữ Giọng nói";
 
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "Chuẩn hóa la bàn";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "Nhấn và giữ lại vào bản đồ để xem giao diện";
 
 /* Update all button text */
 "downloader_update_all_button" = "Cập nhật tất cả";
@@ -499,8 +508,6 @@
 "dialog_routing_application_error" = "Không thể tạo tuyến đường do lỗi ứng dụng.";
 
 "dialog_routing_try_again" = "Vui lòng thử lại";
-
-"not_now" = "Lúc khác";
 
 "dialog_routing_download_and_build_cross_route" = "Bạn có muốn tải về bản đồ và tạo một tuyến đường tối ưu hơn kéo dài trên nhiều hơn một bản đồ?";
 
@@ -705,6 +712,9 @@
 
 "editor_edit_place_name_hint" = "Tên địa điểm";
 
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "Vì nó được viết bằng ngôn ngữ địa phương";
+
 "editor_edit_place_category_title" = "Thể loại";
 
 "whatsnew_editor_message_1" = "Nhập các địa điểm mới vào bản đồ, và trực tiếp chỉnh sửa những địa điểm hiện có trên ứng dụng.";
@@ -860,7 +870,7 @@
 
 "editor_share_to_all_dialog_message_2" = "Các biên tập viên của OpenStreetMap sẽ kiểm tra các thay đổi và liên hệ với bạn nếu họ có bất kỳ câu hỏi nào.";
 
-"navigation_stop_button" = "dừng";
+"navigation_stop_button" = "Dừng";
 
 /* iOS dialog for the case when recent track recording is on and the app comes back from background */
 "recent_track_background_dialog_title" = "Tắt ghi lại tuyến đường đã đi gần đây của bạn?";
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "Dữ liệu giao thông không khả dụng";
 
+"enable_logging" = "Bật nhật ký";
+
+"log_file_size" = "Kích thước tệp nhật ký: %@";
+
 "transliteration_title" = "Chuyển ngữ sang chữ Latinh";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "Lối ra";
 
-"routing_add_start_point" = "Bổ sung điểm bắt đầu để lập kế hoạch lộ trình";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "Sử dụng tìm kiếm hoặc nhấn vào bản đồ để thêm điểm bắt đầu tuyến đường";
 
-"routing_add_finish_point" = "Bổ sung điểm kết thúc để lập kế hoạch lộ trình";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "Sử dụng tìm kiếm hoặc nhấn vào bản đồ để thêm điểm đến";
 
 "planning_route_manage_route" = "Quản lý lộ trình";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "Thêm điểm dừng";
 
 "start_from_my_position" = "Bắt đầu từ";
-
-"profile_authorization_error" = "Rất tiếc, đã có lỗi xảy ra. Hãy thử đăng nhập lại.";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "Vui lòng đăng nhập vào OpenStreetMap để tự động tải lên tất cả các chỉnh sửa bản đồ của bạn. Tìm hiểu thêm";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "Hiển thị tất cả";
 
 "bookmarks_create_new_group" = "Tạo danh sách mới";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "Nhập dấu trang và bản nhạc";
 
 "downloader_hide_screen" = "Ẩn Màn hình";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "Một số tệp không được chuyển đổi.";
 
-"bookmarks_restore_title" = "Khôi phục phiên bản này?";
-
-"error_system_message" = "Đã xảy ra lỗi không xác định";
-
 "restore" = "Khôi phục";
 
 "privacy_policy" = "Chính sách bảo mật";
 
 "terms_of_use" = "Điều khoảng sử dụng";
-
-"button_layer_traffic" = "Giao thông";
 
 "button_layer_subway" = "Xe điện ngầm";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "Popular";
 
-"export_file" = "Xuất tập tin";
+"export_file" = "Xuất KMZ";
+
+"export_file_gpx" = "Xuất GPX";
 
 "delete_list" = "Xóa danh sách";
 
@@ -1038,6 +1051,8 @@
 "power_managment_setting_auto" = "Tự động";
 
 "power_managment_setting_manual_max" = "Tiết kiệm năng lượng tối đa";
+
+"enable_logging_warning_message" = "Tùy chọn này được kích hoạt để ghi nhật ký đăng nhập cho mục đích chẩn đoán. Điều này sẽ giúp nhóm chúng tôi làm rõ các vấn đề liên quan đến ứng dụng. Hãy bật tùy chọn này chỉ khi nào có yêu cầu hỗ trợ từ Organic Maps.";
 
 "driving_options_title" = "Thiết lập đi vòng";
 
@@ -1258,6 +1273,18 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/About_OpenStreetMap";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "Bạn hiện đang sử dụng bản đồ không phải trả tiền trên màn hình điện thoại";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "Bạn hiện đang sử dụng bản đồ không phải trả tiền trên màn hình ô tô";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "Tiếp tục trên điện thoại";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "Đến màn hình ô tô";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
 "button_layer_outdoor" = "Đi bộ đường dài";
 
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "Bản đồ";
+
+"drive_through" = "Lái xe qua";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "Liên kết thực đơn";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "Kích hoạt đồng bộ hóa iCloud";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "Đồng bộ hóa iCloud là một tính năng thử nghiệm đang được phát triển. Đảm bảo rằng bạn đã tạo bản sao lưu tất cả dấu trang và bản nhạc của mình.";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "iCloud bị vô hiệu hóa";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "Vui lòng bật iCloud trong cài đặt thiết bị của bạn để sử dụng tính năng này.";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "Cho phép";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "Hỗ trợ";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "Lỗi: Không đồng bộ được do lỗi kết nối";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "Lỗi: Không thể đồng bộ hóa do vượt quá hạn ngạch iCloud";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "Lỗi: iCloud không khả dụng";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "Quán bar";
 
-"type.amenity.bbq" = "Điểm cắm trại";
+"type.amenity.bbq" = "Nướng thịt nướng";
 
 "type.amenity.bench" = "Xe đạp";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "Chổ nương thân";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "Chổ nương thân";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "Túp lều Bivouac";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
 
 "type.amenity.public_bath" = "Nhà tắm công cộng";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "Lối ra";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "Miễn phí";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "Vạch qua đường";
 
-"type.highway.footway.alpine_hiking" = "Đường";
-
 "type.highway.footway.area" = "Đường";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "Cầu";
-
-"type.highway.footway.demanding_alpine_hiking" = "Đường";
-
-"type.highway.footway.demanding_mountain_hiking" = "Đường";
-
-"type.highway.footway.difficult_alpine_hiking" = "Đường";
-
-"type.highway.footway.hiking" = "Đường";
-
-"type.highway.footway.mountain_hiking" = "Đường";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "Đường hầm";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "Đường";
 
-"type.highway.path.alpine_hiking" = "Đường";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "Đường";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "Đường";
 
 "type.highway.path.bicycle" = "Đường";
+
+"type.highway.footway.bicycle" = "Đường";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "Cầu";
 
-"type.highway.path.demanding_alpine_hiking" = "Đường";
-
-"type.highway.path.demanding_mountain_hiking" = "Đường";
-
-"type.highway.path.difficult_alpine_hiking" = "Đường";
-
-"type.highway.path.hiking" = "Đường";
-
 "type.highway.path.horse" = "Đường";
-
-"type.highway.path.mountain_hiking" = "Đường";
-
-"type.highway.path.permissive" = "Đường";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "Đường hầm";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "Phố";
 
-"type.highway.track.grade2" = "Phố";
-
-"type.highway.track.grade3" = "Phố";
-
-"type.highway.track.grade4" = "Phố";
-
-"type.highway.track.grade5" = "Phố";
-
 "type.highway.track.no.access" = "Phố";
-
-"type.highway.track.permissive" = "Phố";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "Đường hầm";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Educational Facility";
 
-"type.landuse.farm" = "Farm";
-
 "type.landuse.farmland" = "Đất nông nghiệp";
 
 "type.landuse.farmyard" = "Farmyard";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "Điểm khảo cổ";
 
 "type.leisure.golf_course" = "Sân gôn";
+
+"type.leisure.miniature_golf" = "Minigolf";
 
 "type.leisure.hackerspace" = "Không gian tin tặc";
 
@@ -3726,7 +3766,7 @@
 /* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
 "type.tourism.alpine_hut" = "Nhà nghỉ trên núi";
 
-"type.tourism.apartment" = "Căn hộ";
+"type.tourism.apartment" = "Căn hộ nghỉ dưỡng";
 
 "type.tourism.artwork" = "Du lịch";
 
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "Sông";
 
 "type.waterway.river.tunnel" = "Sông";
-
-"type.waterway.riverbank" = "Sông";
 
 "type.waterway.stream" = "Sông";
 

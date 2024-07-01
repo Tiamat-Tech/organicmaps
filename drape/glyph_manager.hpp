@@ -1,23 +1,60 @@
 #pragma once
 
-#include "base/shared_buffer_manager.hpp"
+#include "drape/glyph.hpp"
+
 #include "base/string_utils.hpp"
 
 #include <string>
 #include <vector>
-#include <functional>
 
 namespace dp
 {
-uint32_t constexpr kSdfBorder = 4;
-
 struct UnicodeBlock;
+
+// TODO(AB): Move to a separate file?
+namespace text
+{
+struct GlyphMetrics
+{
+  GlyphFontAndId m_key;
+
+  // TODO(AB): Store original font units or floats?
+  int32_t m_xOffset;
+  int32_t m_yOffset;
+  int32_t m_xAdvance;
+  // yAdvance is used only in vertical text layouts and is 0 for horizontal texts.
+  int32_t m_yAdvance {0};
+
+  bool operator==(GlyphMetrics const & other) const
+  {
+    return m_key == other.m_key;
+  }
+};
+
+// TODO(AB): Move to a separate file?
+struct TextMetrics
+{
+  int32_t m_lineWidthInPixels {0};
+  int32_t m_maxLineHeightInPixels {0};
+  std::vector<GlyphMetrics> m_glyphs;
+
+  void AddGlyphMetrics(int16_t font, uint16_t glyphId, int32_t xOffset, int32_t yOffset, int32_t xAdvance, int32_t height)
+  {
+    m_glyphs.push_back({{font, glyphId}, xOffset, yOffset, xAdvance});
+
+    if (m_glyphs.size() == 1)
+      xAdvance -= xOffset;
+    // if (yOffset > 0)
+    //   height += yOffset;  // TODO(AB): Is it needed? Is it correct?
+    m_lineWidthInPixels += xAdvance;
+    m_maxLineHeightInPixels = std::max(m_maxLineHeightInPixels, height);
+  }
+};
+}  // namespace text
 
 class GlyphManager
 {
 public:
-  static int constexpr kDynamicGlyphSize = -1;
-
   struct Params
   {
     std::string m_uniBlocks;
@@ -25,77 +62,28 @@ public:
     std::string m_blacklist;
 
     std::vector<std::string> m_fonts;
-
-    uint32_t m_baseGlyphHeight = 22;
-    uint32_t m_sdfScale = 4;
-  };
-
-  struct GlyphMetrics
-  {
-    float m_xAdvance;
-    float m_yAdvance;
-    float m_xOffset;
-    float m_yOffset;
-    bool m_isValid;
-  };
-
-  struct GlyphImage
-  {
-    ~GlyphImage()
-    {
-      ASSERT(m_data.use_count() != 1, ("Probably you forgot to call Destroy()"));
-    }
-
-    void Destroy()
-    {
-      if (m_data != nullptr)
-      {
-        SharedBufferManager::instance().freeSharedBuffer(m_data->size(), m_data);
-        m_data = nullptr;
-      }
-    }
-
-    uint32_t m_width;
-    uint32_t m_height;
-
-    uint32_t m_bitmapRows;
-    int m_bitmapPitch;
-
-    SharedBufferManager::shared_buffer_ptr_t m_data;
-  };
-
-  struct Glyph
-  {
-    GlyphMetrics m_metrics;
-    GlyphImage m_image;
-    int m_fontIndex;
-    strings::UniChar m_code;
-    int m_fixedSize;
   };
 
   explicit GlyphManager(Params const & params);
   ~GlyphManager();
 
-  Glyph GetGlyph(strings::UniChar unicodePoints, int fixedHeight);
+  void MarkGlyphReady(GlyphFontAndId key);
+  bool AreGlyphsReady(TGlyphs const & str) const;
 
-  void MarkGlyphReady(Glyph const & glyph);
-  bool AreGlyphsReady(strings::UniString const & str, int fixedSize) const;
+  int GetFontIndex(strings::UniChar unicodePoint);
+  int GetFontIndex(std::u16string_view sv);
 
-  Glyph GetInvalidGlyph(int fixedSize) const;
+  text::TextMetrics ShapeText(std::string_view utf8, int fontPixelHeight, int8_t lang);
+  text::TextMetrics ShapeText(std::string_view utf8, int fontPixelHeight, char const * lang);
 
-  uint32_t GetBaseGlyphHeight() const;
-  uint32_t GetSdfScale() const;
-
-  static Glyph GenerateGlyph(Glyph const & glyph, uint32_t sdfScale);
+  GlyphImage GetGlyphImage(GlyphFontAndId key, int pixelHeight, bool sdf) const;
 
 private:
-  int GetFontIndex(strings::UniChar unicodePoint);
   // Immutable version can be called from any thread and doesn't require internal synchronization.
   int GetFontIndexImmutable(strings::UniChar unicodePoint) const;
   int FindFontIndexInBlock(UnicodeBlock const & block, strings::UniChar unicodePoint) const;
 
-private:
   struct Impl;
-  Impl * m_impl;
+  std::unique_ptr<Impl> m_impl;
 };
 }  // namespace dp

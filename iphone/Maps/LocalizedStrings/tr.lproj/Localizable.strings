@@ -254,6 +254,12 @@
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "Sesli Yönlendirme";
 
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "Sokak İsimlerini Duyur";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "Etkinleştirildiğinde, dönülecek sokağın veya çıkışın adı yüksek sesle söylenecektir.";
+
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "Ses Dili";
 
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "Pusula kalibrasyonu";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "Arayüzü görmek için haritaya tekrar uzun dokunun";
 
 /* Update all button text */
 "downloader_update_all_button" = "Tümünü güncelle";
@@ -499,8 +508,6 @@
 "dialog_routing_application_error" = "Uygulama hatası nedeniyle rota oluşturulamadı.";
 
 "dialog_routing_try_again" = "Lütfen tekrar deneyin";
-
-"not_now" = "Şimdi Değil";
 
 "dialog_routing_download_and_build_cross_route" = "Haritayı indirerek birden fazla haritaya uzanan daha uygun bir rota oluşturmak ister misiniz?";
 
@@ -705,6 +712,9 @@
 
 "editor_edit_place_name_hint" = "Yerin adı";
 
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "Yerel dilde yazıldığı gibi";
+
 "editor_edit_place_category_title" = "Kategori";
 
 "whatsnew_editor_message_1" = "Doğrudan uygulamadan haritaya yeni yerler ekleyin ve mevcut yerleri düzenleyin.";
@@ -788,7 +798,7 @@
 "km" = "km";
 
 /* abbreviation for kilometers per hour */
-"kilometers_per_hour" = "km/s";
+"kilometers_per_hour" = "km/sa";
 
 /* abbreviation for mile(s) */
 "mi" = "mil";
@@ -860,7 +870,7 @@
 
 "editor_share_to_all_dialog_message_2" = "OpenStreetMap editörleri değişikliklerinizi kontrol edecek ve bir soruları olursa sizinle iletişime geçecekler.";
 
-"navigation_stop_button" = "dur";
+"navigation_stop_button" = "Dur";
 
 /* iOS dialog for the case when recent track recording is on and the app comes back from background */
 "recent_track_background_dialog_title" = "En son seyahat edilen rotanızı kaydetmeyi devre dışı bırakmak istiyor musunuz?";
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "Trafik verileri kullanılamıyor";
 
+"enable_logging" = "Günlüğü etkinleştir";
+
+"log_file_size" = "Günlük dosyası boyutu: %@";
+
 "transliteration_title" = "Latin harf çevirisi";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "Çık";
 
-"routing_add_start_point" = "Rotayı planlamak için bir başlangıç noktası ekleyin";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "Bir rota başlangıç noktası eklemek için aramayı kullanın veya haritaya dokunun";
 
-"routing_add_finish_point" = "Rotayı planlamak için bir varış noktası ekleyin";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "Bir hedef noktası eklemek için aramayı kullanın veya haritaya dokunun";
 
 "planning_route_manage_route" = "Rotayı yönet";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "Ara nokta ekle";
 
 "start_from_my_position" = "Buradan başla";
-
-"profile_authorization_error" = "Üzgünüz, bir hata oluştu. Tekrar oturum açmayı deneyin.";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "Tüm harita düzenlemelerinizi otomatik olarak yüklemek için lütfen OpenStreetMap'e giriş yapın. Daha fazla bilgi";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "Tümünü göster";
 
 "bookmarks_create_new_group" = "Yeni liste oluştur";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "Yer i̇mlerini ve parçaları i̇çe aktarma";
 
 "downloader_hide_screen" = "Ekranı Gizle";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "Bazı dosyalar dönüştürülmedi.";
 
-"bookmarks_restore_title" = "Bu sürümü geri yükle?";
-
-"error_system_message" = "Bilinmeyen bir hata oluştu";
-
 "restore" = "Geri al";
 
 "privacy_policy" = "Gizlilik politikası";
 
 "terms_of_use" = "Kullanım koşulları";
-
-"button_layer_traffic" = "Trafik";
 
 "button_layer_subway" = "Metro";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "Popüler";
 
-"export_file" = "Dosyayı dışa aktar";
+"export_file" = "KMZ'yi Dışa Aktar";
+
+"export_file_gpx" = "GPX'i Dışa Aktar";
 
 "delete_list" = "Listeyi sil";
 
@@ -1038,6 +1051,8 @@
 "power_managment_setting_auto" = "Otomatik";
 
 "power_managment_setting_manual_max" = "Maksimum güç tasarrufu";
+
+"enable_logging_warning_message" = "Bu seçenek tanılama amacıyla günlüğe kaydetmeyi açar. Ekibimizin uygulamayla ilgili sorunları gidermesine yardımcı olabilir. Sorununuzla ilgili ayrıntılı günlükleri kaydetmek ve bize göndermek için bu seçeneği geçici olarak etkinleştirin.";
 
 "driving_options_title" = "Yönlendirme seçenekleri";
 
@@ -1258,6 +1273,18 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/Tr:About";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "Artık telefon ekranında Organic Maps kullanıyorsunuz";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "Şu anda araç ekranında Organic Maps kullanıyorsunuz";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "Telefonda devam edin";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "Araba ekranına";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
 "button_layer_outdoor" = "Yürüyüş";
 
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "Harita";
+
+"drive_through" = "Arabaya servis";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "Menü bağlantısı";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "iCloud Senkronizasyonunu Etkinleştir";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "iCloud senkronizasyonu geliştirme aşamasında olan deneysel bir özelliktir. Tüm yer imlerinizin ve parçalarınızın yedeğini aldığınızdan emin olun.";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "iCloud Devre Dışı";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "Bu özelliği kullanmak için lütfen cihazınızın ayarlarında iCloud'u etkinleştirin.";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "Etkinleştir";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "Yedekleme";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "Hata oluştu: Bağlantı hatası nedeniyle senkronizasyon başarısız oldu";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "Hata: iCloud kotası aşıldığı için senkronize edilemedi";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "Hata: iCloud kullanılamıyor";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "Bar";
 
-"type.amenity.bbq" = "Piknik Alanı";
+"type.amenity.bbq" = "Barbekü ızgara";
 
 "type.amenity.bench" = "Bank";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "Barınak";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "Barınak";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "Bivouac Kulübe";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
 
 "type.amenity.public_bath" = "Hamam";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "Çıkış";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "Ücretsiz";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "Yaya Geçidi";
 
-"type.highway.footway.alpine_hiking" = "Yol";
-
 "type.highway.footway.area" = "Yaya Alanı";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "Köprü";
-
-"type.highway.footway.demanding_alpine_hiking" = "Yol";
-
-"type.highway.footway.demanding_mountain_hiking" = "Yol";
-
-"type.highway.footway.difficult_alpine_hiking" = "Yol";
-
-"type.highway.footway.hiking" = "Yol";
-
-"type.highway.footway.mountain_hiking" = "Yol";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "Tünel";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "Yol";
 
-"type.highway.path.alpine_hiking" = "Yol";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "Yol";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "Yol";
 
 "type.highway.path.bicycle" = "Bisiklet ve Yürüyüş Yolu";
+
+"type.highway.footway.bicycle" = "Bisiklet ve Yürüyüş Yolu";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "Köprü";
 
-"type.highway.path.demanding_alpine_hiking" = "Yol";
-
-"type.highway.path.demanding_mountain_hiking" = "Yol";
-
-"type.highway.path.difficult_alpine_hiking" = "Yol";
-
-"type.highway.path.hiking" = "Yol";
-
 "type.highway.path.horse" = "Atlı Yolu";
-
-"type.highway.path.mountain_hiking" = "Yol";
-
-"type.highway.path.permissive" = "Yol";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "Tünel";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "Pist";
 
-"type.highway.track.grade2" = "Pist";
-
-"type.highway.track.grade3" = "Pist";
-
-"type.highway.track.grade4" = "Pist";
-
-"type.highway.track.grade5" = "Pist";
-
 "type.highway.track.no.access" = "Pist";
-
-"type.highway.track.permissive" = "Pist";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "Tünel";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Educational Facility";
 
-"type.landuse.farm" = "Çiftlik";
-
 "type.landuse.farmland" = "Tarım Arazileri";
 
 "type.landuse.farmyard" = "Çiftlik Bölgesi";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "Konut Bahçesi";
 
 "type.leisure.golf_course" = "Golf Sahası";
+
+"type.leisure.miniature_golf" = "Minigolf";
 
 "type.leisure.hackerspace" = "Hackerspace";
 
@@ -3726,7 +3766,7 @@
 /* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
 "type.tourism.alpine_hut" = "Dağ Köşkü";
 
-"type.tourism.apartment" = "Apart Otel";
+"type.tourism.apartment" = "Tatil Apartmanı";
 
 "type.tourism.artwork" = "Sanat";
 
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "Nehir";
 
 "type.waterway.river.tunnel" = "Nehir";
-
-"type.waterway.riverbank" = "Nehir";
 
 "type.waterway.stream" = "Nehir";
 

@@ -278,7 +278,7 @@ UNIT_TEST(Russia_UseTrunk)
   // Similar with GraphHopper.
   CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
                                    mercator::FromLatLon(66.271, 33.048), {0.0, 0.0},
-                                   mercator::FromLatLon(68.95, 33.045), 412359 /* expectedRouteMeters */);
+                                   mercator::FromLatLon(68.95, 33.045), 412795 /* expectedRouteMeters */);
 }
 
 // https://github.com/organicmaps/organicmaps/issues/3920
@@ -308,6 +308,18 @@ UNIT_TEST(AvoidConstruction)
   CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
                                    mercator::FromLatLon(-27.4724942, 153.030171), {0.0, 0.0},
                                    mercator::FromLatLon(-27.4706626, 153.035428), 2989.28);
+}
+
+UNIT_TEST(UK_Canterbury_UseDismount)
+{
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Pedestrian),
+                                   mercator::FromLatLon(51.2794435, 1.05627788), {0.0, 0.0},
+                                   mercator::FromLatLon(51.2818863, 1.05725286), 305);
+
+  /// @todo We have 231 sec bicycle detour here, while using dismount footway is 228 sec by foot :)
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
+                                   mercator::FromLatLon(51.2794435, 1.05627788), {0.0, 0.0},
+                                   mercator::FromLatLon(51.2818863, 1.05725286), 305);
 }
 
 } // namespace bicycle_route_test

@@ -254,6 +254,12 @@
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "Hangutasítások";
 
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "Az utcanevek felolvasása";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "Ha engedélyezve van, a rendszer hangosan kimondja annak az utcának vagy kijáratnak a nevét, amelyre be kell kanyarodni.";
+
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "A hangutasítások nyelve";
 
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "Iránytű kalibrálás";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "Érintse meg újra hosszan a térképet a kezelőfelület megjelenítéséhez.";
 
 /* Update all button text */
 "downloader_update_all_button" = "Mindegyik frissítése";
@@ -499,8 +508,6 @@
 "dialog_routing_application_error" = "Egy alkalmazáshiba miatt nem sikerült az útvonal létrehozása.";
 
 "dialog_routing_try_again" = "Kérjük, próbálja újra";
-
-"not_now" = "Most nem";
 
 "dialog_routing_download_and_build_cross_route" = "Szeretné letölteni a térképet és létrehozni egy optimálisabb útvonalat, amely több, mint egy térképen terül el?";
 
@@ -705,6 +712,9 @@
 
 "editor_edit_place_name_hint" = "Hely neve";
 
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "Ahogy a helyi nyelven írva van";
+
 "editor_edit_place_category_title" = "Kategória";
 
 "whatsnew_editor_message_1" = "Adj hozzá új helyeket a térképhez, és szerkeszd a meglévőket közvetlenül az alkalmazásból.";
@@ -860,7 +870,7 @@
 
 "editor_share_to_all_dialog_message_2" = "Az OpenStreetMap szerkesztői ellenőrzik a változásokat, és felveszik Önnel a kapcsolatot, ha kérdéseik vannak.";
 
-"navigation_stop_button" = "megállítás";
+"navigation_stop_button" = "Megállítás";
 
 /* iOS dialog for the case when recent track recording is on and the app comes back from background */
 "recent_track_background_dialog_title" = "Megszakítod a legutóbb megtett utad rögzítését?";
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "Forgalmi adatok nem állnak rendelkezésre";
 
-"transliteration_title" = "Átírás latin nyelvre";
+"enable_logging" = "Naplózás engedélyezése";
+
+"log_file_size" = "Naplófájl mérete: %@";
+
+"transliteration_title" = "Átírás latin betűkre";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "Kilépés";
 
-"routing_add_start_point" = "Adjon hozzá kiindulási pontot az útvonal megtervezéséhez";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "Használja a keresést, vagy koppintson a térképre az útvonal kezdőpontjának hozzáadásához";
 
-"routing_add_finish_point" = "Adjon hozzá végpontot az útvonal tervezéséhez";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "Használja a keresést, vagy koppintson a térképre egy célpont hozzáadásához";
 
 "planning_route_manage_route" = "Útvonal kezelése";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "Hozzáad megállót";
 
 "start_from_my_position" = "Kiindulás innen:";
-
-"profile_authorization_error" = "Hoppá, volt egy hiba. Próbáljon meg újra bejelentkezni.";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "Kérjük, jelentkezzen be az OpenStreetMap rendszerébe, hogy automatikusan feltölthesse az összes térképszerkesztését. További információ";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "Összes megjelenítése";
 
 "bookmarks_create_new_group" = "Új lista létrehozása";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "Könyvjelzők és sávok importálása";
 
 "downloader_hide_screen" = "Képernyő elrejtése";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "Egyes fájlok nem konvertáltak.";
 
-"bookmarks_restore_title" = "A verzió visszaállítása?";
-
-"error_system_message" = "Ismeretlen hiba történt";
-
 "restore" = "Visszaállítás";
 
 "privacy_policy" = "Adatvédelmi irányelvek";
 
 "terms_of_use" = "Felhasználási feltételek";
-
-"button_layer_traffic" = "Forgalom";
 
 "button_layer_subway" = "Metró";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "Popular";
 
-"export_file" = "Fájl exportálása";
+"export_file" = "KMZ exportálása";
+
+"export_file_gpx" = "GPX exportálása";
 
 "delete_list" = "Törölni a listát";
 
@@ -1038,6 +1051,8 @@
 "power_managment_setting_auto" = "Automatikus";
 
 "power_managment_setting_manual_max" = "Maximális energiatakarékosság";
+
+"enable_logging_warning_message" = "Az opció bekapcsolja a diagnosztikai célú naplózást. Hasznos lehet a terméktámogatási csapatunknak, akik elhárítják az alkalmazás hibáit. Csak az Organic Maps terméktámogatásának kérésére kapcsold be ezt az opciót.";
 
 "driving_options_title" = "Útvonaltervezési lehetőségek";
 
@@ -1258,6 +1273,18 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/Hu:Névjegy";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "Ön most az Organic Maps használja a telefon képernyőjén";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "Ön most az Organic Mapset használja az autó képernyőjén";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "Folytassa a telefonban";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "Az autó képernyőjére";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
 "button_layer_outdoor" = "Túrázás";
 
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "Térkép";
+
+"drive_through" = "Drive-through";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "Menü link";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "iCloud-szinkronizálás engedélyezése";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "Az iCloud-szinkronizálás egy fejlesztés alatt álló kísérleti funkció. Győződjön meg róla, hogy készített biztonsági másolatot az összes könyvjelzőjéről és zeneszámáról.";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "Az iCloud letiltva";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "A funkció használatához engedélyezze az iCloudot a készülék beállításaiban.";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "Engedélyezze a";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "Biztonsági mentés";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "Hiba: A szinkronizálás sikertelen volt a kapcsolat hibája miatt.";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "Hiba: iCloud-kvóta túllépése miatt nem sikerült szinkronizálni.";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "Hiba: Az iCloud nem elérhető";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "Bár";
 
-"type.amenity.bbq" = "Piknikezőhely";
+"type.amenity.bbq" = "Kerti sütögető";
 
 "type.amenity.bench" = "Pad";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "Menedék";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "Menedék";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "Bivak Kunyhó";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
 
 "type.amenity.public_bath" = "Közfürdő";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "Kijárat";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "Ingyenes";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "Gyalogátkelőhely";
 
-"type.highway.footway.alpine_hiking" = "Ösvény";
-
 "type.highway.footway.area" = "Ösvény";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "Híd";
-
-"type.highway.footway.demanding_alpine_hiking" = "Ösvény";
-
-"type.highway.footway.demanding_mountain_hiking" = "Ösvény";
-
-"type.highway.footway.difficult_alpine_hiking" = "Ösvény";
-
-"type.highway.footway.hiking" = "Ösvény";
-
-"type.highway.footway.mountain_hiking" = "Ösvény";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "Alagút";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "Ösvény";
 
-"type.highway.path.alpine_hiking" = "Ösvény";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "Ösvény";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "Ösvény";
 
 "type.highway.path.bicycle" = "Ösvény";
+
+"type.highway.footway.bicycle" = "Ösvény";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "Híd";
 
-"type.highway.path.demanding_alpine_hiking" = "Ösvény";
-
-"type.highway.path.demanding_mountain_hiking" = "Ösvény";
-
-"type.highway.path.difficult_alpine_hiking" = "Ösvény";
-
-"type.highway.path.hiking" = "Ösvény";
-
 "type.highway.path.horse" = "Ösvény";
-
-"type.highway.path.mountain_hiking" = "Ösvény";
-
-"type.highway.path.permissive" = "Ösvény";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "Alagút";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "Utca";
 
-"type.highway.track.grade2" = "Utca";
-
-"type.highway.track.grade3" = "Utca";
-
-"type.highway.track.grade4" = "Utca";
-
-"type.highway.track.grade5" = "Utca";
-
 "type.highway.track.no.access" = "Utca";
-
-"type.highway.track.permissive" = "Utca";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "Alagút";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Educational Facility";
 
-"type.landuse.farm" = "Farm";
-
 "type.landuse.farmland" = "Termőföld";
 
 "type.landuse.farmyard" = "Farmyard";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "Kert";
 
 "type.leisure.golf_course" = "Golfpálya";
+
+"type.leisure.miniature_golf" = "Minigolf";
 
 "type.leisure.hackerspace" = "Hackerspace";
 
@@ -3726,7 +3766,7 @@
 /* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
 "type.tourism.alpine_hut" = "Hegyi kunyhó";
 
-"type.tourism.apartment" = "Apartmanok";
+"type.tourism.apartment" = "Nyaraló apartman";
 
 "type.tourism.artwork" = "Szobor";
 
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "Folyó";
 
 "type.waterway.river.tunnel" = "Folyó";
-
-"type.waterway.riverbank" = "Folyó";
 
 "type.waterway.stream" = "Folyó";
 

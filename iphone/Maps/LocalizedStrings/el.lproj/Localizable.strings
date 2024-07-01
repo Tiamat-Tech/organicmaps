@@ -254,6 +254,12 @@
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "Φωνητικές οδηγίες";
 
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "Ανακοινώστε ονόματα οδών";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "Όταν είναι ενεργοποιημένο, το όνομα της οδού ή της εξόδου στην οποία θα μεταβείτε θα εκφωνείται δυνατά.";
+
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "Γλώσσα φωνής";
 
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "Καλιμπράρισμα πυξίδας";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "Πατήστε ξανά παρατεταμένα στο χάρτη για να δείτε το περιβάλλον εργασίας.";
 
 /* Update all button text */
 "downloader_update_all_button" = "Ενημέρωση όλων";
@@ -499,8 +508,6 @@
 "dialog_routing_application_error" = "Δεν είναι δυνατή η δημιουργία διαδρομής λόγω σφάλματος της εφαρμογής.";
 
 "dialog_routing_try_again" = "Προσπαθήστε ξανά";
-
-"not_now" = "Όχι τώρα";
 
 "dialog_routing_download_and_build_cross_route" = "Θέλετε να κατεβάσετε το χάρτη και να δημιουργήσετε μια πιο βέλτιστη διαδρομή που εκτείνεται σε περισσότερους από έναν χάρτες;";
 
@@ -704,6 +711,9 @@
 "editor_add_place_title" = "Προσθήκη";
 
 "editor_edit_place_name_hint" = "Όνομα τοποθεσίας";
+
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "Όπως είναι γραμμένο στην τοπική γλώσσα";
 
 "editor_edit_place_category_title" = "Κατηγορία";
 
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "Οι πληροφορίες για την κίνηση δεν είναι διαθέσιμες";
 
+"enable_logging" = "Ενεργοποίηση δυνατότητας καταγραφής";
+
+"log_file_size" = "Μέγεθος αρχείου καταγραφής: %@";
+
 "transliteration_title" = "Μεταγραφή στα Λατινικά";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "Έξοδος";
 
-"routing_add_start_point" = "Προσθέστε αφετηρία για να σχεδιάσετε μια διαδρομή";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "Χρησιμοποιήστε την αναζήτηση ή πατήστε στο χάρτη για να προσθέσετε ένα σημείο εκκίνησης της διαδρομής";
 
-"routing_add_finish_point" = "Προσθέστε τελικό προορισμό, για να σχεδιάσετε μια διαδρομή";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "Χρησιμοποιήστε την αναζήτηση ή πατήστε στο χάρτη για να προσθέσετε ένα σημείο προορισμού";
 
 "planning_route_manage_route" = "Διαχείριση διαδρομής";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "Προσθήκη στάσης";
 
 "start_from_my_position" = "Έναρξη από";
-
-"profile_authorization_error" = "Ωχ, παρουσιάστηκε σφάλμα. Προσπαθήστε να συνδεθείτε ξανά.";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "Παρακαλούμε συνδεθείτε στο OpenStreetMap για να ανεβάσετε αυτόματα όλες τις επεξεργασίες του χάρτη σας. Μάθετε περισσότερα";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "Εμφάνιση όλων";
 
 "bookmarks_create_new_group" = "Δημιουργία νέας λίστας";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "Εισαγωγή σελιδοδεικτών και διαδρομών";
 
 "downloader_hide_screen" = "Απόκρυψη οθόνης";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "Ορισμένα αρχεία δεν μετατράπηκαν.";
 
-"bookmarks_restore_title" = "Επαναφορά αυτής της έκδοσης;";
-
-"error_system_message" = "Συνέβη ένα μη αναγνωρίσιμο σφάλμα";
-
 "restore" = "Επαναφορά";
 
 "privacy_policy" = "Πολιτική απορρήτου";
 
 "terms_of_use" = "Όροι χρήσης";
-
-"button_layer_traffic" = "Κίνηση";
 
 "button_layer_subway" = "Μετρό";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "Δημοφιλή";
 
-"export_file" = "Εξαγωγή Αρχείου";
+"export_file" = "Εξαγωγή KMZ";
+
+"export_file_gpx" = "Εξαγωγή GPX";
 
 "delete_list" = "Διαγραφή λίστας";
 
@@ -1038,6 +1051,8 @@
 "power_managment_setting_auto" = "Αυτόματα";
 
 "power_managment_setting_manual_max" = "Πάντα";
+
+"enable_logging_warning_message" = "Αυτή η λειτουργία είναι ενεργοποιημένη για την καταγραφή ενεργειών για διαγνωστικούς σκοπούς. Αυτό βοηθά την ομάδα να εντοπίζει προβλήματα με την εφαρμογή. Να ενεργοποιείτε τη λειτουργία μόνο κατόπιν αιτήματος της υποστήριξης του Organic Maps.";
 
 "driving_options_title" = "Ρυθμίσεις δρομολόγησης";
 
@@ -1258,6 +1273,18 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/El:About_OpenStreetMap";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "Αυτή τη στιγμή το Organic Maps βρίσκεται στην οθόνη του κινητού";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "Αυτή τη στιγμή το Organic Maps βρίσκεται στην οθόνη του αυτοκινήτου.";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "Συνέχεια στο κινητό";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "Προς οθόνη αυτοκ.";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
 "button_layer_outdoor" = "Πεζοπορία";
 
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "Χάρτης";
+
+"drive_through" = "Οδηγώ μέσα από";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "Σύνδεσμος μενού";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "Ενεργοποίηση συγχρονισμού iCloud";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "Ο συγχρονισμός iCloud είναι μια πειραματική λειτουργία υπό ανάπτυξη. Βεβαιωθείτε ότι έχετε δημιουργήσει αντίγραφο ασφαλείας όλων των σελιδοδεικτών και των κομματιών σας.";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "Το iCloud είναι απενεργοποιημένο";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "Ενεργοποιήστε το iCloud στις ρυθμίσεις της συσκευής σας για να χρησιμοποιήσετε αυτή τη λειτουργία.";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "Ενεργοποίηση";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "Δημιουργία αντιγράφων ασφαλείας";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "Σφάλμα: Αποτυχία συγχρονισμού λόγω σφάλματος σύνδεσης";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "Σφάλμα: iCloud: Απέτυχε ο συγχρονισμός λόγω υπέρβασης της ποσόστωσης iCloud";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "Σφάλμα: Το iCloud δεν είναι διαθέσιμο";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "Μπαρ";
 
-"type.amenity.bbq" = "Χώρος εκδρομής";
+"type.amenity.bbq" = "Ψησταριά μπάρμπεκιου";
 
 "type.amenity.bench" = "Παγκάκι";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "Καταφύγιο";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "Καταφύγιο";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "καταφύγιο bivouac";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Lean-to Shelter";
 
 "type.amenity.public_bath" = "Δημόσιο Λουτρό";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "Έξοδος";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "Δωρεάν";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "Διάβαση πεζών";
 
-"type.highway.footway.alpine_hiking" = "Διαδρομή";
-
 "type.highway.footway.area" = "Διαδρομή";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "Γέφυρα";
-
-"type.highway.footway.demanding_alpine_hiking" = "Διαδρομή";
-
-"type.highway.footway.demanding_mountain_hiking" = "Διαδρομή";
-
-"type.highway.footway.difficult_alpine_hiking" = "Διαδρομή";
-
-"type.highway.footway.hiking" = "Διαδρομή";
-
-"type.highway.footway.mountain_hiking" = "Διαδρομή";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "Σήραγγα";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "Διαδρομή";
 
-"type.highway.path.alpine_hiking" = "Διαδρομή";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "Διαδρομή";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "Διαδρομή";
 
 "type.highway.path.bicycle" = "Διαδρομή";
+
+"type.highway.footway.bicycle" = "Διαδρομή";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "Γέφυρα";
 
-"type.highway.path.demanding_alpine_hiking" = "Διαδρομή";
-
-"type.highway.path.demanding_mountain_hiking" = "Διαδρομή";
-
-"type.highway.path.difficult_alpine_hiking" = "Διαδρομή";
-
-"type.highway.path.hiking" = "Διαδρομή";
-
 "type.highway.path.horse" = "Διαδρομή";
-
-"type.highway.path.mountain_hiking" = "Διαδρομή";
-
-"type.highway.path.permissive" = "Διαδρομή";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "Σήραγγα";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "Οδός";
 
-"type.highway.track.grade2" = "Οδός";
-
-"type.highway.track.grade3" = "Οδός";
-
-"type.highway.track.grade4" = "Οδός";
-
-"type.highway.track.grade5" = "Οδός";
-
 "type.highway.track.no.access" = "Οδός";
-
-"type.highway.track.permissive" = "Οδός";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "Σήραγγα";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Educational Facility";
 
-"type.landuse.farm" = "Farm";
-
 "type.landuse.farmland" = "Αγροτική γη";
 
 "type.landuse.farmyard" = "Farmyard";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "Κήπος αναψυχής";
 
 "type.leisure.golf_course" = "Γήπεδο γκολφ";
+
+"type.leisure.miniature_golf" = "Minigolf";
 
 "type.leisure.hackerspace" = "Hackerspace";
 
@@ -3726,7 +3766,7 @@
 /* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
 "type.tourism.alpine_hut" = "Ορεινό καταφύγιο";
 
-"type.tourism.apartment" = "Διαμερίσματα";
+"type.tourism.apartment" = "Διαμέρισμα διακοπών";
 
 "type.tourism.artwork" = "Έργα τέχνης";
 
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "Ποταμός";
 
 "type.waterway.river.tunnel" = "Ποταμός";
-
-"type.waterway.riverbank" = "Ποταμός";
 
 "type.waterway.stream" = "Ποταμός";
 

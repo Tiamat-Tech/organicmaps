@@ -254,6 +254,12 @@
 /* Settings «Route» category: «Tts enabled» title */
 "pref_tts_enable_title" = "Гласови инструкции";
 
+/* Settings «Route» category: «Tts announce street names» title */
+"pref_tts_street_names_title" = "Обявете имена на улици";
+
+/* Settings «Route» category: «Tts announce street names» description */
+"pref_tts_street_names_description" = "Когато е активирано, името на улицата или изхода, по който да завиете, ще бъде произнесено на глас.";
+
 /* Settings «Route» category: «Tts language» title */
 "pref_tts_language_title" = "Език на инструкциите";
 
@@ -339,6 +345,9 @@
 
 /* Settings item title */
 "pref_calibration_title" = "Калибриране на компас";
+
+/* Toast text when user hides UI with a long tap anywhere on the map */
+"long_tap_toast" = "Докоснете отново картата, за да видите интерфейса";
 
 /* Update all button text */
 "downloader_update_all_button" = "Обновяване на всичко";
@@ -499,8 +508,6 @@
 "dialog_routing_application_error" = "Не е възможно да се създаде маршрут поради грешка в приложението.";
 
 "dialog_routing_try_again" = "Моля, опитайте отново";
-
-"not_now" = "Не сега";
 
 "dialog_routing_download_and_build_cross_route" = "Бихте ли искали да изтеглите картата и да създадете по-оптимален маршрут, обхващащ повече от една карта?";
 
@@ -705,6 +712,9 @@
 
 "editor_edit_place_name_hint" = "Име на мястото";
 
+/* The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name */
+"editor_default_language_hint" = "Както е написано на местния език";
+
 "editor_edit_place_category_title" = "Категория";
 
 "whatsnew_editor_message_1" = "Добавяне на нови места в картата и редакция на съществуващите директно от приложението.";
@@ -860,7 +870,7 @@
 
 "editor_share_to_all_dialog_message_2" = "Редакторите на OpenStreetMap ще проверят промените и ще се свържат с вас, ако имат въпроси.";
 
-"navigation_stop_button" = "stop";
+"navigation_stop_button" = "Stop";
 
 /* iOS dialog for the case when recent track recording is on and the app comes back from background */
 "recent_track_background_dialog_title" = "Деактивиране на записването на последния ви маршрут?";
@@ -910,14 +920,20 @@
 /* "traffic" as in "road congestion" */
 "traffic_data_unavailable" = "Няма налични данни за трафика";
 
+"enable_logging" = "Активиране на запис на дневник";
+
+"log_file_size" = "Размер на регистрационния файл: %@";
+
 "transliteration_title" = "Латинска транслитерация";
 
 /* Subway exits for public transport marks on the map */
 "core_exit" = "Изход";
 
-"routing_add_start_point" = "Добавяне на начална точка за планиране на маршрут";
+/* User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". */
+"routing_add_start_point" = "Използвайте търсене или докоснете картата, за да добавите начална точка на маршрута";
 
-"routing_add_finish_point" = "Добавяне на крайна точка за планиране на маршрут";
+/* User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". */
+"routing_add_finish_point" = "Използвайте търсене или докоснете картата, за да добавите точка на дестинация";
 
 "planning_route_manage_route" = "Управление на маршрут";
 
@@ -930,8 +946,6 @@
 "placepage_add_stop" = "Добавяне на спирка";
 
 "start_from_my_position" = "Start from";
-
-"profile_authorization_error" = "За съжаление има грешка. Опитайте да влезете отново.";
 
 /* For iOS message 'alert_reauth_message' should be splitted in two parts: message + link. Here's first part */
 "alert_reauth_message_ios" = "Моля, влезте в OpenStreetMap, за да качвате автоматично всичките си редакции на картата. Научете повече";
@@ -951,6 +965,9 @@
 "bookmark_lists_show_all" = "Показване на всичко";
 
 "bookmarks_create_new_group" = "Създаване на нов списък";
+
+/* Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files */
+"bookmarks_import" = "Импортиране на отметки и маршрути";
 
 "downloader_hide_screen" = "Скриване на екрана";
 
@@ -982,17 +999,11 @@
 
 "bookmarks_convert_error_message" = "Някои файлове не са конвертирани.";
 
-"bookmarks_restore_title" = "Възстановяване на тази версия?";
-
-"error_system_message" = "Възникна неизвестна грешка";
-
 "restore" = "Възстановяване";
 
 "privacy_policy" = "Политика за поверителност";
 
 "terms_of_use" = "Условия за ползване";
-
-"button_layer_traffic" = "Трафик";
 
 "button_layer_subway" = "Метро";
 
@@ -1004,7 +1015,9 @@
 
 "popular_place" = "Популярно";
 
-"export_file" = "Експортиране на файл";
+"export_file" = "Експорт на KMZ";
+
+"export_file_gpx" = "Експортиране на GPX";
 
 "delete_list" = "Изтриване на списък";
 
@@ -1038,6 +1051,8 @@
 "power_managment_setting_auto" = "Автоматично";
 
 "power_managment_setting_manual_max" = "Максимално пестене на енергия";
+
+"enable_logging_warning_message" = "Тази настройка е разрешена, за да се записват действия за диагностични цели, които помагат на нашия екип да идентифицира проблеми с приложението. Временно активирайте тази настройка само за изпращане на подробна информация за проблема, който сте открили с приложението.";
 
 "driving_options_title" = "Опции за маршрутизация";
 
@@ -1258,6 +1273,18 @@
 /* Link to OSM wiki for Editor, Profile and About pages */
 "osm_wiki_about_url" = "https://wiki.openstreetmap.org/wiki/About_OpenStreetMap";
 
+/* Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen */
+"car_used_on_the_phone_screen" = "Вече използвате Organic Maps на екрана на телефона";
+
+/* Text on the phone placeholder screen that maps are displayed on the car screen */
+"car_used_on_the_car_screen" = "Вече използвате Organic Maps на екрана на автомобила";
+
+/* Displayed on the phone screen. Button to display maps on the phone screen instead of a car */
+"car_continue_on_the_phone" = "Продължете в телефона";
+
+/* Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! */
+"car_continue_in_the_car" = "Към екрана на автомобила";
+
 /* Outdoors/hiking map style (activity) name in the Styles and Layers dialog */
 "button_layer_outdoor" = "Активен отдих";
 
@@ -1269,6 +1296,38 @@
 
 /* Main screen title "Map" displayed in the navigation back button's menu. */
 "map" = "Карта";
+
+"drive_through" = "С прозорец за шофьори";
+
+/* Restaurant or other food place's menu URL field in the Editor */
+"website_menu" = "Връзка към менюто";
+
+/* Title for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_title" = "Активиране на синхронизацията с iCloud";
+
+/* Message for the "Enable iCloud Syncronization" alert. */
+"enable_icloud_synchronization_message" = "Синхронизацията в iCloud е експериментална функция в процес на разработка. Уверете се, че сте направили резервно копие на всичките си отметки и песни.";
+
+/* Title for the "iCloud is Disabled" alert. */
+"icloud_disabled_title" = "iCloud е деактивиран";
+
+/* Message for the "iCloud is Disabled" alert. */
+"icloud_disabled_message" = "За да използвате тази функция, разрешете iCloud в настройките на устройството си.";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Enable" action button. */
+"enable" = "Активиране на";
+
+/* Title for the "Enable iCloud Syncronization" alert's "Backup" action button. */
+"backup" = "Резервно копие";
+
+/* iCloud error message: Failed to synchronize due to connection error */
+"icloud_synchronization_error_connection_error" = "Грешка: Не успя да се синхронизира поради грешка при свързването";
+
+/* iCloud error message: Failed to synchronize due to iCloud quota exceeded */
+"icloud_synchronization_error_quota_exceeded" = "Грешка: Неуспешно синхронизиране поради превишена квота на iCloud";
+
+/* iCloud error message: iCloud is not available */
+"icloud_synchronization_error_cloud_is_unavailable" = "Грешка: iCloud не е наличен";
 
 
 /********** Types **********/
@@ -1321,7 +1380,7 @@
 
 "type.amenity.bar" = "Bar";
 
-"type.amenity.bbq" = "Picnic Site";
+"type.amenity.bbq" = "Грил барбекю";
 
 "type.amenity.bench" = "Bench";
 
@@ -1568,6 +1627,15 @@
 
 /* Weather shelter (including sun shelters and natural rock shelters). */
 "type.amenity.shelter" = "Подслон";
+
+/* A weather shelter by the public transport stop. */
+"type.amenity.shelter.public_transport" = "Подслон";
+
+/* Compared to wilderness_hut its smaller and simpler, without a fireplace. */
+"type.amenity.shelter.basic_hut" = "Колибка за бивак";
+
+/* A traditional 3-walled shelter (one side open), suitable for overnight camping. */
+"type.amenity.shelter.lean_to" = "Подслон за бивак";
 
 "type.amenity.public_bath" = "Обществена баня";
 
@@ -1958,7 +2026,7 @@
 
 "type.entrance.exit" = "Изход";
 
-"type.fee.yes" = "💲";
+"type.fee.yes" = "$";
 
 "type.fee.no" = "Безплатно";
 
@@ -2027,22 +2095,10 @@
 
 "type.highway.footway.crossing" = "Пешеходно пресичане";
 
-"type.highway.footway.alpine_hiking" = "Path";
-
 "type.highway.footway.area" = "Foot Path";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.footway.bridge" = "Мост";
-
-"type.highway.footway.demanding_alpine_hiking" = "Path";
-
-"type.highway.footway.demanding_mountain_hiking" = "Path";
-
-"type.highway.footway.difficult_alpine_hiking" = "Path";
-
-"type.highway.footway.hiking" = "Path";
-
-"type.highway.footway.mountain_hiking" = "Path";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.footway.tunnel" = "Тунел";
@@ -2077,26 +2133,20 @@
 
 "type.highway.path" = "Path";
 
-"type.highway.path.alpine_hiking" = "Path";
+/* Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. */
+"type.highway.path.difficult" = "Path";
+
+/* Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. */
+"type.highway.path.expert" = "Path";
 
 "type.highway.path.bicycle" = "Path";
+
+"type.highway.footway.bicycle" = "Path";
 
 /* These translations are used for all type.highway.*.bridge. */
 "type.highway.path.bridge" = "Мост";
 
-"type.highway.path.demanding_alpine_hiking" = "Path";
-
-"type.highway.path.demanding_mountain_hiking" = "Path";
-
-"type.highway.path.difficult_alpine_hiking" = "Path";
-
-"type.highway.path.hiking" = "Path";
-
 "type.highway.path.horse" = "Path";
-
-"type.highway.path.mountain_hiking" = "Path";
-
-"type.highway.path.permissive" = "Path";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.path.tunnel" = "Тунел";
@@ -2219,17 +2269,7 @@
 
 "type.highway.track.grade1" = "Track";
 
-"type.highway.track.grade2" = "Track";
-
-"type.highway.track.grade3" = "Track";
-
-"type.highway.track.grade4" = "Track";
-
-"type.highway.track.grade5" = "Track";
-
 "type.highway.track.no.access" = "Track";
-
-"type.highway.track.permissive" = "Track";
 
 /* These translations are used for all type.highway.*.tunnel. */
 "type.highway.track.tunnel" = "Тунел";
@@ -2439,8 +2479,6 @@
 
 "type.landuse.education" = "Educational Facility";
 
-"type.landuse.farm" = "Farm";
-
 "type.landuse.farmland" = "Farmland";
 
 "type.landuse.farmyard" = "Farmyard";
@@ -2510,6 +2548,8 @@
 "type.leisure.garden.residential" = "Garden";
 
 "type.leisure.golf_course" = "Golf Course";
+
+"type.leisure.miniature_golf" = "Миниголф";
 
 "type.leisure.hackerspace" = "Hackerspace";
 
@@ -3726,7 +3766,7 @@
 /* Typically serviced, staff is present and food is available (compared to wilderness_hut). */
 "type.tourism.alpine_hut" = "Планинска хижа";
 
-"type.tourism.apartment" = "Holiday Apartment";
+"type.tourism.apartment" = "Ваканционен апартамент";
 
 "type.tourism.artwork" = "Artwork";
 
@@ -3825,8 +3865,6 @@
 "type.waterway.river" = "River";
 
 "type.waterway.river.tunnel" = "River";
-
-"type.waterway.riverbank" = "River";
 
 "type.waterway.stream" = "Stream";
 

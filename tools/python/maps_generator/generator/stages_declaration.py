@@ -132,6 +132,7 @@ class StageFeatures(Stage):
             extra.update({"emit_coasts": True})
         if is_accepted(env, StageIsolinesInfo):
             extra.update({"isolines_path": PathProvider.isolines_path()})
+        extra.update({"addresses_path": PathProvider.addresses_path()})
 
         steps.step_features(env, **extra)
         if os.path.exists(env.paths.packed_polygons_path):
@@ -222,10 +223,6 @@ class StageMwm(Stage):
 
 
 @country_stage
-@depends_from_internal(
-    D(settings.UK_POSTCODES_URL, PathProvider.uk_postcodes_path, "p"),
-    D(settings.US_POSTCODES_URL, PathProvider.us_postcodes_path, "p"),
-)
 class StageIndex(Stage):
     def apply(self, env: Env, country, **kwargs):
         if country == WORLD_NAME:
@@ -233,13 +230,12 @@ class StageIndex(Stage):
         elif country == WORLD_COASTS_NAME:
             steps.step_coastline_index(env, country, **kwargs)
         else:
-            if env.production:
-                kwargs.update(
-                    {
-                        "uk_postcodes_dataset": env.paths.uk_postcodes_path,
-                        "us_postcodes_dataset": env.paths.us_postcodes_path,
-                    }
-                )
+            kwargs.update(
+                {
+                    "uk_postcodes_dataset": settings.UK_POSTCODES_URL,
+                    "us_postcodes_dataset": settings.US_POSTCODES_URL,
+                }
+            )
             steps.step_index(env, country, **kwargs)
 
 
@@ -366,7 +362,7 @@ class StageCountriesTxt(Stage):
             )
 
         with open(env.paths.counties_txt_path, "w") as f:
-            json.dump(countries, f, ensure_ascii=True, indent=1)
+            json.dump(countries, f, ensure_ascii=False, indent=1)
 
 
 @outer_stage

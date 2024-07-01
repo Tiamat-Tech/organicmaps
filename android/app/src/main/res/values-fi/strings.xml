@@ -235,6 +235,10 @@
 	<string name="pref_map_3d_buildings_disabled_summary">3D-rakennukset ovat poissa päältä virransäästötilassa</string>
 	<!-- Settings «Route» category: «Tts enabled» title -->
 	<string name="pref_tts_enable_title">Ääniohjeistukset</string>
+	<!-- Settings «Route» category: «Tts announce street names» title -->
+	<string name="pref_tts_street_names_title">Ilmoita kadunnimet</string>
+	<!-- Settings «Route» category: «Tts announce street names» description -->
+	<string name="pref_tts_street_names_description">Kun tämä on käytössä, sen kadun tai liittymän nimi, jolle käännytään, puhutaan ääneen.</string>
 	<!-- Settings «Route» category: «Tts language» title -->
 	<string name="pref_tts_language_title">Äänen kieli</string>
 	<!-- Settings «Route» category: «Test Voice Directions» title -->
@@ -278,6 +282,8 @@
 	<string name="compass_calibration_recommended">Paranna nuolien suuntaa liikuttamalla puhelinta kahdeksikon suuntaisesti kompassin kalibroimiseksi.</string>
 	<!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
 	<string name="compass_calibration_required">Liikuta puhelinta kahdeksikon suuntaisella liikkeellä kompassin kalibroimiseksi ja nuolen suunnan määrittämiseksi kartalla.</string>
+	<!-- Toast text when user hides UI with a long tap anywhere on the map -->
+	<string name="long_tap_toast">Näytä käyttöliittymä napauttamalla karttaa uudelleen pitkään.</string>
 	<!-- Update all button text -->
 	<string name="downloader_update_all_button">Päivitä kaikki</string>
 	<!-- Cancel all button text -->
@@ -479,6 +485,8 @@
 	<string name="editor_edit_place_title">Muokkaus</string>
 	<string name="editor_add_place_title">Lisääminen</string>
 	<string name="editor_edit_place_name_hint">Paikan nimi</string>
+	<!-- The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name -->
+	<string name="editor_default_language_hint">Paikallisella kielellä kirjoitettuna</string>
 	<string name="editor_edit_place_category_title">Kategoria</string>
 	<string name="detailed_problem_description">Ongelman tarkka kuvaus</string>
 	<string name="editor_report_problem_other_title">Eri ongelma</string>
@@ -504,6 +512,8 @@
 	<string name="editor_detailed_description">Ehdottamasi muutokset lähetetään OpenStreetMap-yhteisöön. Kuvaa tiedot, joita ei voi muokata Organic Maps:ssä.</string>
 	<string name="editor_more_about_osm">Lisätietoja OpenStreetMap:sta</string>
 	<string name="editor_operator">Operaattori</string>
+	<string name="editor_category_unsuitable_title">Etkö löydä sopivaa luokkaa?</string>
+	<string name="editor_category_unsuitable_text">Organic Maps mahdollistaa vain yksinkertaisten pisteluokkien lisäämisen, eli ei kaupunkeja, teitä, järviä, rakennusten ääriviivoja jne. Lisää tällaiset luokat suoraan <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Tarkista <a href="https://organicmaps.app/faq/editing/advanced-map-editing">oppaastamme</a> yksityiskohtaiset ohjeet vaihe vaiheelta.</string>
 	<string name="downloader_no_downloaded_maps_title">Et ole ladannut yhtään karttaa</string>
 	<string name="downloader_no_downloaded_maps_message">Lataa karttoja löytääksesi paikkoja ja navigoidaksesi offline-tilassa.</string>
 	<!-- abbreviation for meters -->
@@ -550,7 +560,7 @@
 	<!-- Dialog before publishing the modifications to the public map. -->
 	<string name="editor_share_to_all_dialog_message_1">Varmista, ettet syöttänyt henkilökohtaisia tietojasi.</string>
 	<string name="editor_share_to_all_dialog_message_2">OpenStreetMap-editorit tarkistavat muutokset ja ottavat sinuun yhteyttä, jos heillä on kysyttävää.</string>
-	<string name="navigation_stop_button">lopeta</string>
+	<string name="navigation_stop_button">Lopeta</string>
 	<!-- For the first routing -->
 	<string name="accept">Hyväksy</string>
 	<!-- For the first routing -->
@@ -579,8 +589,10 @@
 	<string name="learn_more">Lisätietoja</string>
 	<!-- Subway exits for public transport marks on the map -->
 	<string name="core_exit">Poistu</string>
-	<string name="routing_add_start_point">Lisää alkupiste reitin suunnittelua varten</string>
-	<string name="routing_add_finish_point">Lisää määränpää reitin suunnittelua varten</string>
+	<!-- User selected the destination by pressing Route To, but the current position is unknown. User needs to select a starting point of a route using search or by tapping on the map and then pressing "Route From". -->
+	<string name="routing_add_start_point">Käytä hakua tai napauta karttaa lisätäksesi reitin lähtöpisteen</string>
+	<!-- User selected the start of a route by pressing Route From. Now the destination of a route should be selected using search or by tapping on the map and then pressing "Route To". -->
+	<string name="routing_add_finish_point">Käytä hakua tai napauta karttaa lisätäksesi kohdepisteen.</string>
 	<string name="placepage_remove_stop">Poista</string>
 	<string name="placepage_add_stop">Lisää pysähdys</string>
 	<!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
@@ -594,6 +606,10 @@
 	<!-- Do not display all bookmark lists on the map -->
 	<string name="bookmark_lists_hide_all">Piilota kaikki</string>
 	<string name="bookmark_lists_show_all">Näytä kaikki</string>
+	<plurals name="bookmarks_places">
+	  <item quantity="one">%d kirjanmerkki</item>
+	  <item quantity="other">%d kirjanmerkkiä</item>
+	</plurals>
 	<string name="bookmarks_create_new_group">Luo uusi luettelo</string>
 	<!-- Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files -->
 	<string name="bookmarks_import">Kirjanmerkkien ja reittien tuominen</string>
@@ -612,14 +628,7 @@
 	  <item quantity="one">%d tiedosto löydettiin. Näet sen muunnoksen jälkeen.</item>
 	  <item quantity="other">%d tiedostoa löydettiin. Näet ne muunnoksen jälkeen.</item>
 	</plurals>
-	<plurals name="objects">
-	  <item quantity="one">%d kohde</item>
-	  <item quantity="other">%d kohdetta</item>
-	</plurals>
-	<plurals name="places">
-	  <item quantity="one">%d paikka</item>
-	  <item quantity="other">%d paikkaa</item>
-	</plurals>
+	<string name="restore">Palauta</string>
 	<plurals name="tracks">
 	  <item quantity="one">%d reitti</item>
 	  <item quantity="other">%d reittiä</item>
@@ -635,7 +644,8 @@
 	<string name="bookmarks_empty_list_title">Luettelo on tyhjä</string>
 	<string name="bookmarks_empty_list_message">Lisätäksesi kirjanmerkin, paina kartasta ja sitten paina tähden kuvaa</string>
 	<string name="category_desc_more">…lisää</string>
-	<string name="export_file">Vie tiedosto</string>
+	<string name="export_file">Vie KMZ</string>
+	<string name="export_file_gpx">Vie GPX</string>
 	<string name="delete_list">Poista luettelo</string>
 	<string name="public_access">Julkinen pääsy</string>
 	<string name="limited_access">Rajoitettu pääsy</string>
@@ -777,16 +787,16 @@
 	<string name="app_tip_08">Voit helposti korjata ja parantaa karttatietoja.</string>
 	<!-- App tip #09 -->
 	<string name="app_tip_09">Päätavoitteemme on rakentaa nopeita, yksityisyyteen keskittyviä, helppokäyttöisiä karttoja, joista pidät.</string>
-	<!-- Text on the Android Auto placeholder screen that maps are displayed on the phone screen -->
-	<string name="aa_used_on_the_phone_screen">Käytät nyt puhelimen näytöllä Organic Maps -palvelua.</string>
+	<!-- Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen -->
+	<string name="car_used_on_the_phone_screen">Käytät nyt puhelimen näytöllä Organic Maps -palvelua.</string>
 	<!-- Text on the phone placeholder screen that maps are displayed on the car screen -->
-	<string name="aa_used_on_the_car_screen">Käytät nyt Organic Maps auton näytöllä</string>
+	<string name="car_used_on_the_car_screen">Käytät nyt Organic Maps auton näytöllä</string>
 	<!-- Displayed on the phone screen. Android Auto connected -->
 	<string name="aa_connected_title">Olet yhteydessä Android Autoon</string>
 	<!-- Displayed on the phone screen. Button to display maps on the phone screen instead of a car -->
-	<string name="aa_continue_on_the_phone">Jatka puhelimessa</string>
-	<!-- Displayed on the Android Auto screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
-	<string name="aa_continue_in_the_car">Auton näyttöön</string>
+	<string name="car_continue_on_the_phone">Jatka puhelimessa</string>
+	<!-- Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
+	<string name="car_continue_in_the_car">Auton näyttöön</string>
 	<!-- Ask user to grant location permissions -->
 	<string name="aa_location_permissions_request">Tämä sovellus edellyttää sijaintisi tallentamista navigointia varten.</string>
 	<!-- Displayed on the Android Auto screen. Grant Permissions button. Must be no more than 18 symbols! -->
@@ -804,6 +814,15 @@
 	<string name="pref_tts_open_system_settings">Puhesynteesijärjestelmän asetukset</string>
 	<!-- toast displayed when pressing the "Speech synthesis system settings" button, and the system settings aren't found. -->
 	<string name="pref_tts_no_system_tts">Puhesynteesin asetuksia ei löytynyt, oletko varma, että laitteesi tukee sitä?</string>
+	<string name="drive_through">Ajaa läpi</string>
+	<string name="clear_the_search">Tyhjennä haku</string>
+	<string name="zoom_in">Suurenna</string>
+	<!-- Accessibility text for the zoom-out button on the map -->
+	<string name="zoom_out">Pienennä</string>
+	<!-- Restaurant or other food place's menu URL field in the Editor -->
+	<string name="website_menu">Valikkolinkki</string>
+	<!-- Button in the Place Page which opens a restaurant or other food place's menu in a browser -->
+	<string name="view_menu">Näytä valikko</string>
 
 	<!-- SECTION: Types -->
 	<string name="type.addr_interpolation">Osoite/lohko</string>
@@ -828,7 +847,7 @@
 	<string name="type.amenity.atm">Pankkiautomaatti</string>
 	<string name="type.amenity.bank">Pankki</string>
 	<string name="type.amenity.bar">Baari</string>
-	<string name="type.amenity.bbq">Piknikpaikat</string>
+	<string name="type.amenity.bbq">Grilli</string>
 	<string name="type.amenity.bench">Penkki</string>
 	<string name="type.amenity.bicycle_parking">Polkupyöräpysäköinti</string>
 	<string name="type.amenity.bicycle_rental">Polkupyöränvuokraus</string>
@@ -952,6 +971,10 @@
 	<string name="type.amenity.school">Koulu</string>
 	<!-- Weather shelter (including sun shelters and natural rock shelters). -->
 	<string name="type.amenity.shelter">Katos</string>
+	<!-- A weather shelter by the public transport stop. -->
+	<string name="type.amenity.shelter.public_transport">Katos</string>
+	<!-- Compared to wilderness_hut its smaller and simpler, without a fireplace. -->
+	<string name="type.amenity.shelter.basic_hut">Bivouac-mökki</string>
 	<string name="type.amenity.public_bath">Julkinen kylpylä</string>
 	<string name="type.amenity.shower">Suihku</string>
 	<string name="type.amenity.stripclub">Stripclub</string>
@@ -1180,15 +1203,9 @@
 	<string name="type.highway.elevator">Hissi</string>
 	<string name="type.highway.footway">Polku</string>
 	<string name="type.highway.footway.crossing">Jalankulkijoiden ylitys</string>
-	<string name="type.highway.footway.alpine_hiking">Polku</string>
 	<string name="type.highway.footway.area">Jalankulkualue</string>
 	<!-- These translations are used for all type.highway.*.bridge. -->
 	<string name="type.highway.footway.bridge">Jalankulkusilta</string>
-	<string name="type.highway.footway.demanding_alpine_hiking">Vaativa alppivaellus</string>
-	<string name="type.highway.footway.demanding_mountain_hiking">Vaativa vuoristovaellus</string>
-	<string name="type.highway.footway.difficult_alpine_hiking">Vaikea alppivaellus</string>
-	<string name="type.highway.footway.hiking">Vaellus</string>
-	<string name="type.highway.footway.mountain_hiking">Vuoristovaellus</string>
 	<!-- These translations are used for all type.highway.*.tunnel. -->
 	<string name="type.highway.footway.tunnel">Jalankulkutunneli</string>
 	<string name="type.highway.ford">Kahluupaikka</string>
@@ -1209,17 +1226,15 @@
 	<!-- These translations are used for all type.highway.*.tunnel. -->
 	<string name="type.highway.motorway_link.tunnel">Tunneli</string>
 	<string name="type.highway.path">Polku</string>
-	<string name="type.highway.path.alpine_hiking">Alppivaellus</string>
+	<!-- Hiking trail tagged as sac_scale=demanding_mountain_hiking (3 of 6) or trail_visibility=bad. -->
+	<string name="type.highway.path.difficult">Polku</string>
+	<!-- Hiking trail tagged as sac_scale=alpine_hiking (4+ of 6) or trail_visibility=horrible or more extreme. -->
+	<string name="type.highway.path.expert">Polku</string>
 	<string name="type.highway.path.bicycle">Pyörä- ja jalkatie</string>
+	<string name="type.highway.footway.bicycle">Pyörä- ja jalkatie</string>
 	<!-- These translations are used for all type.highway.*.bridge. -->
 	<string name="type.highway.path.bridge">Silta</string>
-	<string name="type.highway.path.demanding_alpine_hiking">Vaativa alppivaellus</string>
-	<string name="type.highway.path.demanding_mountain_hiking">Vaativa vuoristovaellus</string>
-	<string name="type.highway.path.difficult_alpine_hiking">Vaikea alppivaellus</string>
-	<string name="type.highway.path.hiking">Vaellus</string>
 	<string name="type.highway.path.horse">Ratsastuspolku</string>
-	<string name="type.highway.path.mountain_hiking">Vuoristovaellus</string>
-	<string name="type.highway.path.permissive">Polku</string>
 	<!-- These translations are used for all type.highway.*.tunnel. -->
 	<string name="type.highway.path.tunnel">Tunneli</string>
 	<string name="type.highway.pedestrian">Jalankulkutie</string>
@@ -1293,12 +1308,7 @@
 	<!-- These translations are used for all type.highway.*.bridge. -->
 	<string name="type.highway.track.bridge">Silta</string>
 	<string name="type.highway.track.grade1">Katu</string>
-	<string name="type.highway.track.grade2">Katu</string>
-	<string name="type.highway.track.grade3">Katu</string>
-	<string name="type.highway.track.grade4">Katu</string>
-	<string name="type.highway.track.grade5">Katu</string>
 	<string name="type.highway.track.no.access">Katu</string>
-	<string name="type.highway.track.permissive">Katu</string>
 	<!-- These translations are used for all type.highway.*.tunnel. -->
 	<string name="type.highway.track.tunnel">Tunneli</string>
 	<string name="type.highway.traffic_signals">Liikennevalot</string>
@@ -1391,7 +1401,6 @@
 	<string name="type.landuse.commercial">Kaupallinen alue</string>
 	<string name="type.landuse.construction">Rakennustyömaa</string>
 	<string name="type.landuse.education">Koulutuslaitos</string>
-	<string name="type.landuse.farm">Maatila</string>
 	<string name="type.landuse.farmland">Maatalousmaa</string>
 	<string name="type.landuse.farmyard">Maatila</string>
 	<string name="type.landuse.field">Kenttä</string>
@@ -1423,6 +1432,7 @@
 	<string name="type.leisure.garden">Puutarha</string>
 	<string name="type.leisure.garden.residential">Puutarha</string>
 	<string name="type.leisure.golf_course">Golf-rata</string>
+	<string name="type.leisure.miniature_golf">Minigolf</string>
 	<string name="type.leisure.hackerspace">Hacklab</string>
 	<string name="type.leisure.marina">Venesatama</string>
 	<string name="type.leisure.nature_reserve">Luonnonsuojelualue</string>
@@ -2013,7 +2023,6 @@
 	<string name="type.waterway.lock_gate">Kanavasulku</string>
 	<string name="type.waterway.river">Joki</string>
 	<string name="type.waterway.river.tunnel">Joki</string>
-	<string name="type.waterway.riverbank">Joki</string>
 	<string name="type.waterway.stream">Joki</string>
 	<string name="type.waterway.stream.ephemeral">Joki</string>
 	<string name="type.waterway.stream.intermittent">Joki</string>

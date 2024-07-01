@@ -9,15 +9,11 @@ protocol PlacePagePresenterProtocol: AnyObject {
 class PlacePagePresenter: NSObject {
   private weak var view: PlacePageViewProtocol!
   private let interactor: PlacePageInteractorProtocol
-  private let layout: IPlacePageLayout
 
   init(view: PlacePageViewProtocol,
-       interactor: PlacePageInteractorProtocol,
-       layout: IPlacePageLayout) {
+       interactor: PlacePageInteractorProtocol) {
     self.view = view
     self.interactor = interactor
-    self.layout = layout
-    view.setLayout(layout)
   }
 }
 
@@ -37,7 +33,7 @@ extension PlacePagePresenter: PlacePagePresenterProtocol {
   }
 
   func closeAnimated() {
-    view.closeAnimated()
+    view.closeAnimated(completion: nil)
   }
 
   func updateTopBound(_ bound: CGFloat, duration: TimeInterval) {

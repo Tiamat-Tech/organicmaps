@@ -33,8 +33,8 @@ func LOG(_ level: LogLevel,
          fileName: StaticString = #file,
          lineNumber: UInt = #line) {
   if (Logger.canLog(level)) {
-    let shorFileName = URL(string: "\(fileName)")?.lastPathComponent ?? ""
-    let formattedMessage = "\(shorFileName):\(lineNumber) \(functionName): \(message())"
+    let shortFileName = URL(string: "\(fileName)")?.lastPathComponent ?? ""
+    let formattedMessage = "\(shortFileName):\(lineNumber) \(functionName): \(message())"
     Logger.log(level, message: formattedMessage)
   }
 }

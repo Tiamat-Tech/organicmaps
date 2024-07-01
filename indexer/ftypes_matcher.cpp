@@ -210,10 +210,11 @@ IsPostBoxChecker::IsPostBoxChecker()
   m_types.push_back(c.GetTypeByPath({"amenity", "post_box"}));
 }
 
-IsPostOfficeChecker::IsPostOfficeChecker()
+IsPostPoiChecker::IsPostPoiChecker()
 {
   Classificator const & c = classif();
-  m_types.push_back(c.GetTypeByPath({"amenity", "post_office"}));
+  for (char const * val : {"post_office", "post_box", "parcel_locker"})
+    m_types.push_back(c.GetTypeByPath({"amenity", val}));
 }
 
 IsFuelStationChecker::IsFuelStationChecker()
@@ -389,7 +390,7 @@ IsStreetOrSquareChecker::IsStreetOrSquareChecker()
 IsAddressObjectChecker::IsAddressObjectChecker() : BaseChecker(1 /* level */)
 {
   base::StringIL const paths = {
-    "building", "entrance", "amenity", "shop", "tourism", "historic", "office", "craft", "addr:interpolation"
+    "building", "entrance", "amenity", "shop", "tourism", "historic", "office", "craft", "leisure", "addr:interpolation"
   };
 
   Classificator const & c = classif();
@@ -479,6 +480,11 @@ IsPoiChecker::IsPoiChecker() : BaseChecker(1 /* level */)
 
   for (auto const & type : poiTypes)
     m_types.push_back(classif().GetTypeByPath({type}));
+}
+
+IsAmenityChecker::IsAmenityChecker() : BaseChecker(1 /* level */)
+{
+  m_types.push_back(classif().GetTypeByPath({"amenity"}));
 }
 
 AttractionsChecker::AttractionsChecker() : BaseChecker(2 /* level */)
@@ -847,23 +853,6 @@ IsAddressInterpolChecker::IsAddressInterpolChecker() : BaseChecker(1 /* level */
   m_types.push_back(c.GetTypeByPath({"addr:interpolation"}));
   m_odd = c.GetTypeByPath({"addr:interpolation", "odd"});
   m_even = c.GetTypeByPath({"addr:interpolation", "even"});
-}
-
-feature::InterpolType IsAddressInterpolChecker::GetInterpolType(FeatureType & ft) const
-{
-  for (uint32_t t : feature::TypesHolder(ft))
-  {
-    if (t == m_odd)
-      return feature::InterpolType::Odd;
-    if (t == m_even)
-      return feature::InterpolType::Even;
-
-    ftype::TruncValue(t, 1);
-    if (t == m_types[0])
-      return feature::InterpolType::Any;
-  }
-
-  return feature::InterpolType::None;
 }
 
 

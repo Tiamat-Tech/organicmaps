@@ -108,7 +108,7 @@ std::string MetadataTagProcessorImpl::ValidateAndFormat_operator(std::string con
       ftypes::IsMoneyExchangeChecker::Instance()(t) ||
       ftypes::IsFuelStationChecker::Instance()(t) ||
       ftypes::IsRecyclingCentreChecker::Instance()(t) ||
-      ftypes::IsPostOfficeChecker::Instance()(t) ||
+      ftypes::IsPostPoiChecker::Instance()(t) ||
       ftypes::IsCarSharingChecker::Instance()(t) ||
       ftypes::IsCarRentalChecker::Instance()(t) ||
       ftypes::IsBicycleRentalChecker::Instance()(t) ||
@@ -122,6 +122,23 @@ std::string MetadataTagProcessorImpl::ValidateAndFormat_operator(std::string con
 
 std::string MetadataTagProcessorImpl::ValidateAndFormat_url(std::string const & v)
 {
+  // Remove the last slash if it's after the hostname to beautify URLs in the UI and save a byte of space:
+  // https://www.test.com/ => https://www.test.com
+  // www.test.com/ => www.test.com
+  // www.test.com/path => www.test.com/path
+  // www.test.com/path/ => www.test.com/path/
+  constexpr std::string_view kHttps = "https://";
+  constexpr std::string_view kHttp = "http://";
+  size_t start = 0;
+  if (v.starts_with(kHttps))
+    start = kHttps.size();
+  else if (v.starts_with(kHttp))
+    start = kHttp.size();
+  auto const first = v.find('/', start);
+  if (first == std::string::npos)
+    return v;
+  if (first + 1 == v.size())
+    return std::string{v.begin(), --v.end()};
   return v;
 }
 
@@ -286,22 +303,17 @@ std::string MetadataTagProcessorImpl::ValidateAndFormat_wikipedia(std::string v)
 
 std::string MetadataTagProcessorImpl::ValidateAndFormat_wikimedia_commons(std::string v)
 {
-
   // Putting the full wikimedia url to this tag is incorrect according to:
   // https://wiki.openstreetmap.org/wiki/Key:wikimedia_commons
   // But it happens often enough that we should guard against it.
   strings::ReplaceFirst(v, "https://commons.wikimedia.org/wiki/", "");
   strings::ReplaceFirst(v, "https://commons.m.wikimedia.org/wiki/", "");
 
-  if (strings::StartsWith(v, "File:") || strings::StartsWith(v, "Category:"))
-  {
+  if (v.starts_with("File:") || v.starts_with("Category:"))
     return v;
-  }
-  else
-  {
-    LOG(LDEBUG, ("Invalid Wikimedia Commons tag value:", v));
-    return {};
-  }
+
+  LOG(LDEBUG, ("Invalid Wikimedia Commons tag value:", v));
+  return {};
 }
 
 std::string MetadataTagProcessorImpl::ValidateAndFormat_airport_iata(std::string const & v) const
@@ -335,6 +347,14 @@ std::string MetadataTagProcessorImpl::ValidateAndFormat_capacity(std::string con
 std::string MetadataTagProcessorImpl::ValidateAndFormat_local_ref(std::string const & v)
 {
   return v;
+}
+
+std::string MetadataTagProcessorImpl::ValidateAndFormat_drive_through(std::string v)
+{
+  strings::AsciiToLower(v);
+  if (v == "yes" || v == "no")
+    return v;
+  return {};
 }
 
 std::string MetadataTagProcessorImpl::ValidateAndFormat_duration(std::string const & v) const
@@ -386,7 +406,7 @@ std::string MetadataTagProcessorImpl::ValidateAndFormat_duration(std::string con
   size_t pos = 0;
   std::optional<uint32_t> op;
 
-  if (strings::StartsWith(v, "PT"))
+  if (v.starts_with("PT"))
   {
     if (v.size() < 4)
       return {};
@@ -466,7 +486,7 @@ void MetadataTagProcessor::operator()(std::string const & k, std::string const &
     return std::string_view();
   };
 
-  if (strings::StartsWith(k, "description"))
+  if (k.starts_with("description"))
   {
     // Separate description tags processing.
     int8_t langIdx = StringUtf8Multilang::kDefaultCode;
@@ -499,6 +519,7 @@ void MetadataTagProcessor::operator()(std::string const & k, std::string const &
     valid = ValidateAndFormat_operator(v);
     break;
   case Metadata::FMD_WEBSITE: valid = ValidateAndFormat_url(v); break;
+  case Metadata::FMD_WEBSITE_MENU: valid = ValidateAndFormat_url(v); break;
   case Metadata::FMD_CONTACT_FACEBOOK: valid = osm::ValidateAndFormat_facebook(v); break;
   case Metadata::FMD_CONTACT_INSTAGRAM: valid = osm::ValidateAndFormat_instagram(v); break;
   case Metadata::FMD_CONTACT_TWITTER: valid = osm::ValidateAndFormat_twitter(v); break;
@@ -532,6 +553,7 @@ void MetadataTagProcessor::operator()(std::string const & k, std::string const &
   case Metadata::FMD_DURATION: valid = ValidateAndFormat_duration(v); break;
   case Metadata::FMD_CAPACITY: valid = ValidateAndFormat_capacity(v); break;
   case Metadata::FMD_LOCAL_REF: valid = ValidateAndFormat_local_ref(v); break;
+  case Metadata::FMD_DRIVE_THROUGH: valid = ValidateAndFormat_drive_through(v); break;
   // Metadata types we do not get from OSM.
   case Metadata::FMD_CUISINE:
   case Metadata::FMD_DESCRIPTION:   // processed separately

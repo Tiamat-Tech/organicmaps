@@ -1,22 +1,17 @@
-• Better isolines elevation data for European countries, thanks to Sonny
-• OpenStreetMap data as of March 26
-• Bookmark lists are sorted by modification time (recent at the top)
-• Eye icons for visible/hidden bookmark lists
-• Distance and time do not freeze anymore in CarPlay
-• Fixed wrong time and distance when switching planned route modes
-• Fixed the wrong 'saved bookmark' icon
-• Many new objects can be added to OpenStreetMap: various shops and crafts, BBQs, food courts, lang schools, cairns, money transfer points, etc.
-• Add "wheelchair" to the search input to limit results to wheelchair-accessible
-• Searchable orders pickup points (shop=outpost)
-• Added a long tap back button menu
+• synchronizacja zakładek i śladów do iCloud (EKSPERYMENTALNE, proszę włączyć w ustawieniach)
+• zapowiadanie nazwy ulicy w komunikatach nawigacji z syntezatora mowy (EKSPERYMENTALNE, proszę włączyć w ustawieniach)
+• możliwość używania mapy przy podłączonym CarPlay
+• wyszukiwanie kodów pocztowych w USA i Wielkiej Brytanii
+• eksport zakładek i śladów do pliku w formacie GPX
+• nowe dane OpenStreetMap z 28 maja
+• dodawanie, edycja i wyświetlanie linków do menu restauracji, barów i pozostałej gastronomii
+• poprawione brakujące adresy w szczegółach centrów fitness
+• poprawione linki do Wikipedii zawierające znak zapytania
+• poprawiony kolor tekstu w trybie ciemnym CarPlay
+• więcej opcji syntezy mowy
+• komunikaty nawigacji przerywają podcasty zamiast je ściszać
+• poprawione niektóre przyciski znikające podczas dodawania miejsca do mapy
+• poprawione szczegóły miejsca, które nie aktualizowały się po edycji zakładki
+• poprawiony przycisk godzin zamknięcia w edytorze tak, aby działał po północy
 
-Map styling:
-• Added wind turbines and power plant icons
-• Reduced visibilities of many outdoors-specific POIs when in the main map style, e.g., waterfalls, mountain peaks, shelters, power towers, etc. (use the Outdoors style for those!)
-• More consistent font sizes and caption appearances
-
-Translations updates:
-• Slovak, Italian, Spanish, Hindi
-• Fixed police, parking, and sights category search for simplified Chinese
-
- …and more fixes and improvements, check https://omaps.org/news for details!
+Zaktualizowane tłumaczenia na czeski, niemiecki, portugalski.

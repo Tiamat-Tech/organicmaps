@@ -2,40 +2,28 @@
 
 #include "drape/texture_manager.hpp"
 
-#include "base/logging.hpp"
-
-#include <ios>
-#include <sstream>
-#include <utility>
-
 namespace df
 {
-TextHandle::TextHandle(dp::OverlayID const & id, strings::UniString const & text,
-                       dp::Anchor anchor, uint64_t priority, int fixedHeight,
-                       ref_ptr<dp::TextureManager> textureManager,
-                       int minVisibleScale, bool isBillboard)
+TextHandle::TextHandle(dp::OverlayID const & id, dp::TGlyphs && glyphs, dp::Anchor anchor, uint64_t priority,
+                       ref_ptr<dp::TextureManager> textureManager, int minVisibleScale, bool isBillboard)
   : OverlayHandle(id, anchor, priority, minVisibleScale, isBillboard)
   , m_forceUpdateNormals(false)
   , m_isLastVisible(false)
-  , m_text(text)
+  , m_glyphs(std::move(glyphs))
   , m_textureManager(textureManager)
   , m_glyphsReady(false)
-  , m_fixedHeight(fixedHeight)
 {}
 
-TextHandle::TextHandle(dp::OverlayID const & id, strings::UniString const & text, dp::Anchor anchor,
-                       uint64_t priority, int fixedHeight,
-                       ref_ptr<dp::TextureManager> textureManager,
-                       gpu::TTextDynamicVertexBuffer && normals, int minVisibleScale,
-                       bool isBillboard)
+TextHandle::TextHandle(dp::OverlayID const & id, dp::TGlyphs && glyphs, dp::Anchor anchor,
+                       uint64_t priority, ref_ptr<dp::TextureManager> textureManager,
+                       gpu::TTextDynamicVertexBuffer && normals, int minVisibleScale, bool isBillboard)
   : OverlayHandle(id, anchor, priority, minVisibleScale, isBillboard)
   , m_buffer(std::move(normals))
   , m_forceUpdateNormals(false)
   , m_isLastVisible(false)
-  , m_text(text)
+  , m_glyphs(std::move(glyphs))
   , m_textureManager(textureManager)
   , m_glyphsReady(false)
-  , m_fixedHeight(fixedHeight)
 {}
 
 void TextHandle::GetAttributeMutation(ref_ptr<dp::AttributeBufferMutator> mutator) const
@@ -66,7 +54,7 @@ void TextHandle::GetAttributeMutation(ref_ptr<dp::AttributeBufferMutator> mutato
 bool TextHandle::Update(ScreenBase const & screen)
 {
   if (!m_glyphsReady)
-    m_glyphsReady = m_textureManager->AreGlyphsReady(m_text, m_fixedHeight);
+    m_glyphsReady = m_textureManager->AreGlyphsReady(m_glyphs);
 
   return m_glyphsReady;
 }

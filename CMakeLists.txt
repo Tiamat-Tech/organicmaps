@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.18)
 project(omim C CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_C_STANDARD 11)
 # Our code does not rely on gnu extensions.
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -10,6 +10,11 @@ set(CMAKE_C_EXTENSIONS OFF)
 set(CMAKE_C_VISIBILITY_PRESET hidden)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 set(CMAKE_VISIBILITY_INLINES_HIDDEN ON)
+
+# Fixes warning ld: warning: ignoring duplicate libraries on Mac and Windows.
+if (POLICY CMP0156)
+  cmake_policy(SET CMP0156 NEW)
+endif()
 
 if (APPLE AND NOT ("${CMAKE_SYSTEM_NAME}" STREQUAL Android))
   # OBJC/OBJCXX are needed to skip m/mm files in Unity builds.
@@ -21,7 +26,7 @@ if (APPLE AND NOT ("${CMAKE_SYSTEM_NAME}" STREQUAL Android))
   set(CMAKE_OBJC_VISIBILITY_PRESET hidden)
   enable_language(OBJCXX)
   set(CMAKE_OBJCXX_EXTENSIONS OFF)
-  set(CMAKE_OBJCXX_STANDARD 17)
+  set(CMAKE_OBJCXX_STANDARD 20)
   set(CMAKE_OBJCXX_FLAGS -fobjc-arc)
   set(CMAKE_OBJCXX_VISIBILITY_PRESET hidden)
 endif()
@@ -149,8 +154,6 @@ option(USE_TSAN "Enable Thread Sanitizer" OFF)
 option(USE_LIBFUZZER "Enable LibFuzzer" OFF)
 option(PYBINDINGS "Create makefiles for building python bindings" OFF)
 option(SKIP_QT_GUI "Skip building of Qt GUI" OFF)
-# TODO: Fix mapshot, it doesn't work without our old FreeType hack.
-option(BUILD_MAPSHOT "Build mapshot tool" OFF)
 option(USE_PCH "Use precompiled headers" OFF)
 option(NJOBS "Number of parallel processes" OFF)
 option(ENABLE_VULKAN_DIAGNOSTICS "Enable Vulkan diagnostics" OFF)
@@ -163,9 +166,9 @@ if (NJOBS)
   set(CMAKE_JOB_POOL_PRECOMPILE_HEADER custom)
 endif()
 
-# GCC 8.1 is required to support <charconv> header inclusion in base/string_utils.hpp, otherwise 7.0 is sufficient
-if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 8.1)
-  message(FATAL_ERROR "Minimum supported g++ version is 8.1 yours is ${CMAKE_CXX_COMPILER_VERSION}")
+# GCC 10.0 is required to support <charconv> header inclusion in base/string_utils.hpp
+if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 10.0)
+  message(FATAL_ERROR "Minimum supported g++ version is 10.0, yours is ${CMAKE_CXX_COMPILER_VERSION}")
 endif()
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
@@ -334,12 +337,8 @@ if (PLATFORM_DESKTOP AND NOT WITH_SYSTEM_PROVIDED_3PARTY)
   include_directories("${PROJECT_BINARY_DIR}/3party/gflags/include")
 endif()
 
-find_package(Python3 COMPONENTS Interpreter)
-if (Python3_Interpreter_FOUND)
-  message(STATUS "Found python to use in qt/, shaders/ and 3party/: ${Python3_EXECUTABLE}")
-else()
-  message(FATAL_ERROR "Could not find python3 to use in qt/, shaders/ and 3party/.")
-endif()
+# Used in qt/ and shaders/
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
 
 add_subdirectory(base)
 add_subdirectory(coding)
@@ -365,10 +364,6 @@ add_subdirectory(traffic)
 add_subdirectory(transit)
 
 if (PLATFORM_DESKTOP)
-  if (BUILD_MAPSHOT)
-    add_subdirectory(mapshot)
-    add_subdirectory(software_renderer)
-  endif()
   omim_add_tool_subdirectory(feature_list)
   add_subdirectory(generator)
   add_subdirectory(openlr)

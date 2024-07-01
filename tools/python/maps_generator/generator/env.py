@@ -312,14 +312,6 @@ class PathProvider:
         return os.path.join(self.intermediate_data_path, "translations_food.json")
 
     @property
-    def uk_postcodes_path(self) -> AnyStr:
-        return os.path.join(self.intermediate_data_path, "uk_postcodes")
-
-    @property
-    def us_postcodes_path(self) -> AnyStr:
-        return os.path.join(self.intermediate_data_path, "us_postcodes")
-
-    @property
     def cities_boundaries_path(self) -> AnyStr:
         return os.path.join(self.intermediate_data_path, "cities_boundaries.bin")
 
@@ -354,6 +346,10 @@ class PathProvider:
     @staticmethod
     def isolines_path() -> AnyStr:
         return settings.ISOLINES_PATH
+
+    @staticmethod
+    def addresses_path() -> AnyStr:
+        return settings.ADDRESSES_PATH
 
     @staticmethod
     def borders_path() -> AnyStr:

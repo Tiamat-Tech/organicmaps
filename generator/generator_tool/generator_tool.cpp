@@ -18,7 +18,6 @@
 #include "generator/platform_helpers.hpp"
 #include "generator/popular_places_section_builder.hpp"
 #include "generator/postcode_points_builder.hpp"
-#include "generator/processor_factory.hpp"
 #include "generator/raw_generator.hpp"
 #include "generator/restriction_generator.hpp"
 #include "generator/road_access_generator.hpp"
@@ -29,13 +28,9 @@
 #include "generator/traffic_generator.hpp"
 #include "generator/transit_generator.hpp"
 #include "generator/transit_generator_experimental.hpp"
-#include "generator/translator_factory.hpp"
 #include "generator/unpack_mwm.hpp"
 #include "generator/utils.hpp"
 #include "generator/wiki_url_dumper.hpp"
-
-#include "routing/cross_mwm_ids.hpp"
-#include "routing/speed_camera_prohibition.hpp"
 
 #include "storage/country_parent_getter.hpp"
 
@@ -54,12 +49,6 @@
 #include "base/timer.hpp"
 
 #include "defines.hpp"
-
-#include <csignal>
-#include <cstdlib>
-#include <fstream>
-#include <memory>
-#include <string>
 
 #include <gflags/gflags.h>
 
@@ -122,8 +111,9 @@ DEFINE_string(
     "Path to file containing list of node ids we need to add to locality index. May be empty.");
 
 DEFINE_bool(generate_isolines_info, false, "Generate the isolines info section");
-DEFINE_string(isolines_path, "",
-              "Path to isolines directory. If set, adds isolines linear features.");
+DEFINE_string(isolines_path, "", "Path to isolines directory. If set, adds isolines linear features.");
+DEFINE_string(addresses_path, "", "Path to addresses directory. If set, adds addr:interpolation features.");
+
 // Routing.
 DEFINE_bool(make_routing_index, false, "Make sections with the routing information.");
 DEFINE_bool(make_cross_mwm, false,
@@ -264,6 +254,7 @@ MAIN_WITH_ERROR_HANDLING([](int argc, char ** argv)
   genInfo.m_idToWikidataFilename = FLAGS_idToWikidata;
   genInfo.m_complexHierarchyFilename = FLAGS_complex_hierarchy_data;
   genInfo.m_isolinesDir = FLAGS_isolines_path;
+  genInfo.m_addressesDir = FLAGS_addresses_path;
 
   // Use merged style.
   GetStyleReader().SetCurrentStyle(MapStyleMerged);
@@ -387,23 +378,13 @@ MAIN_WITH_ERROR_HANDLING([](int argc, char ** argv)
 
       if (!FLAGS_uk_postcodes_dataset.empty() || !FLAGS_us_postcodes_dataset.empty())
       {
-        if (!countryParentGetter)
-        {
-          LOG(LCRITICAL,
-              ("Countries file is needed. Please set countries file name (countries.txt). "
-               "File must be located in data directory."));
-          return EXIT_FAILURE;
-        }
-
-        auto const topmostCountry = (*countryParentGetter)(country);
         bool res = true;
-        if (topmostCountry == "United Kingdom" && !FLAGS_uk_postcodes_dataset.empty())
+        if (!FLAGS_uk_postcodes_dataset.empty() && country.starts_with("UK_"))
         {
           res = indexer::BuildPostcodePoints(path, country, indexer::PostcodePointsDatasetType::UK,
                                              FLAGS_uk_postcodes_dataset, true /*forceRebuild*/);
         }
-        else if (topmostCountry == "United States of America" &&
-                 !FLAGS_us_postcodes_dataset.empty())
+        else if (!FLAGS_us_postcodes_dataset.empty() && country.starts_with("US_"))
         {
           res = indexer::BuildPostcodePoints(path, country, indexer::PostcodePointsDatasetType::US,
                                              FLAGS_us_postcodes_dataset, true /*forceRebuild*/);

@@ -147,26 +147,27 @@ UNIT_TEST(Metadata_ValidateAndFormat_wikipedia)
   #define WIKIHOST "wikipedia.org"
 #endif
 
-  p(kWikiKey, "en:Bad %20Data");
-  TEST_EQUAL(md.Get(Metadata::FMD_WIKIPEDIA), "en:Bad %20Data", ());
-  TEST_EQUAL(md.GetWikiURL(), "https://en." WIKIHOST "/wiki/Bad_%2520Data", ());
-  md.Drop(Metadata::FMD_WIKIPEDIA);
+  struct Test
+  {
+    char const * source;
+    char const * validated;
+    char const * url;
+  };
+  constexpr Test tests[] = {
+    {"en:Bad %20Data", "en:Bad %20Data", "https://en." WIKIHOST "/wiki/Bad_%2520Data"},
+    {"ru:Это тест_со знаками %, ? (и скобками)", "ru:Это тест со знаками %, ? (и скобками)", "https://ru." WIKIHOST "/wiki/Это_тест_со_знаками_%25,_%3F_(и_скобками)"},
+    {"https://be-tarask.wikipedia.org/wiki/Вялікае_Княства_Літоўскае", "be-tarask:Вялікае Княства Літоўскае", "https://be-tarask." WIKIHOST "/wiki/Вялікае_Княства_Літоўскае"},
+    // Final link points to https and mobile version.
+    {"http://en.wikipedia.org/wiki/A#id", "en:A#id", "https://en." WIKIHOST "/wiki/A#id"},
+  };
 
-  p(kWikiKey, "ru:Тест_with % sign");
-  TEST_EQUAL(md.Get(Metadata::FMD_WIKIPEDIA), "ru:Тест with % sign", ());
-  TEST_EQUAL(md.GetWikiURL(), "https://ru." WIKIHOST "/wiki/Тест_with_%25_sign", ());
-  md.Drop(Metadata::FMD_WIKIPEDIA);
-
-  p(kWikiKey, "https://be-tarask.wikipedia.org/wiki/Вялікае_Княства_Літоўскае");
-  TEST_EQUAL(md.Get(Metadata::FMD_WIKIPEDIA), "be-tarask:Вялікае Княства Літоўскае", ());
-  TEST_EQUAL(md.GetWikiURL(), "https://be-tarask." WIKIHOST "/wiki/Вялікае_Княства_Літоўскае", ());
-  md.Drop(Metadata::FMD_WIKIPEDIA);
-
-  // Final link points to https and mobile version.
-  p(kWikiKey, "http://en.wikipedia.org/wiki/A");
-  TEST_EQUAL(md.Get(Metadata::FMD_WIKIPEDIA), "en:A", ());
-  TEST_EQUAL(md.GetWikiURL(), "https://en." WIKIHOST "/wiki/A", ());
-  md.Drop(Metadata::FMD_WIKIPEDIA);
+  for (auto [source, validated, url] : tests)
+  {
+    p(kWikiKey, source);
+    TEST_EQUAL(md.Get(Metadata::FMD_WIKIPEDIA), validated, (source));
+    TEST_EQUAL(md.GetWikiURL(), url, (source));
+    md.Drop(Metadata::FMD_WIKIPEDIA);
+  }
 
   p(kWikiKey, "invalid_input_without_language_and_colon");
   TEST(md.Empty(), (md.Get(Metadata::FMD_WIKIPEDIA)));
@@ -640,4 +641,25 @@ UNIT_TEST(Metadata_ValidateAndFormat_building_levels)
   TEST_EQUAL(tp.ValidateAndFormat_building_levels("Level 1"), "", ());
   TEST_EQUAL(tp.ValidateAndFormat_building_levels("2.51"), "2.5", ());
   TEST_EQUAL(tp.ValidateAndFormat_building_levels("250"), "", ("Too many levels."));
+}
+
+UNIT_TEST(Metadata_ValidateAndFormat_url)
+{
+  std::array<std::pair<char const*, char const*>, 9> constexpr kTests =
+  {{
+    {"a.by", "a.by"},
+    {"http://test.com", "http://test.com"},
+    {"https://test.com", "https://test.com"},
+    {"test.com", "test.com"},
+    {"http://test.com/", "http://test.com"},
+    {"https://test.com/", "https://test.com"},
+    {"test.com/", "test.com"},
+    {"test.com/path", "test.com/path"},
+    {"test.com/path/", "test.com/path/"},
+  }};
+
+  FeatureBuilderParams params;
+  MetadataTagProcessorImpl tp(params);
+  for (auto const& [input, output] : kTests)
+    TEST_EQUAL(tp.ValidateAndFormat_url(input), output, ());
 }

@@ -93,6 +93,7 @@ area|z12-[leisure=garden],
 area|z14-[landuse=grass],
 area|z14-[natural=grassland],
 area|z14-[leisure=golf_course],
+area|z14-[leisure=miniature_golf],
 area|z14-[natural=heath],
 area|z14-[landuse=allotments],
 area|z14-[natural=scrub],
@@ -109,9 +110,9 @@ area|z10[landuse=forest],
 
 area|z14-[landuse=grass],
 area|z14-[natural=grassland],
+area|z14-[leisure=miniature_golf],
 area|z14-[leisure=golf_course],
 area|z14-[natural=heath],
-
 area|z14-[landuse=allotments],
 area|z14-[natural=scrub],
 area|z14-[landuse=orchard],
@@ -193,7 +194,6 @@ area|z0-[natural=desert],
 
 area|z0-[natural=water],
 area|z0-[waterway=dock],
-area|z0-[waterway=riverbank],
 area|z0-[landuse=salt_pond],
 area|z12-[landuse=basin],
 area|z12-[landuse=reservoir],
@@ -204,7 +204,6 @@ area|z13-[leisure=swimming_pool],
 {fill-opacity: 1;}
 
 line|z10-[waterway=river],
-line|z10-[waterway=riverbank],
 line|z13-[waterway=stream],
 line|z13-[waterway=canal],
 line|z13-[natural=strait],
@@ -215,7 +214,6 @@ line|z13-[natural=strait],
 area|z0-[natural=water][!tunnel],
 area|z0-[landuse=salt_pond],
 area|z0-[waterway=dock],
-area|z0-[waterway=riverbank],
 area|z12-[landuse=basin],
 area|z12-[landuse=reservoir],
 area|z13-[leisure=swimming_pool],
@@ -237,15 +235,12 @@ area|z11-[natural=wetland],
 /* 6.2 Line water(river,canal etc.) */
 
 line|z10[waterway=river],
-line|z10[waterway=riverbank],
 {width: 1;}
 
 line|z11-12[waterway=river],
-line|z11-12[waterway=riverbank],
 {width: 1.2;}
 
 line|z13[waterway=river],
-line|z13[waterway=riverbank],
 {width: 1.6;}
 /*line|z13[waterway=stream],
 line|z13[waterway=canal],
@@ -255,7 +250,6 @@ line|z13[waterway=stream][intermittent=yes]
 {width: 0.7;dashes: 2.7,2.7;}*/
 
 line|z14[waterway=river],
-line|z14[waterway=riverbank],
 {width: 1.8;}
 /*line|z14[waterway=stream],
 line|z14[waterway=canal],
@@ -265,7 +259,6 @@ line|z14[waterway=stream][intermittent=yes]
 {width: 1;dashes: 2.7,2.7;}*/
 
 line|z15-[waterway=river],
-line|z15-[waterway=riverbank],
 {width: 2.2;}
 /*line|z15-[waterway=stream],
 line|z15-[waterway=canal],

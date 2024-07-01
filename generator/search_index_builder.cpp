@@ -254,6 +254,7 @@ template <class FnT> bool InsertPostcodes(FeatureType & f, FnT && fn)
 {
   using namespace search;
 
+  // PostBox only, not IsPostPoiChecker?
   auto const & postBoxChecker = ftypes::IsPostBoxChecker::Instance();
   auto const postcode = f.GetMetadata(feature::Metadata::FMD_POSTCODE);
 
@@ -648,9 +649,14 @@ bool BuildSearchIndexFromDataFile(std::string const & country, feature::Generate
       writer->Seek(endOffset);
     }
 
+    /// @todo FilesContainerW::Write with section overriding invalidates current container instance
+    /// (@see FilesContainerW::GetWriter), thus we can't make 2 consecutive Write calls.
     {
       FilesContainerW writeContainer(readContainer.GetFileName(), FileWriter::OP_WRITE_EXISTING);
       writeContainer.Write(streetsFilePath, FEATURE2STREET_FILE_TAG);
+    }
+    {
+      FilesContainerW writeContainer(readContainer.GetFileName(), FileWriter::OP_WRITE_EXISTING);
       writeContainer.Write(placesFilePath, FEATURE2PLACE_FILE_TAG);
     }
   }

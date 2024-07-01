@@ -1,22 +1,17 @@
-• Better isolines elevation data for European countries, thanks to Sonny
-• OpenStreetMap data as of March 26
-• Bookmark lists are sorted by modification time (recent at the top)
-• Eye icons for visible/hidden bookmark lists
-• Distance and time do not freeze anymore in CarPlay
-• Fixed wrong time and distance when switching planned route modes
-• Fixed the wrong 'saved bookmark' icon
-• Many new objects can be added to OpenStreetMap: various shops and crafts, BBQs, food courts, lang schools, cairns, money transfer points, etc.
-• Add "wheelchair" to the search input to limit results to wheelchair-accessible
-• Searchable orders pickup points (shop=outpost)
-• Added a long tap back button menu
+• експериментальна синхронізація міток і треків в iCloud (вмикається в налаштуваннях)
+• оголошення назв вулиць під час голосової навігації (вмикається в налаштуваннях)
+• нарешті можна перемикатися між телефоном і CarPlay
+• пошук поштових індексів США та Великої Британії (GB)
+• експорт міток і треків у форматі GPX
+• нові дані OpenStreetMap станом на 28 травня
+• додавання, редагування та відображення веб-посилань на меню ресторанів, барів і закладів громадського харчування
+• виправлено посилання на Вікіпедію, що містили знак питання
+• виправлено колір тексту CarPlay у темному режимі
+• більше варіантів вибору мови для голосового супроводу TTS
+• голосові оголошення тепер переривають подкасти замість того, щоб їх приглушати
+• виправлено кнопки, які зникали під час додавання місця на карту
+• виправлено кнопку неробочого часу в редакторі, щоб вона працювала після опівночі
 
-Map styling:
-• Added wind turbines and power plant icons
-• Reduced visibilities of many outdoors-specific POIs when in the main map style, e.g., waterfalls, mountain peaks, shelters, power towers, etc. (use the Outdoors style for those!)
-• More consistent font sizes and caption appearances
+Оновлено переклади чеською, німецькою та португальською мовами.
 
-Translations updates:
-• Slovak, Italian, Spanish, Hindi
-• Fixed police, parking, and sights category search for simplified Chinese
-
- …and more fixes and improvements, check https://omaps.org/news for details!
+Докладніше читайте на https://omaps.org/uk/news

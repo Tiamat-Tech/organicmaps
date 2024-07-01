@@ -28,14 +28,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIColor *)speedLimitWhite;
 + (UIColor *)speedLimitLightGray;
 + (UIColor *)speedLimitDarkGray;
++ (UIColor *)carplayPlaceholderBackground;
 
 + (UIColor *)colorWithName:(NSString *)colorName;
 + (UIColor *)colorFromHexString:(NSString *)hexString;
 
 + (void)setNightMode:(BOOL)mode;
 + (BOOL)isNightMode;
-
-- (UIColor *)opposite;
 
 @end
 
